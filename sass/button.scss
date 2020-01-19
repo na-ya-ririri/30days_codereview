@@ -265,3 +265,40 @@ html, body {
     } //アンダーラインが登場
   }
 }
+
+
+.btn10 {
+  position: relative;
+  display: inline-block;
+  margin:0 auto;
+  width:250px;
+  padding: 20px;
+  border: 2px solid #25379B;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  transition: .3s;
+  overflow: hidden;
+  cursor:pointer;
+  font-size:18px;
+  &:hover {
+    color: #fff;
+  }
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -5%;
+    z-index: -1;
+    content: '';
+    width: 110%;
+    height: 200%;
+    background: #25379B;
+    transform-origin: left top;
+    transform: skewY(-10deg) scale(1, 0);
+    transition: transform .3s;
+  }
+  &:hover::before {
+    transform-origin: left top;
+    transform: skewY(-10deg) scale(1, 1);
+  }
+}
