@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import "../../css/base/reset";
+@import "base/reset";
 
 html, body {
   font-family: “游ゴシック体”, YuGothic, “游ゴシック Medium”, “Yu Gothic Medium”, “游ゴシック”, “Yu Gothic”, sans-serif; 
@@ -23,6 +23,10 @@ html, body {
     padding: 20px 10px 15px 10px;
     border-bottom: solid 4px #3F51B5;
     border-radius: 25px 25px 0 0;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      opacity: 0.6;
+    } //透過
   }
 }
 
@@ -39,6 +43,12 @@ html, body {
     border-radius: 3px;
     padding: 15px 93px 14px 16px;
     margin-bottom: 4.5rem;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background-color: #FFFFFF;
+      color: #3F51B5;
+      border: 3px solid #3F51B5;
+    } //色を反転
   }
 }
 
@@ -56,6 +66,8 @@ html, body {
     padding: 15px 93px 14px 16px;
     margin-bottom: 4.5rem;
     position: relative;
+    transition: all 0.3s ease 0s;
+    border-bottom: 0.5rem solid rgb(39, 47, 94);
     &::after {
       position: absolute;
       content: '';
@@ -66,6 +78,10 @@ html, body {
       margin-top: 6px;
       margin-left: 67px;
     }
+    &:hover {
+      border-bottom-color: transparent;
+      transform: translateY(0.5rem);
+    } //凹むように見せる
   }
 }
 
@@ -83,6 +99,7 @@ html, body {
     padding: 15px 93px 14px 16px;
     margin-bottom: 4.5rem;
     position: relative;
+    transition: all 0.3s ease 0s;
     &::after {
       position: absolute;
       content: '';
@@ -93,6 +110,10 @@ html, body {
       margin-top: 6px;
       margin-left: 6px;
     }
+    &:hover {
+      box-shadow: 0 3px 6px rgb(39, 47, 94);
+      transform: translateY(-0.5rem);
+    } //浮き上がって下に影
   }
 }
 
@@ -110,6 +131,10 @@ html, body {
     padding: 15px 74px 14px 35px;
     box-shadow: 0 5px #25379B;
     margin-bottom: 4.5rem;
+    transition: all 1s linear 0s; //一定速度
+    &:hover {
+      transform: rotateX(360deg);
+    } //X軸(横)を起点に360度回る
   }
 }
 
@@ -126,6 +151,10 @@ html, body {
     padding: 15px 74px 14px 35px;
     background: linear-gradient(180deg, #3F51B5 0%, #20295B 100%);
     margin-bottom: 4.5rem;
+    transition: all 1s linear 0s; //一定速度
+    &:hover {
+      transform: rotateY(360deg);
+    } //Y軸(縦)を起点に360度回る
   }
 }
 
@@ -147,6 +176,10 @@ html, body {
     border-radius: 3px;
     padding: 15px 74px 14px 35px;
     margin: 26px 0 28px;
+    transition: all 1s linear 0s; //一定速度
+    &:hover {
+      transform: rotateZ(360deg);
+    } //時計回りに回る
   }
 }
 
@@ -165,6 +198,10 @@ html, body {
     border-radius: 50%;
     padding: 38px 0;
     margin-bottom: 4.5rem;
+    transition: all 0.6s ease 0s;
+    &:hover {
+      transform: scale(1.5, 1.5);
+    } //1.1倍に拡大
   }
 }
 
@@ -182,6 +219,7 @@ html, body {
     padding: 15px 93px 14px 16px;
     margin-bottom: 4.5rem;
     position: relative;
+    transition: all 0.3s ease 0s;
     &::after {
       position: absolute;
       content: '';
@@ -192,6 +230,9 @@ html, body {
       margin-top: 6px;
       margin-left: 67px;
     }
+    &:hover {
+      color: salmon;
+    } //色を変える
   }
 }
 
@@ -208,5 +249,19 @@ html, body {
     padding: 15px 74px 14px 35px;
     border-bottom: 3px solid #25379B;
     margin-bottom: 4.5rem;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: -8px; //アンダーラインの位置
+      left: 0;
+      width: 0; //デフォルトでは見えないように
+      height: 2.5px; //アンダーラインの太さ
+      background: salmon;
+      transition: all 0.3s ease 0s;
+    }
+    &:hover::after {
+      width: 100%; //hoverでアンダーラインを表示
+    } //アンダーラインが登場
   }
 }
