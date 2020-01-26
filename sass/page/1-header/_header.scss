@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+@import "../../setting/var";
+@import "../../mixin/mixin";
+@import "../../base/reset";
+
+html, body {
+  font-family: “游ゴシック体”, YuGothic, “游ゴシック Medium”, “Yu Gothic Medium”, “游ゴシック”, “Yu Gothic”, sans-serif; 
+  font-size: 62.5%;
+}
+
+/* header------------------------------ */
+.nav {
+  background: $color-blue;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  .flex {
+    /* ロゴとメニューを横並びにしてinnerの両端揃えに */
+    display: flex;
+    justify-content: space-between;
+    /* 高さを設定して縦にセンタリング */
+    height: 100px;
+    align-items: center;
+  }
+  .nav__inner {
+    @include inner;
+    .nav__logo {
+      @include mqXS {
+        margin-left: 1rem;
+      }
+      @include mqSM{
+        margin-left: 1rem;
+      }
+      @include mqMD{
+        margin-left: 1rem;
+      }
+      @include mqSP{
+        margin-left: 1rem;
+      }
+      @include mqTAB{
+        margin-left: 2rem;
+      }
+    }
+    .nav__list {
+      @include mqXS{
+        display: none;
+      }
+      @include mqSM{
+        display: none;
+      }
+      @include mqMD{
+        display: none;
+      }
+      @include mqSP{
+        display: none;
+      }
+      @include mqTAB{
+        margin-right: 2rem;
+      }
+      .nav__list--item {
+        display: inline-block;
+        margin-right: 30px; 
+        &:nth-child(5) {
+          margin-right: 0;
+        }
+        a.nav-hover {
+          display: inline-block;
+          color: $color-white;
+          font-size: 1.6rem;
+          line-height: 2.6rem;
+          /* padding-bottom: 4.5px; //文字と下線に隙間を作る←他のメニューより上にずれる:line-heightを設定してなかったのが原因！ */
+          position: relative;
+          /* transition: 0.2s; 不要っぽいので一旦コメントアウト */
+          &::after {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 3px;
+            bottom: -2px;
+            left: 0;
+            background: $color-red;
+            transition: width 0.3s; /* プロパティを指定する */
+          }
+          &:hover::after {
+            width: 100%;
+          }
+        } //a.nav-hover
+      } //.nav__list--item
+    } //.nav__list
+  } //.nav__inner
+} //.nav
+/* カレント表示用のスタイル。あとで付与するクラスなのでここに記述した。 */
+/* (.current{~ という書き方ではダメで、↓のようにjqueryで指定した、親要素からの書き方で書く) */
+#current-nav li a.current {
+  position: relative;
+  /* transition: 0.2s; 不要っぽいので一旦コメントアウト */
+  &::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 3px;
+    bottom: -2px;
+    left: 0;
+    background: $color-red;
+    transition: width 0.3s;
+  }
+}
+/* ------------------------------------ */
