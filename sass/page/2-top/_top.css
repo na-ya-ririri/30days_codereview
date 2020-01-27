@@ -1,0 +1,216 @@
+@charset "UTF-8";
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+/* myreset_CSS */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
+  font-size: 62.5%;
+}
+
+/* top--------------------------------- */
+.top {
+  background: url(../img/header/mainvisual.png) center, center, no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+  /* 位置調整 */
+}
+
+.top .inner {
+  position: absolute;
+  /* 位置調整 */
+  top: 235px;
+  /* 通常パターンのように50%と書くと位置が合わない */
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.top .inner .top__catch {
+  font-size: 6.8rem;
+  line-height: 10.8rem;
+  color: #333333;
+}
+
+@media screen and (max-width: 365px) {
+  .top .inner .top__catch {
+    width: calc(100% - 1rem);
+    font-size: 2.8rem;
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (min-width: 366px) and (max-width: 510px) {
+  .top .inner .top__catch {
+    width: calc(100% - 1rem);
+    font-size: 3.2rem;
+    line-height: 30px;
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 511px) and (max-width: 620px) {
+  .top .inner .top__catch {
+    width: calc(100% - 1rem);
+    font-size: 4.5rem;
+    line-height: 30px;
+    margin-bottom: 35px;
+  }
+}
+
+@media screen and (min-width: 621px) and (max-width: 767px) {
+  .top .inner .top__catch {
+    width: calc(100% - 1rem);
+    font-size: 5.5rem;
+    line-height: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.top .inner .top__lead {
+  font-size: 3.8rem;
+  line-height: 6.1rem;
+  color: #333333;
+  font-weight: bold;
+  margin-bottom: 76px;
+}
+
+@media screen and (max-width: 365px) {
+  .top .inner .top__lead {
+    padding: 0 1rem;
+    font-size: 2.3rem;
+    line-height: 30px;
+  }
+}
+
+@media screen and (min-width: 366px) and (max-width: 510px) {
+  .top .inner .top__lead {
+    padding: 0 1rem;
+    font-size: 2.5rem;
+    line-height: 30px;
+  }
+}
+
+@media screen and (min-width: 511px) and (max-width: 620px) {
+  .top .inner .top__lead {
+    padding: 0 1rem;
+    font-size: 3rem;
+    line-height: 30px;
+  }
+}
+
+@media screen and (min-width: 621px) and (max-width: 767px) {
+  .top .inner .top__lead {
+    padding: 0 1rem;
+    font-size: 3.5rem;
+    line-height: 30px;
+  }
+}
+
+.top .inner .top__contact {
+  display: inline-block;
+  font-size: 3.8rem;
+  line-height: 6.1rem;
+  background-color: #3F51B5;
+  color: #FFFFFF;
+  padding: 10px 81px;
+  border-radius: 12px;
+  box-shadow: 0px 3px 6px #D6D6D6;
+  margin: 0 auto;
+}
+
+.top .inner .top__contact:hover {
+  opacity: 0.85;
+}
+
+@media screen and (max-width: 365px) {
+  .top .inner .top__contact {
+    width: calc(100% - 10%);
+    font-size: 2.0rem;
+    line-height: 4rem;
+  }
+}
+
+@media screen and (min-width: 366px) and (max-width: 510px) {
+  .top .inner .top__contact {
+    width: calc(100% - 18%);
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (min-width: 511px) and (max-width: 620px) {
+  .top .inner .top__contact {
+    width: calc(100% - 30%);
+    font-size: 2.8rem;
+  }
+}
+
+/* ------------------------------------ */

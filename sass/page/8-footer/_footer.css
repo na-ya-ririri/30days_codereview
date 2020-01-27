@@ -1,0 +1,218 @@
+@charset "UTF-8";
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+/* myreset_CSS */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
+  font-size: 62.5%;
+}
+
+/* footer------------------------------*/
+.footer {
+  background: linear-gradient(180deg, #666666 0%, #333333 100%);
+  background: -moz-linear-gradient(top, #666666 0%, #333333 100%);
+  background: -webkit-linear-gradient(top, #666666 0%, #333333 100%);
+  color: #FFFFFF;
+  position: relative;
+  /* .footer__top-linkリンクのため */
+}
+
+.footer .inner {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  padding: 74px 12px 88px 0px;
+  /* 12pxを入れることでピクセルが合う */
+}
+
+@media screen and (max-width: 1080px) {
+  .footer .inner {
+    flex-direction: column;
+    align-items: center;
+    padding: 74px 0 60px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .footer .inner .footer__company {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    /* 縦の表示順番をかえてみた */
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .footer .inner .footer__company {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+
+.footer .inner .footer__company .footer__company--logo {
+  margin-bottom: 20px;
+}
+
+.footer .inner .footer__company .footer__company--address, .footer .inner .footer__company .footer__company--tel {
+  margin-left: 3px;
+}
+
+.footer .inner .footer__company .footer__company--address {
+  margin-bottom: 9px;
+}
+
+@media screen and (max-width: 1080px) {
+  .footer .inner .footer__company--desc {
+    text-align: left;
+    margin-left: 20px;
+  }
+}
+
+.footer .inner .footer__menu--list {
+  display: flex;
+  margin: 7px 224px 0 159px;
+}
+
+@media screen and (max-width: 1080px) {
+  .footer .inner .footer__menu--list {
+    justify-content: center;
+    margin: 0 0 30px 0;
+  }
+}
+
+.footer .inner .footer__menu--list .footer__menu--list-item {
+  display: inline-block;
+}
+
+.footer .inner .footer__menu--list .footer__menu--list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+@media screen and (max-width: 580px) {
+  .footer .inner .footer__menu--list .footer__menu--list-item:not(:last-child) {
+    margin-right: 25px;
+  }
+}
+
+.footer .inner .footer__menu--list .footer__menu--list-item .footer__menu--list-link {
+  font-family: 'Lato', 'Gill', sans-serif;
+  color: #FFFFFF;
+}
+
+.footer .inner .footer__menu--list .footer__menu--list-item .footer__menu--list-link:hover {
+  opacity: 0.7;
+}
+
+.footer .inner .footer__sns-link {
+  margin-top: 7px;
+}
+
+@media screen and (max-width: 580px) {
+  .footer .inner .footer__sns-link {
+    margin-bottom: 30px;
+  }
+}
+
+.footer .inner .footer__sns-link .footer__sns-link--item:hover {
+  opacity: 0.7;
+}
+
+.footer .inner .footer__sns-link .footer__sns-link--item:not(:last-child) {
+  margin-right: 12px;
+}
+
+.footer .footer__end {
+  text-align: center;
+}
+
+.footer .footer__end .cp-right {
+  font-family: 'Lato', 'Gill', sans-serif;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  display: inline-block;
+  margin-bottom: 31px;
+}
+
+@media screen and (max-width: 580px) {
+  .footer .footer__end .cp-right {
+    margin-bottom: 110px;
+  }
+}
+
+.footer .footer__top-link {
+  position: absolute;
+  /* .footerをporに */
+  right: 19px;
+  bottom: 14px;
+}
+
+.footer .footer__top-link:hover {
+  opacity: 0.7;
+}
+
+/* ------------------------------------ */

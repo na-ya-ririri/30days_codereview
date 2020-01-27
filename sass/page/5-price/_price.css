@@ -1,0 +1,258 @@
+@charset "UTF-8";
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+/* myreset_CSS */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
+  font-size: 62.5%;
+}
+
+/* price------------------------------- */
+.price {
+  background-color: #EFEFEF;
+  padding-top: 45px;
+  padding-bottom: 102px;
+}
+
+@media screen and (max-width: 1110px) {
+  .price {
+    padding-bottom: 0px;
+  }
+}
+
+.price .inner {
+  width: 1088px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.price .inner .price__heading {
+  text-align: center;
+  font-family: 'Lato', 'Gill', sans-serif;
+  font-size: 6.0rem;
+  line-height: 9.6rem;
+  color: #333333;
+  padding-bottom: 31px;
+  margin-bottom: 76px;
+  position: relative;
+}
+
+.price .inner .price__heading::before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  bottom: 0px;
+  /*下線の上下位置調整*/
+  display: inline-block;
+  width: 76px;
+  /*下線の幅*/
+  height: 5px;
+  /*下線の太さ*/
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translate(-50%);
+  /*位置調整*/
+  background-color: #3F51B5;
+  /*下線の色*/
+}
+
+.price .inner .price__inner--wrapper {
+  width: 1088px;
+  margin: 0 auto;
+  display: flex;
+}
+
+@media screen and (max-width: 1110px) {
+  .price .inner .price__inner--wrapper {
+    background-image: url(../img/table/price-img.png);
+    /* タブレット幅以下では画像を背景に */
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: lighten;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.price .inner .price__inner--wrapper .price__wrapper--img .price-img {
+  margin-right: 122px;
+}
+
+@media screen and (max-width: 1110px) {
+  .price .inner .price__inner--wrapper .price__wrapper--img .price-img {
+    display: none;
+    /* タブレット幅以下では画像を背景にするためnone */
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .price .inner .price__inner--wrapper .price__wrapper--table {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table {
+  border: 1px solid #707070;
+  border-collapse: collapse;
+  font-size: 1.6rem;
+  line-height: 1.1rem;
+  color: #333333;
+  width: 605px;
+  height: 270px;
+  table-layout: fixed;
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: 1110px) {
+  .price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table th {
+  font-family: 'Lato', 'Gill', sans-serif;
+  border: 1px solid #707070;
+  color: #FFFFFF;
+  background-color: #999999;
+  vertical-align: middle;
+}
+
+.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table th:first-child {
+  width: 160px;
+}
+
+@media screen and (max-width: 550px) {
+  .price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table th:first-child {
+    width: 90px;
+  }
+}
+
+.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table td {
+  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
+  border: 1px solid #707070;
+  background-color: #FFFFFF;
+  text-align: right;
+  vertical-align: middle;
+  padding-right: 15px;
+}
+
+.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table td.font-special {
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  padding-right: 14.5px;
+}
+
+.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table td.font-special span.special {
+  color: #E81919;
+}
+
+.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table td.font-special span.special-desc {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+}
+
+@media screen and (max-width: 1110px) {
+  .price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table-contact {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table-contact .price-table-contact__text {
+  font-size: 1.57rem;
+  line-height: 2.6rem;
+  color: #333333;
+}
+
+.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table-contact .price-table-contact__text .price-table-contact__link {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: #333333;
+  text-decoration: underline;
+}
+
+.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table-contact .price-table-contact__text .price-table-contact__link:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1110px) {
+  .price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table-contact .price-table-contact__text {
+    margin-top: 20px;
+  }
+}
+
+/* ------------------------------------ */

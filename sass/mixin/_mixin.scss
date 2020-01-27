@@ -1,0 +1,190 @@
+@mixin inner {
+  // innerを固定幅にして、
+  width: 1086px;
+  // 小さくした時にはみ出ないようにして、
+  max-width: 100%;
+  // ブロック要素を中央寄せするおまじないをかける
+  margin: 0 auto;
+}
+
+// .top__catch
+@mixin top-catch ($fontSize, $marginBottom) {
+  width: calc(100% - 1rem);
+  font-size: $fontSize;
+  line-height: 30px;
+  margin-bottom: $marginBottom;
+}
+// .top__lead
+@mixin top-lead ($fontSize) {
+  padding: 0 1rem;
+  font-size: $fontSize;
+  line-height: 30px;
+}
+
+// heading title
+@mixin heading ($paddingBottom,$marginBottom) { //引数を使用
+  text-align: center;
+  font-family: 'Lato', 'Gill', sans-serif;
+  font-size: 6.0rem;
+  line-height: 9.6rem;
+  color: $color-black;
+  padding-bottom: $paddingBottom;
+  margin-bottom: $marginBottom;
+  position: relative;
+}
+@mixin  heading-line {
+  position: absolute;
+  content: '';
+  left: 50%;
+  bottom: 0px; /*下線の上下位置調整*/
+  display: inline-block;
+  width: 76px; /*下線の幅*/
+  height: 5px; /*下線の太さ*/
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translate(-50%); /*位置調整*/
+  background-color: $color-card-border; /*下線の色*/
+}
+
+// news-list-label
+@mixin label {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  color: $color-white;
+  border-radius: 6px;
+  text-align: center;
+  margin: 0 30px;
+}
+@mixin label-tab {
+  display: inline-block;
+  line-height: 2.4rem;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  color: $color-white;
+  border-radius: 6px;
+  margin-left: 0px;
+}
+// @mixin label-tab2 {
+//   display: inline-block;
+//   line-height: 2.4rem;
+//   width: 100px;
+//   height: 30px;
+//   line-height: 30px;
+//   font-weight: bold;
+//   color: $color-white;
+//   border-radius: 6px;
+//   margin-right: 7.5px;
+// }
+
+// contact
+@mixin contact-flex {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin contact-no-flex {
+  display: block;
+  text-align: center;
+}
+// placeholder-color
+@mixin placeholder($color) {
+  &::placeholder {
+    color: $color;
+  }
+  // IE
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  // Edge
+  &::-ms-input-placeholder {
+    color: $color;
+  }
+}
+// 必須ラベル
+@mixin must-label {
+  position: absolute;
+  content: '';
+  top: 50px;
+  left: 3px;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: $color-white;
+  background-color: $color-red;
+  border-radius: 12px;
+  width: 45.98px;
+  height: 22.72px;
+  text-align: center;
+}
+
+
+// breakpoint
+@mixin mqXS {
+  @media #{map-get($breakpoints, xs)}{
+    @content;
+  }
+}
+@mixin mqSM {
+  @media #{map-get($breakpoints, sm)}{
+    @content;
+  }
+}
+@mixin mqMD {
+  @media #{map-get($breakpoints, md)}{
+    @content;
+  }
+}
+@mixin mqSP-PRICE {
+  @media #{map-get($breakpoints, sp-price)}{
+    @content;
+  }
+}
+@mixin mqSP-FOOTER {
+  @media #{map-get($breakpoints, sp-footer)}{
+    @content;
+  }
+}
+@mixin mqSP {
+  @media #{map-get($breakpoints, sp)}{
+    @content;
+  }
+}
+@mixin mqSP-CARD {
+  @media #{map-get($breakpoints, sp-card)}{
+    @content;
+  }
+}
+@mixin mqTAB-CONTACT {
+  @media #{map-get($breakpoints, tab-contact)}{
+    @content;
+  }
+}
+@mixin mqTAB-NEWS {
+  @media #{map-get($breakpoints, tab-news)}{
+    @content;
+  }
+}
+@mixin mqTAB {
+  @media #{map-get($breakpoints, tab)}{
+    @content;
+  }
+}
+@mixin mqTAB-PRICE {
+  @media #{map-get($breakpoints, tab-price)}{
+    @content;
+  }
+}
+@mixin mqTAB-FOOTER {
+  @media #{map-get($breakpoints, tab-footer)}{
+    @content;
+  }
+}
+@mixin mqPC {
+  @media #{map-get($breakpoints, pc)}{
+    @content;
+  }
+}

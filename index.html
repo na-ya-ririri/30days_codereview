@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- style CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- form reset CSS -->
+  <!-- <link rel="stylesheet" href="css/form_reset.css"> スタイルが崩れるためコメントアウトし、style.scssに直接書き込み -->
+  <!-- Google Fonts Noto Sans JP -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap&subset=japanese" rel="stylesheet">
+  <!-- Google Fonts Lato -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+
+  <title>The Company Site</title>
+</head>
+<body>
+  <div class="wrap">
+
+  <header id="top">
+    <!-- logo & nav after review -->
+    <div class="nav">
+      <div class="nav__inner flex">
+        <a href="#top" class="nav__logo"><img src="img/header/logo.png" alt="The Company logo"></a>
+        <nav class="nav__list">
+          <ul id="current-nav" class="flex">
+            <li class="nav__list--item"><a href="#card" class="nav-hover">Card</a></li>
+            <li class="nav__list--item"><a href="#news" class="nav-hover">News</a></li>
+            <li class="nav__list--item"><a href="#price" class="nav-hover">Price</a></li>
+            <li class="nav__list--item"><a href="#access" class="nav-hover">Access</a></li>
+            <li class="nav__list--item"><a href="#contact" class="nav-hover">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div> <!-- 無駄なdivを省く→HTML5のタグを使う<nav> -->
+  </header> <!-- <header>タグに↓のメインビジュアルまでは含めない -->
+
+    <!-- TOP after review -->
+    <section class="top"> <!-- 見出しh1があるのでdivではなくsectionタグを使用する -->
+      <div class="inner">
+        <h1 class="top__catch">一番伝えたいことを書く</h1>
+        <p class="top__lead">リードリードリード</p>
+        <a href="#contact" class="top__contact">お問い合わせ</a>
+      </div>
+    </section> <!-- 無駄なdivを省く -->
+
+
+  <main>
+    <!-- Card after review -->
+    <section class="card current-pos" id="card">
+      <div class="inner">
+        <h2 class="card__heading">Card</h2>
+        <ul class="card-list">
+          <li class="card-list__item">
+            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card">
+            <h3 class="card-list__item--title">タイトルタイトル</h3>
+            <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          </li>
+          <li class="card-list__item">
+            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card">
+            <h3 class="card-list__item--title">タイトルタイトル</h3>
+            <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          </li>
+          <li class="card-list__item">
+            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card">
+            <h3 class="card-list__item--title">タイトルタイトル</h3>
+            <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          </li>
+          <li class="card-list__item">
+            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card">
+            <h3 class="card-list__item--title">タイトルタイトル</h3>
+            <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          </li>
+          <li class="card-list__item">
+            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card">
+            <h3 class="card-list__item--title">タイトルタイトル</h3>
+            <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          </li>
+          <li class="card-list__item">
+            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card">
+            <h3 class="card-list__item--title">タイトルタイトル</h3>
+            <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          </li>
+        </ul>
+      </div>
+    </section> <!-- divじゃなくてリストで記述.BEMも修正 -->
+
+    <!-- News -resposive1- after review -->
+    <section class="news current-pos" id="news">
+      <div class="inner">
+        <h2 class="news__heading">News</h2>
+        <ul class="news-list">
+          <li class="news-list__item">
+            <time datetime="2019-01-30" class="news-list__date">2019-01-30</time>
+            <div class="news-list__tab">
+              <div class="news-list__label-wrap">
+                <a href="#" class="news-list__label--label-1">ラベル１</a>
+              </div>
+              <p><a href="#" class="news-list__title">ニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
+            </div>
+          </li>
+          <li class="news-list__item">
+            <time datetime="2019-01-30" class="news-list__date">2019-01-30</time>
+            <div class="news-list__tab">
+              <div class="news-list__label-wrap">
+                <a href="#" class="news-list__label--label-2">ラベル２</a>
+              </div>
+              <p><a href="#" class="news-list__title">ニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
+            </div>
+          </li>
+          <li class="news-list__item">
+            <time datetime="2019-01-30" class="news-list__date">2019-01-30</time>
+            <div class="news-list__tab">
+              <div class="news-list__label-wrap">
+                <a href="#" class="news-list__label--label-3">ラベル３</a>
+              </div>
+              <p><a href="#" class="news-list__title">ニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
+            </div>
+          </li>
+          <li class="news-list__item">
+            <time datetime="2019-01-30" class="news-list__date">2019-01-30</time>
+            <div class="news-list__tab">
+              <div class="news-list__label-wrap">
+                <a href="#" class="news-list__label--label-1">ラベル１</a>
+              </div>
+              <p><a href="#" class="news-list__title">ニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
+            </div>
+          </li>
+          <li class="news-list__item">
+            <time datetime="2019-01-30" class="news-list__date">2019-01-30</time>
+            <div class="news-list__tab">
+              <div class="news-list__label-wrap">
+                <a href="#" class="news-list__label--label-1">ラベル１</a>
+              </div>
+              <p><a href="#" class="news-list__title">ニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
+            </div>
+          </li>
+        </ul>
+        <div class="news-list__link"> <!-- ↓のリンクを左右中央寄せにするために入れました -->
+          <a href="" class="link-button">more</a>
+        </div>
+      </div>
+    </section> <!-- div削減とBEM記述の修正 -->
+
+    <!-- News -resposive2- -->
+    <!-- <section class="news">
+        <div class="news__inner">
+          <div class="news__inner--title">
+            <h2>News</h2>
+          </div>
+          <div class="news__inner--wrapper">
+            <ul class="news-list">
+              <li class="news-list__item">
+                <div class="flex-news-tab2">
+                  <div class="news-list__item--date">
+                    <time datetime="2019-01-30">2019-01-30</time>
+                  </div>
+                    <div class="news-list__item--label">
+                      <a href="" class="label-1">ラベル１</a>
+                    </div>
+                </div>
+                  <div class="news-list__item--title2">
+                    <p><a href="" class="news-title">ニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
+                  </div>
+              </li>
+              <li class="news-list__item">
+                  <div class="flex-news-tab2">
+                    <div class="news-list__item--date">
+                      <time datetime="2019-01-30">2019-01-30</time>
+                    </div>
+                      <div class="news-list__item--label">
+                        <a href="" class="label-2">ラベル２</a>
+                      </div>
+                    </div>
+                  <div class="news-list__item--title2">
+                    <p><a href="" class="news-title">ニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
+                  </div>
+              </li>
+              <li class="news-list__item">
+                  <div class="flex-news-tab2">
+                    <div class="news-list__item--date">
+                      <time datetime="2019-01-30">2019-01-30</time>
+                    </div>
+                      <div class="news-list__item--label">
+                        <a href="" class="label-3">ラベル３</a>
+                      </div>
+                    </div>
+                  <div class="news-list__item--title2">
+                    <p><a href="" class="news-title">ニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
+                  </div>
+              </li>
+              <li class="news-list__item">
+                  <div class="flex-news-tab2">
+                    <div class="news-list__item--date">
+                      <time datetime="2019-01-30">2019-01-30</time>
+                    </div>
+                      <div class="news-list__item--label">
+                        <a href="" class="label-1">ラベル１</a>
+                      </div>
+                    </div>
+                  <div class="news-list__item--title2">
+                    <p><a href="" class="news-title">ニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
+                  </div>
+              </li>
+              <li class="news-list__item">
+                  <div class="flex-news-tab2">
+                    <div class="news-list__item--date">
+                      <time datetime="2019-01-30">2019-01-30</time>
+                    </div>
+                      <div class="news-list__item--label">
+                        <a href="" class="label-1">ラベル１</a>
+                      </div>
+                    </div>
+                  <div class="news-list__item--title2">
+                    <p><a href="" class="news-title">ニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
+                  </div>
+              </li>
+            </ul>
+            <div class="news-more__link">
+              <a href="" class="link-button">more</a>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+    <!-- Price -->
+    <section class="price current-pos" id="price">
+      <div class="inner">
+        <h2 class="price__heading">Price</h2>
+        <div class="price__inner--wrapper">
+          <div class="price__wrapper--img">
+            <img src="img/table/price-img.png" class="price-img" alt="price-woman">
+          </div> <!-- img このdivは必要 -->
+          <div class="price__wrapper--table">
+            <div class="price-table-wrap">
+              <table class="price-table">
+                <tr>
+                  <th></th>
+                  <th>column1</th>
+                  <th>column2</th>
+                </tr> <!-- 1行目 -->
+                <tr>
+                  <th>row1</th>
+                  <td>100円</td>
+                  <td>100円</td>
+                </tr> <!-- 2行目 -->
+                <tr>
+                  <th>row2</th>
+                  <td>6,000円</td>
+                  <td>0円</td>
+                </tr> <!-- 3行目 -->
+                <tr>
+                  <th>row3</th>
+                  <td class="font-special"><span class="special">6,000円</span><br><span class="special-desc">※ 今だけ半額</span></td>
+                  <td>0円</td>
+                </tr> <!-- 4行目 -->
+                <tr>
+                  <th>row4</th>
+                  <td>100円</td>
+                  <td>100円</td>
+                </tr> <!-- 5行目 -->
+              </table>
+            <div class="price-table-contact">
+              <p class="price-table-contact__text">※ 目安なので詳しくは<a href="#contact" class="price-table-contact__link">お問い合わせ</a>ください。</p>
+            </div>  
+            </div> <!-- price-table-wrap -->
+          </div> <!-- price__wrapper--table -->
+        </div> <!-- price__inner--wrapper -->
+      </div> <!-- price__inner -->
+    </section>
+
+    <!-- Access -->
+    <section class="access current-pos" id="access">
+      <div class="inner">
+        <h2 class="access__heading">Access</h2>
+        <div class="access__inner--wrapper">
+          <div class="access-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.0054065225077!2d77.65502781446456!3d12.957293375693013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13f778882c6f%3A0x14e38042a94c0cab!2sShivoham%20Shiva%20Temple!5e0!3m2!1sja!2sin!4v1578733626434!5m2!1sja!2sin" width="800" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </div> <!-- access-map -->
+          <div class="aceess-text">
+            <table class="aceess-text__table">
+              <tr>
+                <th>住所</th>
+                <td>ほげほげほげのほげの場所</td>
+              </tr>
+              <tr>
+                <th>アクセス</th>
+                <td>〇〇駅から右に５分</td>
+              </tr>
+            </table>
+          </div> <!-- aceess-text -->
+          <div class="access-google-link">
+            <p><a href="https://www.google.co.in/maps/place/Shivoham+Shiva+Temple/@12.9572934,77.6550278,17.11z/data=!4m8!1m2!2m1!1sBengaluru+shiva+temple!3m4!1s0x3bae13f778882c6f:0x14e38042a94c0cab!8m2!3d12.958333!4d77.656531" class="google-link">Googleマップで見る</a></p>
+          </div> <!-- access-google-link -->
+        </div> <!-- access__inner--wrapper -->
+      </div> <!-- access__inner -->
+    </section>
+
+    <!-- Contact お問い合わせ種別にjs使用 -->
+    <section class="contact current-pos" id="contact">
+      <div class="inner">
+        <h2 class="contact__heading">Contact</h2>
+        <div class="contact-form--wrapper">
+          <form action="" method="POST" class="contact-form">
+
+            <div class="contact-form__name">
+              <label for="name" class="m-top">お名前</label>
+              <span class="must-label">必須</span>
+              <input type="text" id="name" placeholder="山田太郎" class="inputs input-text inputs-common" required>
+            </div> <!-- contact-form__name お名前 -->
+
+            <div class="contact-form__mail">
+              <label for="mail" class="m-top">メールアドレス</label>
+              <span class="must-label">必須</span>
+              <input type="email" id="mail" placeholder="text@example.com" class="inputs input-text inputs-common" required>
+            </div> <!-- contact-form__mail メールアドレス -->
+
+            <div class="contact-form__type">
+              <label for="type" class="m-top">お問い合わせ種別</label>
+              <select id="type" name="type" class="select inputs-type" onchange="changeItem(this)"> <!-- selectの値が変更されたときに発動 -->
+                <option value="" disabled="disabled" selected class="no-select">ーーー</option>
+                <option value="toi1">問１</option>
+                <option value="toi2">問２</option>
+                <option value="toi3">問３</option>
+              </select>
+            </div> <!-- contact-form__type お問い合わせ種別 -->
+
+            <div class="contact-form__content">
+              <label for="content" class="m-top">お問い合わせ内容</label>
+              <textarea name="content" id="content" placeholder="お問い合わせを入力してください" class="inputs textarea inputs-content" cols="30" rows="10"></textarea>
+            </div> <!-- contact-form__content お問い合わせ内容 -->
+
+            <div class="contact-form__radio">
+              <label for="radio1" class="radio-label">
+                <input type="radio" id="radio1" name="radio" value="radio1" class="radio inputs-radio"><span>ラジオ１</span>
+              </label>
+              <label for="radio2" class="radio-label">
+                <input type="radio" id="radio2" name="radio" value="radio2" class="inputs-radio"><span>ラジオ２</span>
+              </label>
+              <label for="radio3" class="radio-label">
+                <input type="radio" id="radio3" name="radio" value="radio3" class="inputs-radio"><span>ラジオ３</span>
+              </label>
+            </div> <!-- contact-form__radio -->
+
+            <div class="contact-form__privacy">
+              <label>
+                <input type="checkbox" name="privacy-check" class="check inputs-checkbox"><span></span> <!-- チェックボックスのためのspan -->
+              </label>
+              <p class="privacy-text"><a href="#" class="privacy-content">プライバシーポリシー</a>に合意する</p>
+            </div> <!-- contact-form__privacy -->
+
+            <div class="contact-form__button">
+              <button type="submit" class=".submit-button submit-btn">送信する</button>
+            </div> <!-- contact-form__button -->
+
+          </form>
+        </div> <!-- contact__inner--wrapper -->
+      </div> <!-- contact__inner -->
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="inner">
+      <div class="footer__company">
+        <img src="img/footer/logo.png" alt="The Company logo" class="footer__company--logo">
+        <div class="footer__company--desc">
+          <p class="footer__company--address">住所：ほげほげのほげほげ</p>
+          <p class="footer__company--tel">TEL：0000-00-0000</p>
+        </div>
+      </div>
+      <ul class="footer__menu--list">
+        <li class="footer__menu--list-item"><a href="#card" class="footer__menu--list-link">Card</a></li>
+        <li class="footer__menu--list-item"><a href="#news" class="footer__menu--list-link">News</a></li>
+        <li class="footer__menu--list-item"><a href="#price" class="footer__menu--list-link">Price</a></li>
+        <li class="footer__menu--list-item"><a href="#access" class="footer__menu--list-link">Access</a></li>
+        <li class="footer__menu--list-item"><a href="#contact" class="footer__menu--list-link">Contact</a></li>
+      </ul>
+      <div class="footer__sns-link">
+        <a href="#" class="footer__sns-link--item"><img src="img/footer/twitter.svg" alt="twitter"></a>
+        <a href="#" class="footer__sns-link--item"><img src="img/footer/facebook.svg" alt="facebook"></a>
+        <a href="#" class="footer__sns-link--item"><img src="img/footer/instagram.svg" alt="instagram"></a>
+      </div>
+    </div> <!-- inner -->
+    <div class="footer__end">
+      <p class="cp-right"><small>Copyright © 2018 @haniwa008 All rights reserved.</small></p>
+    </div> <!-- footer__end -->
+    <a href="#top" class="footer__top-link"><img src="img/footer/totop.svg" alt="TOPリンク" class="footer__top-btn"></a>
+  </footer>
+
+ </div> <!-- .wrap -->
+
+ <!-- jquery googleCDN 2.x -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+ <!-- jqery file -->
+ <script src="jquery/script_jquery.js"></script>
+ <!-- javascript -->
+ <script type="text/javascript" src="javascript/script.js"></script>
+
+</body>
+</html>

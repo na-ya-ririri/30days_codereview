@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+@import "../../setting/var";
+@import "../../mixin/mixin";
+@import "../../base/reset";
+
+html, body {
+  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif; 
+  font-size: 62.5%;
+}
+
+/* footer------------------------------*/
+.footer {
+  background: linear-gradient(180deg, $color-footer-back1 0%, $color-footer-back2 100%);
+  background: -moz-linear-gradient(top, $color-footer-back1 0%, $color-footer-back2 100%);
+  background: -webkit-linear-gradient(top, $color-footer-back1 0%, $color-footer-back2 100%);
+  color: $color-white;
+  position: relative; /* .footer__top-linkリンクのため */
+  .inner {
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    padding: 74px 12px 88px 0px; /* 12pxを入れることでピクセルが合う */
+    @include mqTAB-FOOTER {
+      flex-direction: column;
+      align-items: center;
+      padding: 74px 0 60px;
+    }
+    .footer__company {
+      @include mqSP-FOOTER {
+        display: flex;
+        flex-direction: column;
+        order: 1; /* 縦の表示順番をかえてみた */
+      }
+      @include mqTAB-FOOTER {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+      .footer__company--logo {
+        margin-bottom: 20px;
+      }
+      .footer__company--address,.footer__company--tel {
+        margin-left: 3px;
+      }
+      .footer__company--address {
+        margin-bottom: 9px;
+      }
+    } //.footer__company
+    .footer__company--desc {
+      @include mqTAB-FOOTER {
+        text-align: left;
+        margin-left: 20px;
+      }
+    } //.footer__company--desc
+    .footer__menu--list {
+      display: flex;
+      margin: 7px 224px 0 159px;
+      @include mqTAB-FOOTER {
+        justify-content: center;
+        margin: 0 0 30px 0;
+      }
+      .footer__menu--list-item {
+        display: inline-block;
+        &:not(:last-child) {
+          margin-right: 30px;
+          @include mqSP-FOOTER {
+            margin-right: 25px;
+          }
+        }
+        .footer__menu--list-link {
+          font-family: 'Lato', 'Gill', sans-serif;
+          color: $color-white;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    } //.footer__menu--list
+    .footer__sns-link {
+      margin-top: 7px;
+      @include mqSP-FOOTER {
+        margin-bottom: 30px;
+      }
+      .footer__sns-link--item {
+        &:hover {
+          opacity: 0.7;
+        }
+        &:not(:last-child) {
+          margin-right: 12px;
+        }
+      }
+    } //.footer__sns-link
+  } //.inner
+  .footer__end {
+    text-align: center;
+    .cp-right {
+      font-family: 'Lato', 'Gill', sans-serif;
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      display: inline-block;
+      margin-bottom: 31px;
+      @include mqSP-FOOTER {
+        margin-bottom: 110px;
+      }
+    }
+  } //.footer__end
+  .footer__top-link {
+    position: absolute; /* .footerをporに */
+    right: 19px;
+    bottom: 14px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+} //.footer
+/* ------------------------------------ */
