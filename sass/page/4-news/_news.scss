@@ -1,18 +1,9 @@
 @charset "utf-8";
 
-@import "../../setting/var";
-@import "../../mixin/mixin";
-@import "../../base/reset";
 
-html, body {
-  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif; 
-  font-size: 62.5%;
-}
-
-/* news -resposive1-------------------- */
 .news {
   background-color: $color-white;
-  padding-top: 58px;
+  padding-top: 57px;
   padding-bottom: 33px;
   .inner {
     .news__heading {
@@ -21,87 +12,89 @@ html, body {
         @include heading-line;
       }
     } //.news__heading
-      .news-list {
-        width: 838px; /* これないとborderがinner幅まで伸びちゃう */
-        margin: 0 auto; /* これないとinnerの左寄せになっちゃう */
+  } //.inner
+    &-list {
+      width: 838px; /* これないとborderがinner幅まで伸びちゃう */
+      margin: 0 auto; /* これないとinnerの左寄せになっちゃう */
+      &:not(:last-child) {
+        margin: 0 auto 16px; /* moreリンクがあるときのmargin-bottom */
+      }
+      @include mqTAB-NEWS {
+        width: 90%; /* innerじゃなくてこちらに指定しないと幅が縮まらない */
+      }
+      &__item {
+        display: flex;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        color: $color-black;
+        padding-bottom: 16.3px;
+        height: auto;
         &:not(:last-child) {
-          margin: 0 auto 16px; /* moreリンクがあるときのmargin-bottom */
+          border-bottom: 1px solid $color-news-border;
+          margin-bottom: 18.5px;
         }
         @include mqTAB-NEWS {
-          width: 90%; /* innerじゃなくてこちらに指定しないと幅が縮まらない */
+          display: block; /* レスポンシブ縦並び */
         }
-        .news-list__item {
-          display: flex;
-          font-size: 1.6rem;
-          line-height: 2.6rem;
-          color: $color-black;
-          padding-bottom: 16.3px;
-          height: auto;
-          &:not(:last-child) {
-            border-bottom: 1px solid $color-news-border;
-            margin-bottom: 18.5px;
-          }
-          .news-list__date {
-            font-family: 'Lato', 'Gill', sans-serif;
-            margin-left: 4.5px;
-          }
-          .news-list__tab {
-            display: flex; /* これないと横並びにならない */
-            .news-list__label--label-1 {
-              @include label;
-              background-color: $color-news-label1;
-              &:hover {
-                opacity: 0.8;
-              }
-              @include mqTAB-NEWS {
-                @include label-tab; /* ラベルの余白を調整 */
-              }
-            } //.news-list__label--label-1
-            .news-list__label--label-2 {
-              @include label;
-              background-color: $color-news-label2;
-              &:hover {
-                opacity: 0.8;
-              }
-              @include mqTAB-NEWS {
-                @include label-tab; /* ラベルの余白を調整 */
-              }
-            } //.news-list__label--label-2
-            .news-list__label--label-3 {
-              @include label;
-              background-color: $color-news-label3;
-              &:hover {
-                opacity: 0.8;
-              }
-              @include mqTAB-NEWS {
-                @include label-tab; /* ラベルの余白を調整 */
-              }
-            } //.news-list__label--label-3
-              .news-list__title {
-                color: $color-black;
-                display: inline-block; /* 複数行がずれないように */
-                width: 576px;
-                margin-right: 9.5px;
-                &:hover {
-                  opacity: 0.65;
-                }
-                @include mqTAB-NEWS {
-                  display: inline; /* レスポンシブで改行されるように */
-                }
-              } //.news-list__title
-            @include mqTAB-NEWS {
-              margin-top: 10px;
-            }
-          } //.news-list__tab
+        .news-list__date {
+          font-family: 'Lato', 'Gill', sans-serif;
+          margin-left: 4.2px;
+        }
+        .news-list__tab {
+          display: flex; /* これないと横並びにならない */
           @include mqTAB-NEWS {
-            display: block; /* レスポンシブ縦並び */
+            margin-top: 10px;
           }
-        } //.news-list__item
-      } //.news-list
+          .news-list__label--label-1 {
+            @include label;
+            background-color: $color-news-label1;
+            &:hover {
+              opacity: 0.8;
+            }
+            @include mqTAB-NEWS {
+              @include label-tab; /* ラベルの余白を調整 */
+            }
+          } //.news-list__label--label-1
+          .news-list__label--label-2 {
+            @include label;
+            background-color: $color-news-label2;
+            &:hover {
+              opacity: 0.8;
+            }
+            @include mqTAB-NEWS {
+              @include label-tab; /* ラベルの余白を調整 */
+            }
+          } //.news-list__label--label-2
+          .news-list__label--label-3 {
+            @include label;
+            background-color: $color-news-label3;
+            &:hover {
+              opacity: 0.8;
+            }
+            @include mqTAB-NEWS {
+              @include label-tab; /* ラベルの余白を調整 */
+            }
+          } //.news-list__label--label-3
+        .news-list__title {
+          color: $color-black;
+          display: inline-block; /* 複数行がずれないように */
+          width: 576px;
+          margin-right: 9.5px;
+          &:hover {
+            opacity: 0.65;
+          }
+          @include mqTAB-NEWS {
+            display: inline; /* レスポンシブで改行されるように */
+          }
+        } //.news-list__title
+        } //.news-list__tab
+      } //.news-list__item
+    } //.news-list
       .news-list__link {
         text-align: center;
         .link-button {
           font-family: 'Lato', 'Gill', sans-serif;
+          font-weight: 700;
           font-size: 1.6rem;
           line-height: 2.6rem;
           color: $color-red;
@@ -122,9 +115,8 @@ html, body {
           }
         } //.link-button
       } //.news-list__link
-  } //.inner
+//   } //.inner
 } //.news
-/* ------------------------------------ */
 
 
 

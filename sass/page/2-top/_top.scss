@@ -1,17 +1,8 @@
 @charset "utf-8";
 
-@import "../../setting/var";
-@import "../../mixin/mixin";
-@import "../../base/reset";
 
-html, body {
-  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif; 
-  font-size: 62.5%;
-}
-
-/* top--------------------------------- */
 .top {
-  background: url(../img/header/mainvisual.png) center, center, no-repeat;
+  background: url(../img/header/mainvisual-min.png) center, center, no-repeat;
   width: 100%;
   background-size: cover;
   height: 700px;
@@ -25,12 +16,14 @@ html, body {
     -ms-transform : translateX(-50%);
     width: 100%;
     text-align: center;
-    .top__catch {
+  } //.inner
+    &__catch {
       font-size: 6.8rem;
       line-height: 10.8rem;
+      margin-bottom: -3px; /* Pixel調整 */
       color: $color-black;
       @include mqXS{
-        @include top-catch(2.8rem, 15px);
+        @include top-catch(2.6rem, 15px);
       }
       @include mqSM{
         @include top-catch(3.2rem, 25px);
@@ -42,12 +35,12 @@ html, body {
         @include top-catch(5.5rem, 30px);
       }
     } //.top__catch
-    .top__lead {
+    &__lead {
       font-size: 3.8rem;
       line-height: 6.1rem;
       color: $color-black;
       font-weight: bold;
-      margin-bottom: 76px;
+      margin-bottom: 78px;
       @include mqXS{
         @include top-lead(2.3rem);
       }
@@ -61,7 +54,7 @@ html, body {
         @include top-lead(3.5rem);
       }
     } //.top__lead
-    .top__contact {
+    &__contact {
       display: inline-block;
       font-size: 3.8rem;
       line-height: 6.1rem;
@@ -88,6 +81,5 @@ html, body {
         font-size: 2.8rem;
       }
     } //.top__contact
-  } //.inner
+  // } //.inner ネスト整理のため移動
 } //.top
-/* ------------------------------------ */

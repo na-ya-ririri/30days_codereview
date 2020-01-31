@@ -40,7 +40,7 @@
   display: inline-block;
   width: 76px; /*下線の幅*/
   height: 5px; /*下線の太さ*/
-  -moz-transform: translateX(-50%);
+  /* -moz-transform: translateX(-50%); 不要*/
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translate(-50%); /*位置調整*/
@@ -96,11 +96,14 @@
   &::placeholder {
     color: $color;
   }
-  // IE
+  // IEだけは↓にまとめると反映されないので分ける
   &:-ms-input-placeholder {
     color: $color;
   }
-  // Edge
+  // webkit系、moz系、Edge
+  &::-webkit-input-placeholder,
+  &:-moz-placeholder,
+  &::-moz-placeholder,
   &::-ms-input-placeholder {
     color: $color;
   }
@@ -123,6 +126,11 @@
 
 
 // breakpoint
+@mixin mqXXS {
+  @media #{map-get($breakpoints, xxs)}{
+    @content;
+  }
+}
 @mixin mqXS {
   @media #{map-get($breakpoints, xs)}{
     @content;

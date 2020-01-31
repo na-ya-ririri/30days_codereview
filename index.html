@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <!-- サイト説明文とキーワード -->
+  <meta name="description" content="30DAYSトライアル2ndの課題制作サイトです">
+  <meta name="keywords" content="プログラミング初心者,30DAYSトライアル">
+
+  <!-- form reset CSS -->
+  <link rel="stylesheet" href="css/form_reset.css"> <!-- リセットCSSはstyleより先に読み込むようにする -->
   <!-- style CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <!-- form reset CSS -->
-  <!-- <link rel="stylesheet" href="css/form_reset.css"> スタイルが崩れるためコメントアウトし、style.scssに直接書き込み -->
   <!-- Google Fonts Noto Sans JP -->
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap&subset=japanese" rel="stylesheet">
   <!-- Google Fonts Lato -->
@@ -23,7 +27,7 @@
     <!-- logo & nav after review -->
     <div class="nav">
       <div class="nav__inner flex">
-        <a href="#top" class="nav__logo"><img src="img/header/logo.png" alt="The Company logo"></a>
+        <a href="#top" class="nav__logo"><img src="img/header/logo-min.png" alt="The Company logo"></a>
         <nav class="nav__list">
           <ul id="current-nav" class="flex">
             <li class="nav__list--item"><a href="#card" class="nav-hover">Card</a></li>
@@ -54,32 +58,32 @@
         <h2 class="card__heading">Card</h2>
         <ul class="card-list">
           <li class="card-list__item">
-            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card">
+            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card-image">
             <h3 class="card-list__item--title">タイトルタイトル</h3>
             <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
           </li>
           <li class="card-list__item">
-            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card">
+            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card-image">
             <h3 class="card-list__item--title">タイトルタイトル</h3>
             <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
           </li>
           <li class="card-list__item">
-            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card">
+            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card-image">
             <h3 class="card-list__item--title">タイトルタイトル</h3>
             <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
           </li>
           <li class="card-list__item">
-            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card">
+            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card-image">
             <h3 class="card-list__item--title">タイトルタイトル</h3>
             <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
           </li>
           <li class="card-list__item">
-            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card">
+            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card-image">
             <h3 class="card-list__item--title">タイトルタイトル</h3>
             <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
           </li>
           <li class="card-list__item">
-            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card">
+            <img src="img/card/card-img.svg" class="card-list__item--img" alt="card-image">
             <h3 class="card-list__item--title">タイトルタイトル</h3>
             <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
           </li>
@@ -144,94 +148,13 @@
       </div>
     </section> <!-- div削減とBEM記述の修正 -->
 
-    <!-- News -resposive2- -->
-    <!-- <section class="news">
-        <div class="news__inner">
-          <div class="news__inner--title">
-            <h2>News</h2>
-          </div>
-          <div class="news__inner--wrapper">
-            <ul class="news-list">
-              <li class="news-list__item">
-                <div class="flex-news-tab2">
-                  <div class="news-list__item--date">
-                    <time datetime="2019-01-30">2019-01-30</time>
-                  </div>
-                    <div class="news-list__item--label">
-                      <a href="" class="label-1">ラベル１</a>
-                    </div>
-                </div>
-                  <div class="news-list__item--title2">
-                    <p><a href="" class="news-title">ニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
-                  </div>
-              </li>
-              <li class="news-list__item">
-                  <div class="flex-news-tab2">
-                    <div class="news-list__item--date">
-                      <time datetime="2019-01-30">2019-01-30</time>
-                    </div>
-                      <div class="news-list__item--label">
-                        <a href="" class="label-2">ラベル２</a>
-                      </div>
-                    </div>
-                  <div class="news-list__item--title2">
-                    <p><a href="" class="news-title">ニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
-                  </div>
-              </li>
-              <li class="news-list__item">
-                  <div class="flex-news-tab2">
-                    <div class="news-list__item--date">
-                      <time datetime="2019-01-30">2019-01-30</time>
-                    </div>
-                      <div class="news-list__item--label">
-                        <a href="" class="label-3">ラベル３</a>
-                      </div>
-                    </div>
-                  <div class="news-list__item--title2">
-                    <p><a href="" class="news-title">ニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
-                  </div>
-              </li>
-              <li class="news-list__item">
-                  <div class="flex-news-tab2">
-                    <div class="news-list__item--date">
-                      <time datetime="2019-01-30">2019-01-30</time>
-                    </div>
-                      <div class="news-list__item--label">
-                        <a href="" class="label-1">ラベル１</a>
-                      </div>
-                    </div>
-                  <div class="news-list__item--title2">
-                    <p><a href="" class="news-title">ニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
-                  </div>
-              </li>
-              <li class="news-list__item">
-                  <div class="flex-news-tab2">
-                    <div class="news-list__item--date">
-                      <time datetime="2019-01-30">2019-01-30</time>
-                    </div>
-                      <div class="news-list__item--label">
-                        <a href="" class="label-1">ラベル１</a>
-                      </div>
-                    </div>
-                  <div class="news-list__item--title2">
-                    <p><a href="" class="news-title">ニュースニュースニュースニュースニュースニュースニュースニュースニュース</a></p>
-                  </div>
-              </li>
-            </ul>
-            <div class="news-more__link">
-              <a href="" class="link-button">more</a>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
     <!-- Price -->
     <section class="price current-pos" id="price">
       <div class="inner">
         <h2 class="price__heading">Price</h2>
         <div class="price__inner--wrapper">
           <div class="price__wrapper--img">
-            <img src="img/table/price-img.png" class="price-img" alt="price-woman">
+            <img src="img/table/price-img-min.png" class="price-img" alt="price-woman-image">
           </div> <!-- img このdivは必要 -->
           <div class="price__wrapper--table">
             <div class="price-table-wrap">
@@ -266,8 +189,8 @@
               <p class="price-table-contact__text">※ 目安なので詳しくは<a href="#contact" class="price-table-contact__link">お問い合わせ</a>ください。</p>
             </div>  
             </div> <!-- price-table-wrap -->
-          </div> <!-- price__wrapper--table -->
-        </div> <!-- price__inner--wrapper -->
+          </div> <!-- price__wrapper-table warning回避のために-を消した(その他も同様) -->
+        </div> <!-- price__inner-wrapper -->
       </div> <!-- price__inner -->
     </section>
 
@@ -277,7 +200,7 @@
         <h2 class="access__heading">Access</h2>
         <div class="access__inner--wrapper">
           <div class="access-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.0054065225077!2d77.65502781446456!3d12.957293375693013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13f778882c6f%3A0x14e38042a94c0cab!2sShivoham%20Shiva%20Temple!5e0!3m2!1sja!2sin!4v1578733626434!5m2!1sja!2sin" width="800" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.0054065225077!2d77.65502781446456!3d12.957293375693013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13f778882c6f%3A0x14e38042a94c0cab!2sShivoham%20Shiva%20Temple!5e0!3m2!1sja!2sin!4v1578733626434!5m2!1sja!2sin" width="800" height="400" style="border:0;" allowfullscreen=""></iframe>
           </div> <!-- access-map -->
           <div class="aceess-text">
             <table class="aceess-text__table">
@@ -294,7 +217,7 @@
           <div class="access-google-link">
             <p><a href="https://www.google.co.in/maps/place/Shivoham+Shiva+Temple/@12.9572934,77.6550278,17.11z/data=!4m8!1m2!2m1!1sBengaluru+shiva+temple!3m4!1s0x3bae13f778882c6f:0x14e38042a94c0cab!8m2!3d12.958333!4d77.656531" class="google-link">Googleマップで見る</a></p>
           </div> <!-- access-google-link -->
-        </div> <!-- access__inner--wrapper -->
+        </div> <!-- access__inner-wrapper -->
       </div> <!-- access__inner -->
     </section>
 
@@ -303,7 +226,7 @@
       <div class="inner">
         <h2 class="contact__heading">Contact</h2>
         <div class="contact-form--wrapper">
-          <form action="" method="POST" class="contact-form">
+          <form action="abc.php" method="POST" class="contact-form"> <!-- エラー回避のためにaction部分は適当なファイル名を追加 -->
 
             <div class="contact-form__name">
               <label for="name" class="m-top">お名前</label>
@@ -337,10 +260,10 @@
                 <input type="radio" id="radio1" name="radio" value="radio1" class="radio inputs-radio"><span>ラジオ１</span>
               </label>
               <label for="radio2" class="radio-label">
-                <input type="radio" id="radio2" name="radio" value="radio2" class="inputs-radio"><span>ラジオ２</span>
+                <input type="radio" id="radio2" name="radio" value="radio2" class="radio inputs-radio"><span>ラジオ２</span>
               </label>
               <label for="radio3" class="radio-label">
-                <input type="radio" id="radio3" name="radio" value="radio3" class="inputs-radio"><span>ラジオ３</span>
+                <input type="radio" id="radio3" name="radio" value="radio3" class="radio inputs-radio"><span>ラジオ３</span>
               </label>
             </div> <!-- contact-form__radio -->
 
@@ -356,7 +279,7 @@
             </div> <!-- contact-form__button -->
 
           </form>
-        </div> <!-- contact__inner--wrapper -->
+        </div> <!-- contact__inner-wrapper -->
       </div> <!-- contact__inner -->
     </section>
   </main>
@@ -364,7 +287,7 @@
   <footer class="footer">
     <div class="inner">
       <div class="footer__company">
-        <img src="img/footer/logo.png" alt="The Company logo" class="footer__company--logo">
+        <img src="img/footer/logo-min.png" alt="The Company logo" class="footer__company--logo">
         <div class="footer__company--desc">
           <p class="footer__company--address">住所：ほげほげのほげほげ</p>
           <p class="footer__company--tel">TEL：0000-00-0000</p>
@@ -378,9 +301,9 @@
         <li class="footer__menu--list-item"><a href="#contact" class="footer__menu--list-link">Contact</a></li>
       </ul>
       <div class="footer__sns-link">
-        <a href="#" class="footer__sns-link--item"><img src="img/footer/twitter.svg" alt="twitter"></a>
-        <a href="#" class="footer__sns-link--item"><img src="img/footer/facebook.svg" alt="facebook"></a>
-        <a href="#" class="footer__sns-link--item"><img src="img/footer/instagram.svg" alt="instagram"></a>
+        <a href="#" class="footer__sns-link--item"><img src="img/footer/twitter.svg" alt="twitter-link"></a>
+        <a href="#" class="footer__sns-link--item"><img src="img/footer/facebook.svg" alt="facebook-link"></a>
+        <a href="#" class="footer__sns-link--item"><img src="img/footer/instagram.svg" alt="instagram-link"></a>
       </div>
     </div> <!-- inner -->
     <div class="footer__end">
@@ -396,7 +319,7 @@
  <!-- jqery file -->
  <script src="jquery/script_jquery.js"></script>
  <!-- javascript -->
- <script type="text/javascript" src="javascript/script.js"></script>
+ <script src="javascript/script.js"></script> <!-- type="text/javascript"の記述は不要 -->
 
 </body>
 </html>

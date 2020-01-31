@@ -140,7 +140,7 @@
   height: 30px; /* 数値でないと表示されない。100%はダメ */
   left: 0;
   margin-top: -0.2em;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

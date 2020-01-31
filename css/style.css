@@ -62,7 +62,7 @@ a {
 /* myreset_CSS */
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html, body {
@@ -85,6 +85,9 @@ index.html
 ※とりあえずはお問い合わせフォーム以外は
 スタイル崩れがなかったので、
 このまま(@import "";での読み込み)にしています
+⇢各pageで変更修正し、style.scssで@import"";を
+コメントアウト、コメントアウト解除すれば
+変更修正が適用される
 
 1.header
 2.top
@@ -96,78 +99,6 @@ index.html
 8.footer
 --------------------------------------- */
 /* header------------------------------ */
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
-body {
-  line-height: 1;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
-}
-
-/* myreset_CSS */
-*, *::before, *::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html, body {
-  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
-  font-size: 62.5%;
-}
-
-/* header------------------------------ */
 .nav {
   background: #3F51B5;
   position: fixed;
@@ -178,89 +109,98 @@ html, body {
 
 .nav .flex {
   /* ロゴとメニューを横並びにしてinnerの両端揃えに */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   /* 高さを設定して縦にセンタリング */
   height: 100px;
-  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.nav .nav__inner {
+.nav__inner {
   width: 1086px;
   max-width: 100%;
   margin: 0 auto;
 }
 
 @media screen and (max-width: 365px) {
-  .nav .nav__inner .nav__logo {
+  .nav__logo {
     margin-left: 1rem;
   }
 }
 
 @media screen and (min-width: 366px) and (max-width: 510px) {
-  .nav .nav__inner .nav__logo {
+  .nav__logo {
     margin-left: 1rem;
   }
 }
 
 @media screen and (min-width: 511px) and (max-width: 620px) {
-  .nav .nav__inner .nav__logo {
+  .nav__logo {
     margin-left: 1rem;
   }
 }
 
-@media screen and (min-width: 621px) and (max-width: 767px) {
-  .nav .nav__inner .nav__logo {
+@media screen and (min-width: 621px) and (max-width: 768px) {
+  .nav__logo {
     margin-left: 1rem;
   }
 }
 
 @media screen and (max-width: 1085px) {
-  .nav .nav__inner .nav__logo {
+  .nav__logo {
     margin-left: 2rem;
   }
 }
 
 @media screen and (max-width: 365px) {
-  .nav .nav__inner .nav__list {
+  .nav__list {
     display: none;
   }
 }
 
 @media screen and (min-width: 366px) and (max-width: 510px) {
-  .nav .nav__inner .nav__list {
+  .nav__list {
     display: none;
   }
 }
 
 @media screen and (min-width: 511px) and (max-width: 620px) {
-  .nav .nav__inner .nav__list {
+  .nav__list {
     display: none;
   }
 }
 
-@media screen and (min-width: 621px) and (max-width: 767px) {
-  .nav .nav__inner .nav__list {
+@media screen and (min-width: 621px) and (max-width: 768px) {
+  .nav__list {
     display: none;
   }
 }
 
 @media screen and (max-width: 1085px) {
-  .nav .nav__inner .nav__list {
+  .nav__list {
     margin-right: 2rem;
   }
 }
 
-.nav .nav__inner .nav__list .nav__list--item {
+.nav__list--item {
   display: inline-block;
-  margin-right: 30px;
+  margin-right: 32.5px;
 }
 
-.nav .nav__inner .nav__list .nav__list--item:nth-child(5) {
+.nav__list--item:nth-child(5) {
   margin-right: 0;
 }
 
-.nav .nav__inner .nav__list .nav__list--item a.nav-hover {
+.nav__list--item .nav-hover {
   display: inline-block;
   color: #FFFFFF;
   font-family: 'Lato', 'Gill', sans-serif;
@@ -271,7 +211,7 @@ html, body {
   /* transition: 0.2s; 不要っぽいので一旦コメントアウト */
 }
 
-.nav .nav__inner .nav__list .nav__list--item a.nav-hover::after {
+.nav__list--item .nav-hover::after {
   position: absolute;
   content: '';
   width: 0;
@@ -279,11 +219,12 @@ html, body {
   bottom: -2px;
   left: 0;
   background: #E81919;
+  -webkit-transition: width 0.3s;
   transition: width 0.3s;
   /* プロパティを指定する */
 }
 
-.nav .nav__inner .nav__list .nav__list--item a.nav-hover:hover::after {
+.nav__list--item .nav-hover:hover::after {
   width: 100%;
 }
 
@@ -302,86 +243,14 @@ html, body {
   bottom: -2px;
   left: 0;
   background: #E81919;
+  -webkit-transition: width 0.3s;
   transition: width 0.3s;
 }
 
 /* ------------------------------------ */
-/* ------------------------------------ */
-/* top--------------------------------- */
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
-body {
-  line-height: 1;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
-}
-
-/* myreset_CSS */
-*, *::before, *::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html, body {
-  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
-  font-size: 62.5%;
-}
-
 /* top--------------------------------- */
 .top {
-  background: url(../img/header/mainvisual.png) center, center, no-repeat;
+  background: url(../img/header/mainvisual-min.png) center, center, no-repeat;
   width: 100%;
   background-size: cover;
   height: 700px;
@@ -402,23 +271,25 @@ html, body {
   text-align: center;
 }
 
-.top .inner .top__catch {
+.top__catch {
   font-size: 6.8rem;
   line-height: 10.8rem;
+  margin-bottom: -3px;
+  /* Pixel調整 */
   color: #333333;
 }
 
 @media screen and (max-width: 365px) {
-  .top .inner .top__catch {
+  .top__catch {
     width: calc(100% - 1rem);
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     line-height: 30px;
     margin-bottom: 15px;
   }
 }
 
 @media screen and (min-width: 366px) and (max-width: 510px) {
-  .top .inner .top__catch {
+  .top__catch {
     width: calc(100% - 1rem);
     font-size: 3.2rem;
     line-height: 30px;
@@ -427,7 +298,7 @@ html, body {
 }
 
 @media screen and (min-width: 511px) and (max-width: 620px) {
-  .top .inner .top__catch {
+  .top__catch {
     width: calc(100% - 1rem);
     font-size: 4.5rem;
     line-height: 30px;
@@ -435,8 +306,8 @@ html, body {
   }
 }
 
-@media screen and (min-width: 621px) and (max-width: 767px) {
-  .top .inner .top__catch {
+@media screen and (min-width: 621px) and (max-width: 768px) {
+  .top__catch {
     width: calc(100% - 1rem);
     font-size: 5.5rem;
     line-height: 30px;
@@ -444,16 +315,16 @@ html, body {
   }
 }
 
-.top .inner .top__lead {
+.top__lead {
   font-size: 3.8rem;
   line-height: 6.1rem;
   color: #333333;
   font-weight: bold;
-  margin-bottom: 76px;
+  margin-bottom: 78px;
 }
 
 @media screen and (max-width: 365px) {
-  .top .inner .top__lead {
+  .top__lead {
     padding: 0 1rem;
     font-size: 2.3rem;
     line-height: 30px;
@@ -461,7 +332,7 @@ html, body {
 }
 
 @media screen and (min-width: 366px) and (max-width: 510px) {
-  .top .inner .top__lead {
+  .top__lead {
     padding: 0 1rem;
     font-size: 2.5rem;
     line-height: 30px;
@@ -469,22 +340,22 @@ html, body {
 }
 
 @media screen and (min-width: 511px) and (max-width: 620px) {
-  .top .inner .top__lead {
+  .top__lead {
     padding: 0 1rem;
     font-size: 3rem;
     line-height: 30px;
   }
 }
 
-@media screen and (min-width: 621px) and (max-width: 767px) {
-  .top .inner .top__lead {
+@media screen and (min-width: 621px) and (max-width: 768px) {
+  .top__lead {
     padding: 0 1rem;
     font-size: 3.5rem;
     line-height: 30px;
   }
 }
 
-.top .inner .top__contact {
+.top__contact {
   display: inline-block;
   font-size: 3.8rem;
   line-height: 6.1rem;
@@ -492,16 +363,17 @@ html, body {
   color: #FFFFFF;
   padding: 10px 81px;
   border-radius: 12px;
-  box-shadow: 0px 3px 6px #D6D6D6;
+  -webkit-box-shadow: 0px 3px 6px #D6D6D6;
+          box-shadow: 0px 3px 6px #D6D6D6;
   margin: 0 auto;
 }
 
-.top .inner .top__contact:hover {
+.top__contact:hover {
   opacity: 0.85;
 }
 
 @media screen and (max-width: 365px) {
-  .top .inner .top__contact {
+  .top__contact {
     width: calc(100% - 10%);
     font-size: 2.0rem;
     line-height: 4rem;
@@ -509,97 +381,24 @@ html, body {
 }
 
 @media screen and (min-width: 366px) and (max-width: 510px) {
-  .top .inner .top__contact {
+  .top__contact {
     width: calc(100% - 18%);
     font-size: 2.3rem;
   }
 }
 
 @media screen and (min-width: 511px) and (max-width: 620px) {
-  .top .inner .top__contact {
+  .top__contact {
     width: calc(100% - 30%);
     font-size: 2.8rem;
   }
 }
 
 /* ------------------------------------ */
-/* ------------------------------------ */
-/* card-------------------------------- */
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
-body {
-  line-height: 1;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
-}
-
-/* myreset_CSS */
-*, *::before, *::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html, body {
-  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
-  font-size: 62.5%;
-}
-
 /* card-------------------------------- */
 .card {
   background-color: #EFEFEF;
-  padding-top: 58px;
+  padding-top: 55px;
   padding-bottom: 120px;
 }
 
@@ -615,7 +414,7 @@ html, body {
   font-size: 6.0rem;
   line-height: 9.6rem;
   color: #333333;
-  padding-bottom: 40px;
+  padding-bottom: 39px;
   margin-bottom: 68px;
   position: relative;
   /* border-bottom: 5px solid $color-card-border; h2要素と長さが違う線を指定したい場合、borderではできない▶疑似要素 */
@@ -632,30 +431,44 @@ html, body {
   /*下線の幅*/
   height: 5px;
   /*下線の太さ*/
-  -moz-transform: translateX(-50%);
+  /* -moz-transform: translateX(-50%); 不要*/
   -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   transform: translate(-50%);
   /*位置調整*/
   background-color: #3F51B5;
   /*下線の色*/
 }
 
-.card .inner .card-list {
+.card-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 @media screen and (max-width: 767px) {
-  .card .inner .card-list {
-    flex-direction: column;
+  .card-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     /* スマホ幅で縦1列並びに */
-    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
-.card .inner .card-list .card-list__item {
+.card-list__item {
   background-color: #FFFFFF;
   padding: 16px 16px 35px 16px;
   border-radius: 4px;
@@ -664,136 +477,65 @@ html, body {
   /* 余白30×2=60pxを3つのアイテムに均等に分け、1アイテム幅の100%/3から引けば余白は常に一定にかつアイテム幅を可変にできる */
 }
 
-.card .inner .card-list .card-list__item:nth-child(3n) {
+.card-list__item:nth-child(3n) {
   margin-right: 0;
 }
 
 @media screen and (max-width: 767px) {
-  .card .inner .card-list .card-list__item {
+  .card-list__item {
     width: 100%;
     min-width: 80%;
     /* アイテム幅が小さくなりすぎないように自分で入れてみた */
     margin: 0 0 20px 0;
   }
-  .card .inner .card-list .card-list__item:nth-child(3) {
+  .card-list__item:nth-child(3) {
     margin-left: 30px;
     /* 下のtabの指定でずれた分を直す */
   }
 }
 
 @media screen and (max-width: 1085px) {
-  .card .inner .card-list .card-list__item {
+  .card-list__item {
     width: calc(100% / 2 - 60px / 2);
     /* 2列で余白を2等分 */
   }
-  .card .inner .card-list .card-list__item:nth-child(3n) {
+  .card-list__item:nth-child(3n) {
     margin-right: 30px;
     /* 親元の指定で0になっているのを余白足す */
   }
-  .card .inner .card-list .card-list__item:nth-child(2n) {
+  .card-list__item:nth-child(2n) {
     margin-right: 0;
     /* 2列の時の余白をなくす */
   }
 }
 
-.card .inner .card-list .card-list__item .card-list__item--img {
+.card-list__item--img {
   width: 100%;
   /* 画面を小さくしたときに画像も小さくなるように */
 }
 
-.card .inner .card-list .card-list__item .card-list__item--title {
+.card-list__item--title {
   font-size: 2rem;
   color: #6F7579;
   line-height: 2.4rem;
-  margin-top: 22px;
-  margin-bottom: 20px;
+  margin-top: 24px;
+  /* margin-bottom: 20px; margin-topとmargin-bottomはどちらか片方で統一する */
 }
 
-.card .inner .card-list .card-list__item .card-list__item--text {
+.card-list__item--text {
   font-size: 1.6rem;
   color: #6F7579;
   line-height: 2.4rem;
+  margin-top: 20px;
+  /* ↑margin-topとmargin-bottomはどちらか片方で統一するためにこちらにmargin-topを追加 */
 }
 
 /* 参考URL: https://haniwaman.com/calc/ */
 /* ------------------------------------ */
-/* ------------------------------------ */
-/* news -resposive1-------------------- */
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
-body {
-  line-height: 1;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
-}
-
-/* myreset_CSS */
-*, *::before, *::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html, body {
-  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
-  font-size: 62.5%;
-}
-
 /* news -resposive1-------------------- */
 .news {
   background-color: #FFFFFF;
-  padding-top: 58px;
+  padding-top: 57px;
   padding-bottom: 33px;
 }
 
@@ -819,35 +561,37 @@ html, body {
   /*下線の幅*/
   height: 5px;
   /*下線の太さ*/
-  -moz-transform: translateX(-50%);
+  /* -moz-transform: translateX(-50%); 不要*/
   -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   transform: translate(-50%);
   /*位置調整*/
   background-color: #3F51B5;
   /*下線の色*/
 }
 
-.news .inner .news-list {
+.news-list {
   width: 838px;
   /* これないとborderがinner幅まで伸びちゃう */
   margin: 0 auto;
   /* これないとinnerの左寄せになっちゃう */
 }
 
-.news .inner .news-list:not(:last-child) {
+.news-list:not(:last-child) {
   margin: 0 auto 16px;
   /* moreリンクがあるときのmargin-bottom */
 }
 
 @media screen and (max-width: 850px) {
-  .news .inner .news-list {
+  .news-list {
     width: 90%;
     /* innerじゃなくてこちらに指定しないと幅が縮まらない */
   }
 }
 
-.news .inner .news-list .news-list__item {
+.news-list__item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   font-size: 1.6rem;
   line-height: 2.6rem;
@@ -856,22 +600,38 @@ html, body {
   height: auto;
 }
 
-.news .inner .news-list .news-list__item:not(:last-child) {
+.news-list__item:not(:last-child) {
   border-bottom: 1px solid #707070;
   margin-bottom: 18.5px;
 }
 
-.news .inner .news-list .news-list__item .news-list__date {
-  font-family: 'Lato', 'Gill', sans-serif;
-  margin-left: 4.5px;
+@media screen and (max-width: 850px) {
+  .news-list__item {
+    display: block;
+    /* レスポンシブ縦並び */
+  }
 }
 
-.news .inner .news-list .news-list__item .news-list__tab {
+.news-list__item .news-list__date {
+  font-family: 'Lato', 'Gill', sans-serif;
+  margin-left: 4.2px;
+}
+
+.news-list__item .news-list__tab {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   /* これないと横並びにならない */
 }
 
-.news .inner .news-list .news-list__item .news-list__tab .news-list__label--label-1 {
+@media screen and (max-width: 850px) {
+  .news-list__item .news-list__tab {
+    margin-top: 10px;
+  }
+}
+
+.news-list__item .news-list__tab .news-list__label--label-1 {
   display: inline-block;
   width: 100px;
   height: 30px;
@@ -884,12 +644,12 @@ html, body {
   background-color: #666666;
 }
 
-.news .inner .news-list .news-list__item .news-list__tab .news-list__label--label-1:hover {
+.news-list__item .news-list__tab .news-list__label--label-1:hover {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 850px) {
-  .news .inner .news-list .news-list__item .news-list__tab .news-list__label--label-1 {
+  .news-list__item .news-list__tab .news-list__label--label-1 {
     display: inline-block;
     line-height: 2.4rem;
     width: 100px;
@@ -903,7 +663,7 @@ html, body {
   }
 }
 
-.news .inner .news-list .news-list__item .news-list__tab .news-list__label--label-2 {
+.news-list__item .news-list__tab .news-list__label--label-2 {
   display: inline-block;
   width: 100px;
   height: 30px;
@@ -916,12 +676,12 @@ html, body {
   background-color: #3F51B5;
 }
 
-.news .inner .news-list .news-list__item .news-list__tab .news-list__label--label-2:hover {
+.news-list__item .news-list__tab .news-list__label--label-2:hover {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 850px) {
-  .news .inner .news-list .news-list__item .news-list__tab .news-list__label--label-2 {
+  .news-list__item .news-list__tab .news-list__label--label-2 {
     display: inline-block;
     line-height: 2.4rem;
     width: 100px;
@@ -935,7 +695,7 @@ html, body {
   }
 }
 
-.news .inner .news-list .news-list__item .news-list__tab .news-list__label--label-3 {
+.news-list__item .news-list__tab .news-list__label--label-3 {
   display: inline-block;
   width: 100px;
   height: 30px;
@@ -948,12 +708,12 @@ html, body {
   background-color: #E81919;
 }
 
-.news .inner .news-list .news-list__item .news-list__tab .news-list__label--label-3:hover {
+.news-list__item .news-list__tab .news-list__label--label-3:hover {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 850px) {
-  .news .inner .news-list .news-list__item .news-list__tab .news-list__label--label-3 {
+  .news-list__item .news-list__tab .news-list__label--label-3 {
     display: inline-block;
     line-height: 2.4rem;
     width: 100px;
@@ -967,7 +727,7 @@ html, body {
   }
 }
 
-.news .inner .news-list .news-list__item .news-list__tab .news-list__title {
+.news-list__item .news-list__tab .news-list__title {
   color: #333333;
   display: inline-block;
   /* 複数行がずれないように */
@@ -975,36 +735,24 @@ html, body {
   margin-right: 9.5px;
 }
 
-.news .inner .news-list .news-list__item .news-list__tab .news-list__title:hover {
+.news-list__item .news-list__tab .news-list__title:hover {
   opacity: 0.65;
 }
 
 @media screen and (max-width: 850px) {
-  .news .inner .news-list .news-list__item .news-list__tab .news-list__title {
+  .news-list__item .news-list__tab .news-list__title {
     display: inline;
     /* レスポンシブで改行されるように */
   }
 }
 
-@media screen and (max-width: 850px) {
-  .news .inner .news-list .news-list__item .news-list__tab {
-    margin-top: 10px;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .news .inner .news-list .news-list__item {
-    display: block;
-    /* レスポンシブ縦並び */
-  }
-}
-
-.news .inner .news-list__link {
+.news .news-list__link {
   text-align: center;
 }
 
-.news .inner .news-list__link .link-button {
+.news .news-list__link .link-button {
   font-family: 'Lato', 'Gill', sans-serif;
+  font-weight: 700;
   font-size: 1.6rem;
   line-height: 2.6rem;
   color: #E81919;
@@ -1012,11 +760,11 @@ html, body {
   position: relative;
 }
 
-.news .inner .news-list__link .link-button:hover {
+.news .news-list__link .link-button:hover {
   opacity: 0.65;
 }
 
-.news .inner .news-list__link .link-button::after {
+.news .news-list__link .link-button::after {
   position: absolute;
   content: '';
   display: inline-block;
@@ -1028,79 +776,6 @@ html, body {
 }
 
 /* ------------------------------------ */
-/* ------------------------------------ */
-/* price------------------------------- */
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
-body {
-  line-height: 1;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
-}
-
-/* myreset_CSS */
-*, *::before, *::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html, body {
-  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
-  font-size: 62.5%;
-}
-
 /* price------------------------------- */
 .price {
   background-color: #EFEFEF;
@@ -1142,23 +817,25 @@ html, body {
   /*下線の幅*/
   height: 5px;
   /*下線の太さ*/
-  -moz-transform: translateX(-50%);
+  /* -moz-transform: translateX(-50%); 不要*/
   -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   transform: translate(-50%);
   /*位置調整*/
   background-color: #3F51B5;
   /*下線の色*/
 }
 
-.price .inner .price__inner--wrapper {
+.price__inner--wrapper {
   width: 1088px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
 @media screen and (max-width: 1110px) {
-  .price .inner .price__inner--wrapper {
+  .price__inner--wrapper {
     background-image: url(../img/table/price-img.png);
     /* タブレット幅以下では画像を背景に */
     background-size: cover;
@@ -1166,36 +843,42 @@ html, body {
     background-blend-mode: lighten;
     width: 100%;
     height: 500px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
-.price .inner .price__inner--wrapper .price__wrapper--img .price-img {
+.price__wrapper--img .price-img {
   margin-right: 122px;
 }
 
 @media screen and (max-width: 1110px) {
-  .price .inner .price__inner--wrapper .price__wrapper--img .price-img {
+  .price__wrapper--img .price-img {
     display: none;
     /* タブレット幅以下では画像を背景にするためnone */
   }
 }
 
 @media screen and (max-width: 1110px) {
-  .price .inner .price__inner--wrapper .price__wrapper--table {
+  .price__wrapper--table {
     margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 1110px) {
-  .price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap {
+  .price .price-table-wrap {
     width: 100%;
     margin: 0 auto;
   }
 }
 
-.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table {
+.price .price-table {
   border: 1px solid #707070;
   border-collapse: collapse;
   font-size: 1.6rem;
@@ -1208,13 +891,13 @@ html, body {
 }
 
 @media screen and (max-width: 1110px) {
-  .price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table {
+  .price .price-table {
     width: 90%;
     margin: 0 auto;
   }
 }
 
-.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table th {
+.price .price-table th {
   font-family: 'Lato', 'Gill', sans-serif;
   border: 1px solid #707070;
   color: #FFFFFF;
@@ -1222,17 +905,17 @@ html, body {
   vertical-align: middle;
 }
 
-.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table th:first-child {
+.price .price-table th:first-child {
   width: 160px;
 }
 
 @media screen and (max-width: 550px) {
-  .price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table th:first-child {
+  .price .price-table th:first-child {
     width: 90px;
   }
 }
 
-.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table td {
+.price .price-table td {
   font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
   border: 1px solid #707070;
   background-color: #FFFFFF;
@@ -1241,129 +924,62 @@ html, body {
   padding-right: 15px;
 }
 
-.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table td.font-special {
+.price .price-table td.font-special {
   font-size: 1.6rem;
   line-height: 2.1rem;
   padding-right: 14.5px;
 }
 
-.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table td.font-special span.special {
+.price .price-table td.font-special .special {
   color: #E81919;
 }
 
-.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table td.font-special span.special-desc {
+.price .price-table td.font-special .special-desc {
   font-size: 1.4rem;
   line-height: 2.2rem;
 }
 
+@media screen and (max-width: 365px) {
+  .price .price-table td.font-special .special-desc {
+    font-size: 1.2rem;
+  }
+}
+
 @media screen and (max-width: 1110px) {
-  .price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table-contact {
+  .price .price-table-contact {
     width: 90%;
     margin: 0 auto;
   }
 }
 
-.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table-contact .price-table-contact__text {
+.price .price-table-contact__text {
   font-size: 1.57rem;
   line-height: 2.6rem;
   color: #333333;
 }
 
-.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table-contact .price-table-contact__text .price-table-contact__link {
+.price .price-table-contact__text .price-table-contact__link {
   font-size: 1.6rem;
   line-height: 2.6rem;
   color: #333333;
   text-decoration: underline;
 }
 
-.price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table-contact .price-table-contact__text .price-table-contact__link:hover {
+.price .price-table-contact__text .price-table-contact__link:hover {
   opacity: 0.7;
 }
 
 @media screen and (max-width: 1110px) {
-  .price .inner .price__inner--wrapper .price__wrapper--table .price-table-wrap .price-table-contact .price-table-contact__text {
+  .price .price-table-contact__text {
     margin-top: 20px;
   }
 }
 
 /* ------------------------------------ */
-/* ------------------------------------ */
-/* access------------------------------ */
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
-body {
-  line-height: 1;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
-}
-
-/* myreset_CSS */
-*, *::before, *::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html, body {
-  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
-  font-size: 62.5%;
-}
-
 /* access------------------------------ */
 .access {
   background-color: #FFFFFF;
-  padding-top: 58px;
+  padding-top: 55px;
   padding-bottom: 90px;
 }
 
@@ -1395,21 +1011,20 @@ html, body {
   /*下線の幅*/
   height: 5px;
   /*下線の太さ*/
-  -moz-transform: translateX(-50%);
+  /* -moz-transform: translateX(-50%); 不要*/
   -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   transform: translate(-50%);
   /*位置調整*/
   background-color: #3F51B5;
   /*下線の色*/
 }
 
-.access .inner .access__inner--wrapper {
+.access__inner--wrapper {
   width: 100%;
   margin: 0 auto;
 }
 
-.access .inner .access__inner--wrapper .access-map {
+.access-map {
   position: relative;
   height: 0;
   width: 100%;
@@ -1419,26 +1034,28 @@ html, body {
 }
 
 @media screen and (max-width: 850px) {
-  .access .inner .access__inner--wrapper .access-map {
+  .access-map {
     width: 95%;
     /* 小さくしたときに左右に余白持たす */
   }
 }
 
-.access .inner .access__inner--wrapper .access-map iframe {
+.access-map iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  border: none;
+  /* HTMLの<iframe>におけるframeborder="0"の記述がエラーだったためこちらに記述 */
 }
 
-.access .inner .access__inner--wrapper .aceess-text {
+.access .aceess-text {
   margin-top: 32px;
   width: 800px;
 }
 
-.access .inner .access__inner--wrapper .aceess-text .aceess-text__table {
+.access .aceess-text__table {
   font-size: 1.6rem;
   line-height: 2.6rem;
   color: #333333;
@@ -1446,30 +1063,37 @@ html, body {
   margin-bottom: 30px;
 }
 
+@media screen and (max-width: 365px) {
+  .access .aceess-text__table {
+    font-size: 1.4rem;
+    margin-left: 0;
+  }
+}
+
 @media screen and (max-width: 850px) {
-  .access .inner .access__inner--wrapper .aceess-text .aceess-text__table {
+  .access .aceess-text__table {
     margin-left: 2rem;
   }
 }
 
-.access .inner .access__inner--wrapper .aceess-text .aceess-text__table tr {
+.access .aceess-text__table tr {
   height: 32px;
 }
 
-.access .inner .access__inner--wrapper .aceess-text .aceess-text__table tr th {
+.access .aceess-text__table tr th {
   font-weight: normal;
   text-align: left;
   padding-right: 52px;
 }
 
-.access .inner .access__inner--wrapper .access-google-link {
+.access-google-link {
   text-align: center;
 }
 
-.access .inner .access__inner--wrapper .access-google-link .google-link {
+.access-google-link .google-link {
   font-size: 2.0rem;
   font-weight: bold;
-  /* line-height: 3.2rem; */
+  line-height: 3.2rem;
   line-height: 56px;
   color: #FFFFFF;
   background-color: #3F51B5;
@@ -1477,15 +1101,14 @@ html, body {
   display: inline-block;
   width: 305px;
   height: 56px;
-  padding: 16px auto 14px;
   position: relative;
 }
 
-.access .inner .access__inner--wrapper .access-google-link .google-link:hover {
+.access-google-link .google-link:hover {
   opacity: 0.8;
 }
 
-.access .inner .access__inner--wrapper .access-google-link .google-link::after {
+.access-google-link .google-link::after {
   position: absolute;
   content: '';
   background: url(../img/table/access-arrow.svg) no-repeat;
@@ -1497,84 +1120,11 @@ html, body {
 }
 
 /* ------------------------------------ */
-/* ------------------------------------ */
-/* contact----------------------------- */
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
-body {
-  line-height: 1;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
-}
-
-/* myreset_CSS */
-*, *::before, *::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html, body {
-  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
-  font-size: 62.5%;
-}
-
 /* contact----------------------------- */
 .contact {
   background-color: #EFEFEF;
-  padding-top: 52px;
-  padding-bottom: 102px;
+  padding-top: 55px;
+  padding-bottom: 120px;
 }
 
 .contact .inner {
@@ -1605,33 +1155,33 @@ html, body {
   /*下線の幅*/
   height: 5px;
   /*下線の太さ*/
-  -moz-transform: translateX(-50%);
+  /* -moz-transform: translateX(-50%); 不要*/
   -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   transform: translate(-50%);
   /*位置調整*/
   background-color: #3F51B5;
   /*下線の色*/
 }
 
-.contact .inner .contact-form--wrapper {
+.contact-form--wrapper {
   background-color: #FFFFFF;
-  padding: 60px 43px 60px 52px;
+  padding: 60px 43px 40px 52px;
+  /* フォント変更後、あまりにずれていたのでbottomを60pxから変更した */
 }
 
-.contact .inner .contact-form--wrapper .contact-form {
+.contact-form {
   font-size: 1.8rem;
   line-height: 2.9rem;
   color: #333333;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .m-top {
+.contact-form .m-top {
   margin-top: 16px;
   /* 項目名の位置調整 */
 }
 
 @media screen and (max-width: 800px) {
-  .contact .inner .contact-form--wrapper .contact-form .m-top {
+  .contact-form .m-top {
     display: block;
     margin-top: 0;
     text-align: left;
@@ -1639,90 +1189,81 @@ html, body {
   }
 }
 
-.contact .inner .contact-form--wrapper .contact-form .inputs::placeholder {
+.contact-form .inputs::-webkit-input-placeholder {
   color: #CCCCCC;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .inputs:-ms-input-placeholder {
+.contact-form .inputs:-ms-input-placeholder {
   color: #CCCCCC;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .inputs::-ms-input-placeholder {
+.contact-form .inputs::-ms-input-placeholder {
   color: #CCCCCC;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .inputs.inputs-common {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  background-image: none;
+.contact-form .inputs::placeholder {
+  color: #CCCCCC;
+}
+
+.contact-form .inputs:-ms-input-placeholder {
+  color: #CCCCCC;
+}
+
+.contact-form .inputs::-webkit-input-placeholder, .contact-form .inputs:-moz-placeholder, .contact-form .inputs::-moz-placeholder, .contact-form .inputs::-ms-input-placeholder {
+  color: #CCCCCC;
+}
+
+.contact-form .inputs.inputs-common {
   border: 1px solid #707070;
-  border-radius: 0;
-  color: inherit;
-  font-family: inherit;
-  font-size: 1em;
-  padding: 0.4em 0.8em;
   width: 528px;
   height: 60px;
 }
 
 @media screen and (max-width: 800px) {
-  .contact .inner .contact-form--wrapper .contact-form .inputs.inputs-common {
+  .contact-form .inputs.inputs-common {
     width: 100%;
   }
 }
 
-.contact .inner .contact-form--wrapper .contact-form .inputs.inputs-common:focus {
-  border: 1px solid rgba(0, 0, 0, 0.32);
-  box-shadow: none;
-  outline: none;
-}
-
-.contact .inner .contact-form--wrapper .contact-form .inputs.inputs-content {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  background-image: none;
+.contact-form .inputs.inputs-content {
   border: 1px solid #707070;
-  border-radius: 0;
-  color: inherit;
-  font-family: inherit;
-  font-size: 1em;
-  padding: 0.4em 0.8em;
-  resize: none;
   width: 528px;
   height: 240px;
+  resize: none;
+  /* 角の//消し */
 }
 
 @media screen and (max-width: 800px) {
-  .contact .inner .contact-form--wrapper .contact-form .inputs.inputs-content {
+  .contact-form .inputs.inputs-content {
     width: 100%;
   }
 }
 
-.contact .inner .contact-form--wrapper .contact-form .inputs.inputs-content:focus {
-  border: 1px solid rgba(0, 0, 0, 0.32);
-  box-shadow: none;
-  outline: none;
-}
-
-.contact .inner .contact-form--wrapper .contact-form .contact-form__name {
+.contact-form__name {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 49px;
   position: relative;
 }
 
 @media screen and (max-width: 800px) {
-  .contact .inner .contact-form--wrapper .contact-form .contact-form__name {
+  .contact-form__name {
     display: block;
     text-align: center;
   }
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__name .must-label {
+.contact-form__name .must-label {
+  position: absolute;
+  content: '';
+  top: 50px;
+  left: 3px;
   font-size: 1.4rem;
   line-height: 2.2rem;
   color: #FFFFFF;
@@ -1731,34 +1272,40 @@ html, body {
   width: 45.98px;
   height: 22.72px;
   text-align: center;
-  position: absolute;
-  content: '';
-  top: 50px;
-  left: 3px;
 }
 
 @media screen and (max-width: 800px) {
-  .contact .inner .contact-form--wrapper .contact-form .contact-form__name .must-label {
+  .contact-form__name .must-label {
     top: 0;
     left: 70px;
   }
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__mail {
+.contact-form__mail {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 53px;
   position: relative;
 }
 
 @media screen and (max-width: 800px) {
-  .contact .inner .contact-form--wrapper .contact-form .contact-form__mail {
+  .contact-form__mail {
     display: block;
     text-align: center;
   }
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__mail .must-label {
+.contact-form__mail .must-label {
+  position: absolute;
+  content: '';
+  top: 50px;
+  left: 3px;
   font-size: 1.4rem;
   line-height: 2.2rem;
   color: #FFFFFF;
@@ -1767,233 +1314,211 @@ html, body {
   width: 45.98px;
   height: 22.72px;
   text-align: center;
-  position: absolute;
-  content: '';
-  top: 50px;
-  left: 3px;
 }
 
 @media screen and (max-width: 800px) {
-  .contact .inner .contact-form--wrapper .contact-form .contact-form__mail .must-label {
+  .contact-form__mail .must-label {
     top: 0;
     left: 140px;
   }
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__type {
+.contact-form__type {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 48px;
 }
 
 @media screen and (max-width: 800px) {
-  .contact .inner .contact-form--wrapper .contact-form .contact-form__type {
+  .contact-form__type {
     display: block;
     text-align: center;
   }
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__type .inputs-type {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
+.contact-form__type .inputs-type {
   background: transparent url(../img/form/select-arrow.svg) no-repeat center right 20px/20px 20px;
   border: 1px solid #707070;
-  border-radius: 0;
   color: #CCCCCC;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 1em;
-  padding: 0.4em 0.8em;
   width: 528px;
   height: 60px;
 }
 
 @media screen and (max-width: 800px) {
-  .contact .inner .contact-form--wrapper .contact-form .contact-form__type .inputs-type {
+  .contact-form__type .inputs-type {
     width: 100%;
   }
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__type .inputs-type::-ms-expand {
-  display: none;
-}
-
-.contact .inner .contact-form--wrapper .contact-form .contact-form__type .inputs-type:focus {
-  border: 1px solid rgba(0, 0, 0, 0.32);
-  box-shadow: none;
-  outline: none;
-}
-
-.contact .inner .contact-form--wrapper .contact-form .contact-form__content {
+.contact-form__content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 39.5px;
 }
 
 @media screen and (max-width: 800px) {
-  .contact .inner .contact-form--wrapper .contact-form .contact-form__content {
+  .contact-form__content {
     display: block;
     text-align: center;
   }
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__radio {
+.contact-form__radio {
   margin-left: 5px;
   margin-bottom: 45px;
 }
 
 @media screen and (max-width: 800px) {
-  .contact .inner .contact-form--wrapper .contact-form .contact-form__radio {
+  .contact-form__radio {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     /* 縦並びに */
     margin-bottom: 25px;
   }
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__radio .radio-label {
+.contact-form__radio .radio-label {
   font-size: 1.6rem;
 }
 
 @media screen and (max-width: 800px) {
-  .contact .inner .contact-form--wrapper .contact-form .contact-form__radio .radio-label {
+  .contact-form__radio .radio-label {
     margin-bottom: 12px;
     /* 縦並びにした際の各ラジオボタンの間隔 */
   }
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__radio .inputs-radio {
-  display: none;
-}
-
-.contact .inner .contact-form--wrapper .contact-form .contact-form__radio .inputs-radio + span {
-  cursor: pointer;
-  display: inline-block;
-  margin: 0 20px 0 0;
+.contact-form__radio .inputs-radio + span {
+  margin: 0 25px 0 0;
   /* 各項目の右側の余白 */
   padding: 0 0 0 40px;
   /* ○と項目の間の余白 */
-  position: relative;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__radio .inputs-radio + span::before {
-  -webkit-transform: translateY(-50%);
-  background: #fff;
+.contact-form__radio .inputs-radio + span::before {
   border: 1px solid #707070;
-  border-radius: 50%;
-  content: "";
-  display: block;
   height: 30px;
-  left: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   width: 30px;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__radio .inputs-radio + span::after {
-  -webkit-transform: translateY(-50%);
+.contact-form__radio .inputs-radio + span::after {
   background: #3F51B5;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  content: "";
   height: 18px;
   left: 6px;
-  opacity: 0;
   padding: 6px;
   /* ●と○の間 */
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: all 0.1s ease 0s;
+  -webkit-transition: opacity 0.1s ease 0s;
+  transition: opacity 0.1s ease 0s;
   width: 18px;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__radio .inputs-radio:checked + span::after {
-  opacity: 1;
-}
-
-.contact .inner .contact-form--wrapper .contact-form .contact-form__privacy {
+.contact-form__privacy {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 27px;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__privacy .inputs-checkbox {
-  display: none;
-}
-
-.contact .inner .contact-form--wrapper .contact-form .contact-form__privacy .inputs-checkbox + span {
-  cursor: pointer;
-  display: inline-block;
-  margin: 0 0.3em 0;
-  padding: 0 0 0 45px;
+.contact-form__privacy .inputs-checkbox + span {
+  margin: 0 -8px 0;
+  padding: 0 0 0 60px;
   /* □と文章(項目)の間の余白 */
-  position: relative;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__privacy .inputs-checkbox + span::before {
-  /* -webkit-transform: translateY(-50%); */
-  background: #fff;
+@media screen and (max-width: 321px) {
+  .contact-form__privacy .inputs-checkbox + span {
+    padding: 0 0 0 43px;
+  }
+}
+
+.contact-form__privacy .inputs-checkbox + span::before {
   border: 1px solid #707070;
-  content: "";
-  display: block;
   height: 30px;
-  left: 0;
-  position: absolute;
-  /* top: 50%; */
-  /* transform: translateY(-50%); */
   top: -22px;
   width: 30px;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__privacy .inputs-checkbox + span::after {
+@media screen and (max-width: 321px) {
+  .contact-form__privacy .inputs-checkbox + span::before {
+    height: 25px;
+    width: 25px;
+  }
+}
+
+.contact-form__privacy .inputs-checkbox + span::after {
   -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  /* 追加 */
   background: url(../img/form/check.svg) no-repeat;
   background-size: contain;
   /* サイズ指定 */
-  content: "";
-  display: inline-block;
   height: 30px;
   /* 数値でないと表示されない。100%はダメ */
-  left: 0;
   margin-top: -0.2em;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
   transform: translateY(-50%);
-  transition: all 0.1s ease 0s;
+  -webkit-transition: opacity 0.1s ease 0s;
+  transition: opacity 0.1s ease 0s;
   width: 30px;
   /* 数値でないと表示されない。100%はダメ */
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__privacy .inputs-checkbox:checked + span::after {
-  opacity: 1;
+@media screen and (max-width: 321px) {
+  .contact-form__privacy .inputs-checkbox + span::after {
+    height: 25px;
+    width: 25px;
+  }
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__privacy .privacy-text {
+.contact-form__privacy .privacy-text {
   font-size: 1.6rem;
   line-height: 2.6rem;
   color: #333333;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__privacy .privacy-text .privacy-content {
+@media screen and (max-width: 321px) {
+  .contact-form__privacy .privacy-text {
+    font-size: 1.3rem;
+  }
+}
+
+.contact-form__privacy .privacy-text .privacy-content {
   color: #333333;
   text-decoration: underline;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__button {
+.contact-form__privacy .privacy-text .privacy-content:hover {
+  opacity: 0.7;
+}
+
+.contact-form__button {
   text-align: center;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__button .submit-btn {
-  background: none;
-  border: none;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+.contact-form__button .submit-btn {
   display: inline-block;
   font-size: 2.2rem;
   line-height: 3.6rem;
@@ -2002,109 +1527,44 @@ html, body {
   border-radius: 12px;
   width: 261px;
   height: 56px;
+  padding: 9px 0;
   left: -3px;
   /* perfectpixelで合わせると必要 */
   position: relative;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__button .submit-btn::after {
+@media screen and (max-width: 321px) {
+  .contact-form__button .submit-btn {
+    left: -2rem;
+  }
+}
+
+.contact-form__button .submit-btn::after {
   position: absolute;
   content: '';
   background: url(../img/form/contact-arrow.svg) no-repeat;
-  display: inline-block;
   width: 100%;
   height: 100%;
-  margin-left: 55px;
+  margin-left: 58px;
   top: 18px;
 }
 
-.contact .inner .contact-form--wrapper .contact-form .contact-form__button .submit-btn:hover {
-  cursor: pointer;
+.contact-form__button .submit-btn:hover {
+  opacity: 0.85;
 }
 
-/* ------------------------------------ */
 /* _contact.scss内では修正変更できず、form_reset.cssをHTMLで読み込んでいるとスタイルが崩れる模様。
 ⇢style.scssにリセットCSSも含めて直接スタイルを書き込めば崩れはなくなる
 ⇢さらに、リセットCSSも含めた下記コードを_contact.scssに書き込み、style.scssにて@import "page/7-contact/contact";としてもスタイル崩れはなくなる。(ただし、先に_contact.scss内に下記コードを書き、その後style.scssに@import "page/7-contact/contact";と記述しないとスタイルは反映されない)
-？_contact.scss内では修正変更できないのにここにコード書いて_contact.scssに書いたら反映されるのはなぜか？
-(取り急ぎは経過が分かるようにここにコードを記述しておく) */
+⇢リセットCSSと分けてスタイルのコードを書くと崩れていた原因は、スタイリングの方の
+コードに & が不足していたこと！！！！！
+？_contact.scss内では修正変更できないのにここにコード書いて_contact.scssに書いたら反映されるのはなぜか？ */
 /* ------------------------------------ */
 /* footer------------------------------*/
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
-body {
-  line-height: 1;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
-}
-
-/* myreset_CSS */
-*, *::before, *::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html, body {
-  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
-  font-size: 62.5%;
-}
-
-/* footer------------------------------*/
 .footer {
+  background: -webkit-gradient(linear, left top, left bottom, from(#666666), to(#333333));
   background: linear-gradient(180deg, #666666 0%, #333333 100%);
-  background: -moz-linear-gradient(top, #666666 0%, #333333 100%);
+  /* background: -moz-linear-gradient(top, $color-footer-back1 0%, $color-footer-back2 100%); 不要*/
   background: -webkit-linear-gradient(top, #666666 0%, #333333 100%);
   color: #FFFFFF;
   position: relative;
@@ -2112,116 +1572,156 @@ html, body {
 }
 
 .footer .inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 1.6rem;
   line-height: 2.6rem;
-  padding: 74px 12px 88px 0px;
-  /* 12pxを入れることでピクセルが合う */
+  padding: 74px 0 86px;
 }
 
 @media screen and (max-width: 1080px) {
   .footer .inner {
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 74px 0 60px;
   }
 }
 
 @media screen and (max-width: 580px) {
-  .footer .inner .footer__company {
+  .footer__company {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    order: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
     /* 縦の表示順番をかえてみた */
   }
 }
 
 @media screen and (max-width: 1080px) {
-  .footer .inner .footer__company {
+  .footer__company {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-bottom: 30px;
   }
 }
 
-.footer .inner .footer__company .footer__company--logo {
+.footer__company--logo {
   margin-bottom: 20px;
 }
 
-.footer .inner .footer__company .footer__company--address, .footer .inner .footer__company .footer__company--tel {
+.footer__company--address, .footer__company--tel {
   margin-left: 3px;
 }
 
-.footer .inner .footer__company .footer__company--address {
+.footer__company--address {
   margin-bottom: 9px;
 }
 
 @media screen and (max-width: 1080px) {
-  .footer .inner .footer__company--desc {
+  .footer__company--desc {
     text-align: left;
     margin-left: 20px;
   }
 }
 
-.footer .inner .footer__menu--list {
+.footer__menu--list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   margin: 7px 224px 0 159px;
 }
 
 @media screen and (max-width: 1080px) {
-  .footer .inner .footer__menu--list {
-    justify-content: center;
+  .footer__menu--list {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 0 0 30px 0;
   }
 }
 
-.footer .inner .footer__menu--list .footer__menu--list-item {
+.footer__menu--list-item {
   display: inline-block;
 }
 
-.footer .inner .footer__menu--list .footer__menu--list-item:not(:last-child) {
+.footer__menu--list-item:not(:last-child) {
   margin-right: 30px;
 }
 
 @media screen and (max-width: 580px) {
-  .footer .inner .footer__menu--list .footer__menu--list-item:not(:last-child) {
+  .footer__menu--list-item:not(:last-child) {
     margin-right: 25px;
   }
 }
 
-.footer .inner .footer__menu--list .footer__menu--list-item .footer__menu--list-link {
+@media screen and (max-width: 365px) {
+  .footer__menu--list-item:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.footer__menu--list-item .footer__menu--list-link {
   font-family: 'Lato', 'Gill', sans-serif;
   color: #FFFFFF;
 }
 
-.footer .inner .footer__menu--list .footer__menu--list-item .footer__menu--list-link:hover {
+.footer__menu--list-item .footer__menu--list-link:hover {
   opacity: 0.7;
 }
 
-.footer .inner .footer__sns-link {
+.footer__sns-link {
   margin-top: 7px;
 }
 
 @media screen and (max-width: 580px) {
-  .footer .inner .footer__sns-link {
+  .footer__sns-link {
     margin-bottom: 30px;
   }
 }
 
-.footer .inner .footer__sns-link .footer__sns-link--item:hover {
+.footer__sns-link--item:hover {
   opacity: 0.7;
 }
 
-.footer .inner .footer__sns-link .footer__sns-link--item:not(:last-child) {
+.footer__sns-link--item:not(:last-child) {
   margin-right: 12px;
 }
 
-.footer .footer__end {
+.footer__end {
   text-align: center;
 }
 
-.footer .footer__end .cp-right {
+.footer__end .cp-right {
   font-family: 'Lato', 'Gill', sans-serif;
   font-size: 1.4rem;
   line-height: 2.2rem;
@@ -2230,21 +1730,21 @@ html, body {
 }
 
 @media screen and (max-width: 580px) {
-  .footer .footer__end .cp-right {
+  .footer__end .cp-right {
     margin-bottom: 110px;
   }
 }
 
-.footer .footer__top-link {
+.footer__top-link {
   position: absolute;
   /* .footerをporに */
   right: 19px;
   bottom: 14px;
 }
 
-.footer .footer__top-link:hover {
+.footer__top-link:hover {
   opacity: 0.7;
 }
 
 /* ------------------------------------ */
-/* ------------------------------------ */
+/*# sourceMappingURL=style.css.map */

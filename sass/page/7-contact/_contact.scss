@@ -1,19 +1,242 @@
 @charset "utf-8";
 
-@import "../../setting/var";
-@import "../../mixin/mixin";
-@import "../../base/reset";
 
-html, body {
-  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif; 
-  font-size: 62.5%;
-}
+.contact {
+  background-color: $color-card-back;
+  padding-top: 55px;
+  padding-bottom: 120px;
+  .inner {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+      .contact__heading {
+        @include heading(30px, 45px);
+        &::before {
+          @include heading-line;
+        }
+      } //.contact__heading
+  } //.inner
+  &-form--wrapper {
+    background-color: $color-white;
+    padding: 60px 43px 40px 52px; /* フォント変更後、あまりにずれていたのでbottomを60pxから変更した */
+  } // .contact-form--wrapper
+} //.contact
+    .contact-form {
+      font-size: 1.8rem;
+      line-height: 2.9rem;
+      color: $color-black;
+      .m-top {
+        margin-top: 16px; /* 項目名の位置調整 */
+        @include mqTAB-CONTACT {
+          display: block;
+          margin-top: 0;
+          text-align: left;
+          margin-bottom: 10px;
+        }
+      }
+      .inputs {
+        @include placeholder($color-price-border);
+        &.inputs-common { //ここに & がなかったことで崩れていた！！
+          border: 1px solid $color-blog-border;
+          width: 528px;
+          height: 60px;
+          @include mqTAB-CONTACT {
+            width: 100%;
+          }
+        } //.inputs-common
+        &.inputs-content { //ここに & がなかったことで崩れていた！！
+          border: 1px solid $color-blog-border;
+          width: 528px;
+          height: 240px;
+          resize: none; /* 角の//消し */
+          @include mqTAB-CONTACT {
+            width: 100%;
+          }
+        } //.inputs-content
+      } //.inputs
+      &__name {
+        @include contact-flex;
+        margin-bottom: 49px;
+        position: relative;
+        @include mqTAB-CONTACT {
+          @include contact-no-flex;
+        }
+        .must-label {
+          @include must-label;
+          @include mqTAB-CONTACT {
+            top: 0;
+            left: 70px;
+          }
+        } //.must-label
+      } //.contact-form__name
+      &__mail {
+        @include contact-flex;
+        margin-bottom: 53px;
+        position: relative;
+        @include mqTAB-CONTACT {
+          @include contact-no-flex;
+        }
+        .must-label {
+          @include must-label;
+          @include mqTAB-CONTACT {
+            top: 0;
+            left: 140px;
+          }
+        } //.must-label
+      } //.contact-form__mail
+      &__type {
+        @include contact-flex;
+        margin-bottom: 48px;
+        @include mqTAB-CONTACT {
+          @include contact-no-flex;
+        }
+        .inputs-type {
+          background: transparent url(../img/form/select-arrow.svg) no-repeat center right 20px/20px 20px;
+          border: 1px solid $color-blog-border;
+          color: $color-price-border;
+          width: 528px;
+          height: 60px;
+          @include mqTAB-CONTACT {
+            width: 100%;
+          }
+        } //.inputs-type
+      } //.contact-form__type
+      &__content {
+        @include contact-flex;
+        margin-bottom: 39.5px;
+        @include mqTAB-CONTACT {
+          @include contact-no-flex;
+        }
+      } //.contact-form__content
+      &__radio {
+        margin-left: 5px;
+        margin-bottom: 45px;
+        @include mqTAB-CONTACT {
+          display: flex;
+          flex-direction: column; /* 縦並びに */
+          margin-bottom: 25px;
+        }
+        .radio-label {
+          font-size: 1.6rem;
+          @include mqTAB-CONTACT {
+            margin-bottom: 12px; /* 縦並びにした際の各ラジオボタンの間隔 */
+          }
+        }
+        .inputs-radio {
+          & + span {
+            margin: 0 25px 0 0; /* 各項目の右側の余白 */
+            padding: 0 0 0 40px; /* ○と項目の間の余白 */
+          }
+          & + span::before {
+            border: 1px solid $color-blog-border;
+            height: 30px;
+            width: 30px;
+          }
+          & + span::after {
+            background: $color-blue;
+            height: 18px;
+            left: 6px;
+            padding: 6px; /* ●と○の間 */
+            transition: opacity 0.1s ease 0s;
+            width: 18px;
+          }
+        } //.inputs-radio
+      } //.contact-form__radio
+      &__privacy {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 27px;
+        .inputs-checkbox {
+          & + span {
+            margin: 0 -8px 0;
+            padding: 0 0 0 60px; /* □と文章(項目)の間の余白 */
+            @include mqXXS {
+              padding: 0 0 0 43px;
+            }
+          }
+          & + span::before {
+            border: 1px solid $color-blog-border;
+            height: 30px;
+            top: -22px;
+            width: 30px;
+            @include mqXXS {
+              height: 25px;
+              width: 25px;
+            }
+          }
+          & + span::after {
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%); /* 追加 */
+            background: url(../img/form/check.svg) no-repeat;
+            background-size: contain; /* サイズ指定 */
+            height: 30px; /* 数値でないと表示されない。100%はダメ */
+            margin-top: -0.2em;
+            transform: translateY(-50%);
+            transition: opacity 0.1s ease 0s;
+            width: 30px; /* 数値でないと表示されない。100%はダメ */
+            @include mqXXS {
+              height: 25px;
+              width: 25px;
+            }
+          }
+        } //.inputs-checkbox
+        .privacy-text {
+          font-size: 1.6rem;
+          line-height: 2.6rem;
+          color: $color-black;
+          @include mqXXS {
+            font-size: 1.3rem;
+          }
+          .privacy-content {
+            color: $color-black;
+            text-decoration: underline;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      } //.contact-form__privacy
+      &__button {
+        text-align: center;
+        .submit-btn {
+          display: inline-block;
+          font-size: 2.2rem;
+          line-height: 3.6rem;
+          color: $color-white;
+          background-color: $color-blue;
+          border-radius: 12px;
+          width: 261px;
+          height: 56px;
+          padding: 9px 0;
+          left: -3px; /* perfectpixelで合わせると必要 */
+          position: relative;
+          @include mqXXS {
+            left: -2rem;
+          }
+          &::after {
+            position: absolute;
+            content: '';
+            background: url(../img/form/contact-arrow.svg) no-repeat;
+            width: 100%;
+            height: 100%;
+            margin-left: 58px;
+            top: 18px;
+          }
+          &:hover {
+            opacity: 0.85;
+          }
+        } //.submit-btn
+      } //contact-form__button
+    } //.contact-form
+  // } // .contact-form--wrapper
+//   } //.contact__inner
+// } //.contact
 
-/* contact----------------------------- */
+// ↓リセットCSSつきコード
 // .contact {
 //   background-color: $color-card-back;
 //   padding-top: 52px;
-//   padding-bottom: 120px;
+//   padding-bottom: 102px;
 //   .inner {
 //     width: 800px;
 //     max-width: 100%;
@@ -42,23 +265,53 @@ html, body {
 //         }
 //         .inputs {
 //           @include placeholder($color-price-border);
-//           .inputs-common {
+//           &.inputs-common {
+//             -moz-appearance: none;
+//             -webkit-appearance: none;
+//             appearance: none;
+//             background-color: transparent;
+//             background-image: none;
 //             border: 1px solid $color-blog-border;
+//             border-radius: 0;
+//             color: inherit;
+//             font-family: inherit;
+//             font-size: 1em;
+//             padding: 0.4em 0.8em;
 //             width: 528px;
 //             height: 60px;
 //             @include mqTAB-CONTACT {
 //               width: 100%;
 //             }
-//           } //.inputs-common
-//           .inputs-content {
+//             &:focus {
+//               border: 1px solid rgba(0, 0, 0, 0.32);
+//               box-shadow: none;
+//               outline: none;
+//             }
+//           } //&.inputs-common
+//           &.inputs-content {
+//             -moz-appearance: none;
+//             -webkit-appearance: none;
+//             appearance: none;
+//             background-color: transparent;
+//             background-image: none;
 //             border: 1px solid $color-blog-border;
+//             border-radius: 0;
+//             color: inherit;
+//             font-family: inherit;
+//             font-size: 1em;
+//             padding: 0.4em 0.8em;
+//             resize: none;
 //             width: 528px;
 //             height: 240px;
-//             resize: none; /* 角の//消し */
 //             @include mqTAB-CONTACT {
 //               width: 100%;
 //             }
-//           } //.inputs-content
+//             &:focus {
+//               border: 1px solid rgba(0, 0, 0, 0.32);
+//               box-shadow: none;
+//               outline: none;
+//             }
+//           } //&.inputs-content
 //         } //.inputs
 //         .contact-form__name {
 //           @include contact-flex;
@@ -68,7 +321,18 @@ html, body {
 //             @include contact-no-flex;
 //           }
 //           .must-label {
-//             @include must-label;
+//             font-size: 1.4rem;
+//             line-height: 2.2rem;
+//             color: $color-white;
+//             background-color: $color-red;
+//             border-radius: 12px;
+//             width: 45.98px;
+//             height: 22.72px;
+//             text-align: center;
+//             position: absolute;
+//             content: '';
+//             top: 50px;
+//             left: 3px;
 //             @include mqTAB-CONTACT {
 //               top: 0;
 //               left: 70px;
@@ -83,7 +347,18 @@ html, body {
 //               @include contact-no-flex;
 //             }
 //             .must-label {
-//               @include must-label;
+//               font-size: 1.4rem;
+//               line-height: 2.2rem;
+//               color: $color-white;
+//               background-color: $color-red;
+//               border-radius: 12px;
+//               width: 45.98px;
+//               height: 22.72px;
+//               text-align: center;
+//               position: absolute;
+//               content: '';
+//               top: 50px;
+//               left: 3px;
 //               @include mqTAB-CONTACT {
 //                 top: 0;
 //                 left: 140px;
@@ -97,15 +372,31 @@ html, body {
 //               @include contact-no-flex;
 //             }
 //             .inputs-type {
+//               -moz-appearance: none;
+//               -webkit-appearance: none;
+//               appearance: none;
 //               background: transparent url(../img/form/select-arrow.svg) no-repeat center right 20px/20px 20px;
 //               border: 1px solid $color-blog-border;
+//               border-radius: 0;
 //               color: $color-price-border;
+//               cursor: pointer;
+//               font-family: inherit;
+//               font-size: 1em;
+//               padding: 0.4em 0.8em;
 //               width: 528px;
 //               height: 60px;
 //               @include mqTAB-CONTACT {
 //                 width: 100%;
 //               }
-//             } //.inputs-type
+//               &::-ms-expand {
+//                 display: none;
+//               }
+//               &:focus {
+//                 border: 1px solid rgba(0, 0, 0, 0.32);
+//                 box-shadow: none;
+//                 outline: none;
+//               }
+//             } //select.inputs-type
 //           } //.contact-form__type
 //           .contact-form__content {
 //             @include contact-flex;
@@ -128,38 +419,74 @@ html, body {
 //                 margin-bottom: 12px; /* 縦並びにした際の各ラジオボタンの間隔 */
 //               }
 //             }
-//             .inputs-radio {
-//               & + span {
-//                 margin: 0 25px 0 0; /* 各項目の右側の余白 */
-//                 padding: 0 0 0 40px; /* ○と項目の間の余白 */
-//               }
-//               & + span::before {
-//                 border: 1px solid $color-blog-border;
-//                 height: 30px;
-//                 width: 30px;
-//               }
-//               & + span::after {
-//                 background: $color-blue;
-//                 height: 18px;
-//                 left: 6px;
-//                 padding: 6px; /* ●と○の間 */
-//                 transition: opacity 0.1s ease 0s;
-//                 width: 18px;
-//               }
-//             } //.inputs-radio
+//               .inputs-radio {
+//                 display: none;
+//                 & + span {
+//                   cursor: pointer;
+//                   display: inline-block;
+//                   margin: 0 20px 0 0; /* 各項目の右側の余白 */
+//                   padding: 0 0 0 40px; /* ○と項目の間の余白 */
+//                   position: relative;
+//                 }
+//                 & + span::before {
+//                   -webkit-transform: translateY(-50%);
+//                   background: #fff;
+//                   border: 1px solid $color-blog-border;
+//                   border-radius: 50%;
+//                   content: "";
+//                   display: block;
+//                   height: 30px;
+//                   left: 0;
+//                   position: absolute;
+//                   top: 50%;
+//                   transform: translateY(-50%);
+//                   width: 30px;
+//                 }
+//                 & + span::after {
+//                   -webkit-transform: translateY(-50%);
+//                   background: $color-blue;
+//                   border: 1px solid transparent;
+//                   border-radius: 50%;
+//                   content: "";
+//                   height: 18px;
+//                   left: 6px;
+//                   opacity: 0;
+//                   padding: 6px; /* ●と○の間 */
+//                   position: absolute;
+//                   top: 50%;
+//                   transform: translateY(-50%);
+//                   transition: all 0.1s ease 0s;
+//                   width: 18px;
+//                 }
+//                 &:checked + span::after {
+//                   opacity: 1;
+//                 }
+//               } //input.inputs-radio
 //           } //.contact-form__radio
 //           .contact-form__privacy {
 //             display: flex;
 //             justify-content: center;
 //             margin-bottom: 27px;
 //             .inputs-checkbox {
+//               display: none;
 //               & + span {
-//                 margin: 0 -8px 0;
-//                 padding: 0 0 0 60px; /* □と文章(項目)の間の余白 */
+//                 cursor: pointer;
+//                 display: inline-block;
+//                 margin: 0 0.3em 0;
+//                 padding: 0 0 0 45px; /* □と文章(項目)の間の余白 */
+//                 position: relative;
 //               }
 //               & + span::before {
+//                 /* -webkit-transform: translateY(-50%); */
+//                 background: #fff;
 //                 border: 1px solid $color-blog-border;
+//                 content: "";
+//                 display: block;
 //                 height: 30px;
+//                 left: 0;
+//                 position: absolute;
+//                 /* top: 50%; */
+//                 /* transform: translateY(-50%); */
 //                 top: -22px;
 //                 width: 30px;
 //               }
@@ -167,11 +494,20 @@ html, body {
 //                 -webkit-transform: translateY(-50%);
 //                 background: url(../img/form/check.svg) no-repeat;
 //                 background-size: contain; /* サイズ指定 */
+//                 content: "";
+//                 display: inline-block;
 //                 height: 30px; /* 数値でないと表示されない。100%はダメ */
+//                 left: 0;
 //                 margin-top: -0.2em;
+//                 opacity: 0;
+//                 position: absolute;
+//                 top: 50%;
 //                 transform: translateY(-50%);
-//                 transition: opacity 0.1s ease 0s;
+//                 transition: all 0.1s ease 0s;
 //                 width: 30px; /* 数値でないと表示されない。100%はダメ */
+//               }
+//               &:checked + span::after {
+//                 opacity: 1;
 //               }
 //             } //.inputs-checkbox
 //             .privacy-text {
@@ -181,12 +517,22 @@ html, body {
 //               .privacy-content {
 //                 color: $color-black;
 //                 text-decoration: underline;
+//                 &:hover {
+//                   opacity: 0.7;
+//                 }
 //               }
 //             }
 //           } //.contact-form__privacy
 //           .contact-form__button {
 //             text-align: center;
 //             .submit-btn {
+//               background: none;
+//               border: none;
+//               outline: none;
+//               -webkit-appearance: none;
+//               -moz-appearance: none;
+//               appearance: none;
+//               display: inline-block;
 //               font-size: 2.2rem;
 //               line-height: 3.6rem;
 //               color: $color-white;
@@ -195,15 +541,20 @@ html, body {
 //               width: 261px;
 //               height: 56px;
 //               left: -3px; /* perfectpixelで合わせると必要 */
-//               &:hover {
-//                 opacity: 0.8;
-//               }
+//               position: relative;
 //               &::after {
+//                 position: absolute;
+//                 content: '';
 //                 background: url(../img/form/contact-arrow.svg) no-repeat;
+//                 display: inline-block;
 //                 width: 100%;
 //                 height: 100%;
 //                 margin-left: 55px;
 //                 top: 18px;
+//               }
+//               &:hover {
+//                 cursor: pointer;
+//                 opacity: 0.85;
 //               }
 //             } //.submit-btn
 //           } //contact-form__button
@@ -211,329 +562,3 @@ html, body {
 //     } //.contact__inner--wrapper
 //   } //.contact__inner
 // } //.contact
-.contact {
-  background-color: $color-card-back;
-  padding-top: 52px;
-  padding-bottom: 102px;
-  .inner {
-    width: 800px;
-    max-width: 100%;
-    margin: 0 auto;
-      .contact__heading {
-        @include heading(30px, 45px);
-        &::before {
-          @include heading-line;
-        }
-      } //.contact__heading
-    .contact-form--wrapper {
-      background-color: $color-white;
-      padding: 60px 43px 60px 52px;
-      .contact-form {
-        font-size: 1.8rem;
-        line-height: 2.9rem;
-        color: $color-black;
-        .m-top {
-          margin-top: 16px; /* 項目名の位置調整 */
-          @include mqTAB-CONTACT {
-            display: block;
-            margin-top: 0;
-            text-align: left;
-            margin-bottom: 10px;
-          }
-        }
-        .inputs {
-          @include placeholder($color-price-border);
-          &.inputs-common {
-            -moz-appearance: none;
-            -webkit-appearance: none;
-            appearance: none;
-            background-color: transparent;
-            background-image: none;
-            border: 1px solid $color-blog-border;
-            border-radius: 0;
-            color: inherit;
-            font-family: inherit;
-            font-size: 1em;
-            padding: 0.4em 0.8em;
-            width: 528px;
-            height: 60px;
-            @include mqTAB-CONTACT {
-              width: 100%;
-            }
-            &:focus {
-              border: 1px solid rgba(0, 0, 0, 0.32);
-              box-shadow: none;
-              outline: none;
-            }
-          } //&.inputs-common
-          &.inputs-content {
-            -moz-appearance: none;
-            -webkit-appearance: none;
-            appearance: none;
-            background-color: transparent;
-            background-image: none;
-            border: 1px solid $color-blog-border;
-            border-radius: 0;
-            color: inherit;
-            font-family: inherit;
-            font-size: 1em;
-            padding: 0.4em 0.8em;
-            resize: none;
-            width: 528px;
-            height: 240px;
-            @include mqTAB-CONTACT {
-              width: 100%;
-            }
-            &:focus {
-              border: 1px solid rgba(0, 0, 0, 0.32);
-              box-shadow: none;
-              outline: none;
-            }
-          } //&.inputs-content
-        } //.inputs
-        .contact-form__name {
-          @include contact-flex;
-          margin-bottom: 49px;
-          position: relative;
-          @include mqTAB-CONTACT {
-            @include contact-no-flex;
-          }
-          .must-label {
-            font-size: 1.4rem;
-            line-height: 2.2rem;
-            color: $color-white;
-            background-color: $color-red;
-            border-radius: 12px;
-            width: 45.98px;
-            height: 22.72px;
-            text-align: center;
-            position: absolute;
-            content: '';
-            top: 50px;
-            left: 3px;
-            @include mqTAB-CONTACT {
-              top: 0;
-              left: 70px;
-            }
-          } //.must-label
-        } //.contact-form__name
-          .contact-form__mail {
-            @include contact-flex;
-            margin-bottom: 53px;
-            position: relative;
-            @include mqTAB-CONTACT {
-              @include contact-no-flex;
-            }
-            .must-label {
-              font-size: 1.4rem;
-              line-height: 2.2rem;
-              color: $color-white;
-              background-color: $color-red;
-              border-radius: 12px;
-              width: 45.98px;
-              height: 22.72px;
-              text-align: center;
-              position: absolute;
-              content: '';
-              top: 50px;
-              left: 3px;
-              @include mqTAB-CONTACT {
-                top: 0;
-                left: 140px;
-              }
-            } //.must-label
-          } //.contact-form__mail
-          .contact-form__type {
-            @include contact-flex;
-            margin-bottom: 48px;
-            @include mqTAB-CONTACT {
-              @include contact-no-flex;
-            }
-            .inputs-type {
-              -moz-appearance: none;
-              -webkit-appearance: none;
-              appearance: none;
-              background: transparent url(../img/form/select-arrow.svg) no-repeat center right 20px/20px 20px;
-              border: 1px solid $color-blog-border;
-              border-radius: 0;
-              color: $color-price-border;
-              cursor: pointer;
-              font-family: inherit;
-              font-size: 1em;
-              padding: 0.4em 0.8em;
-              width: 528px;
-              height: 60px;
-              @include mqTAB-CONTACT {
-                width: 100%;
-              }
-              &::-ms-expand {
-                display: none;
-              }
-              &:focus {
-                border: 1px solid rgba(0, 0, 0, 0.32);
-                box-shadow: none;
-                outline: none;
-              }
-            } //select.inputs-type
-          } //.contact-form__type
-          .contact-form__content {
-            @include contact-flex;
-            margin-bottom: 39.5px;
-            @include mqTAB-CONTACT {
-              @include contact-no-flex;
-            }
-          } //.contact-form__content
-          .contact-form__radio {
-            margin-left: 5px;
-            margin-bottom: 45px;
-            @include mqTAB-CONTACT {
-              display: flex;
-              flex-direction: column; /* 縦並びに */
-              margin-bottom: 25px;
-            }
-            .radio-label {
-              font-size: 1.6rem;
-              @include mqTAB-CONTACT {
-                margin-bottom: 12px; /* 縦並びにした際の各ラジオボタンの間隔 */
-              }
-            }
-              .inputs-radio {
-                display: none;
-                & + span {
-                  cursor: pointer;
-                  display: inline-block;
-                  margin: 0 20px 0 0; /* 各項目の右側の余白 */
-                  padding: 0 0 0 40px; /* ○と項目の間の余白 */
-                  position: relative;
-                }
-                & + span::before {
-                  -webkit-transform: translateY(-50%);
-                  background: #fff;
-                  border: 1px solid $color-blog-border;
-                  border-radius: 50%;
-                  content: "";
-                  display: block;
-                  height: 30px;
-                  left: 0;
-                  position: absolute;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  width: 30px;
-                }
-                & + span::after {
-                  -webkit-transform: translateY(-50%);
-                  background: $color-blue;
-                  border: 1px solid transparent;
-                  border-radius: 50%;
-                  content: "";
-                  height: 18px;
-                  left: 6px;
-                  opacity: 0;
-                  padding: 6px; /* ●と○の間 */
-                  position: absolute;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  transition: all 0.1s ease 0s;
-                  width: 18px;
-                }
-                &:checked + span::after {
-                  opacity: 1;
-                }
-              } //input.inputs-radio
-          } //.contact-form__radio
-          .contact-form__privacy {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 27px;
-            .inputs-checkbox {
-              display: none;
-              & + span {
-                cursor: pointer;
-                display: inline-block;
-                margin: 0 0.3em 0;
-                padding: 0 0 0 45px; /* □と文章(項目)の間の余白 */
-                position: relative;
-              }
-              & + span::before {
-                /* -webkit-transform: translateY(-50%); */
-                background: #fff;
-                border: 1px solid $color-blog-border;
-                content: "";
-                display: block;
-                height: 30px;
-                left: 0;
-                position: absolute;
-                /* top: 50%; */
-                /* transform: translateY(-50%); */
-                top: -22px;
-                width: 30px;
-              }
-              & + span::after {
-                -webkit-transform: translateY(-50%);
-                background: url(../img/form/check.svg) no-repeat;
-                background-size: contain; /* サイズ指定 */
-                content: "";
-                display: inline-block;
-                height: 30px; /* 数値でないと表示されない。100%はダメ */
-                left: 0;
-                margin-top: -0.2em;
-                opacity: 0;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                transition: all 0.1s ease 0s;
-                width: 30px; /* 数値でないと表示されない。100%はダメ */
-              }
-              &:checked + span::after {
-                opacity: 1;
-              }
-            } //.inputs-checkbox
-            .privacy-text {
-              font-size: 1.6rem;
-              line-height: 2.6rem;
-              color: $color-black;
-              .privacy-content {
-                color: $color-black;
-                text-decoration: underline;
-              }
-            }
-          } //.contact-form__privacy
-          .contact-form__button {
-            text-align: center;
-            .submit-btn {
-              background: none;
-              border: none;
-              outline: none;
-              -webkit-appearance: none;
-              -moz-appearance: none;
-              appearance: none;
-              display: inline-block;
-              font-size: 2.2rem;
-              line-height: 3.6rem;
-              color: $color-white;
-              background-color: $color-blue;
-              border-radius: 12px;
-              width: 261px;
-              height: 56px;
-              left: -3px; /* perfectpixelで合わせると必要 */
-              position: relative;
-              &::after {
-                position: absolute;
-                content: '';
-                background: url(../img/form/contact-arrow.svg) no-repeat;
-                display: inline-block;
-                width: 100%;
-                height: 100%;
-                margin-left: 55px;
-                top: 18px;
-              }
-              &:hover {
-                cursor: pointer;
-              }
-            } //.submit-btn
-          } //contact-form__button
-      } //.contact-form
-    } //.contact__inner--wrapper
-  } //.contact__inner
-} //.contact
-/* ------------------------------------ */

@@ -1,15 +1,6 @@
 @charset "utf-8";
 
-@import "../../setting/var";
-@import "../../mixin/mixin";
-@import "../../base/reset";
 
-html, body {
-  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
-  font-size: 62.5%;
-}
-
-/* price------------------------------- */
 .price {
   background-color: $color-card-back;
   padding-top: 45px;
@@ -27,7 +18,8 @@ html, body {
           @include heading-line;
         }
       } //.price__heading
-    .price__inner--wrapper {
+  } //.inner
+    &__inner--wrapper {
       width: 1088px;
       margin: 0 auto;
       display: flex;
@@ -41,7 +33,8 @@ html, body {
         display: flex;
         align-items: center;
       }
-      .price__wrapper--img {
+    } //.price__inner--wrapper
+      &__wrapper--img {
         .price-img {
           margin-right: 122px;
           @include mqTAB-PRICE {
@@ -49,15 +42,17 @@ html, body {
           }
         }
       } //.price__wrapper--img
-      .price__wrapper--table {
+      &__wrapper--table {
         @include mqTAB-PRICE {
           margin: 0 auto;
         }
+      } //.price__wrapper--table
         .price-table-wrap {
           @include mqTAB-PRICE {
             width: 100%;
             margin: 0 auto;
           }
+        } //.price-table-wrap
           .price-table {
             border: 1px solid $color-blog-border;
             border-collapse: collapse;
@@ -96,12 +91,15 @@ html, body {
                 font-size: 1.6rem;
                 line-height: 2.1rem;
                 padding-right: 14.5px;
-                span.special {
+                .special {
                   color: $color-red;
                 }
-                span.special-desc {
+                .special-desc {
                   font-size: 1.4rem;
                   line-height: 2.2rem;
+                  @include mqXS {
+                    font-size: 1.2rem;
+                  }
                 }
               }
             }
@@ -111,7 +109,7 @@ html, body {
               width: 90%;
               margin: 0 auto;
             }
-            .price-table-contact__text {
+            &__text {
               font-size: 1.57rem;
               line-height: 2.6rem;
               color: $color-black;
@@ -129,9 +127,8 @@ html, body {
               }
             }
           } //.price-table-contact
-        } //.price-table-wrap
-      } //.price__wrapper--table
-    } //.price__inner--wrapper
-  } //.price__inner
+        // } //.price-table-wrap
+      // } //.price__wrapper--table
+    // } //.price__inner--wrapper
+  // } //.inner
 } //.price
-/* ------------------------------------ */

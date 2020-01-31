@@ -1,15 +1,6 @@
 @charset "utf-8";
 
-@import "../../setting/var";
-@import "../../mixin/mixin";
-@import "../../base/reset";
-
-html, body {
-  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif; 
-  font-size: 62.5%;
-}
-
-/* header------------------------------ */
+// /* header------------------------------- */ style.scssもこのコメントアウトで囲んでいるのでここには不要もしくは/*ではなく//で囲んでおく
 .nav {
   background: $color-blue;
   position: fixed;
@@ -23,10 +14,11 @@ html, body {
     /* 高さを設定して縦にセンタリング */
     height: 100px;
     align-items: center;
-  }
-  .nav__inner {
+  } //.flex
+  &__inner {
     @include inner;
-    .nav__logo {
+  } //.nav__inner
+    &__logo {
       @include mqXS {
         margin-left: 1rem;
       }
@@ -43,7 +35,7 @@ html, body {
         margin-left: 2rem;
       }
     }
-    .nav__list {
+    &__list {
       @include mqXS{
         display: none;
       }
@@ -59,38 +51,39 @@ html, body {
       @include mqTAB{
         margin-right: 2rem;
       }
-      .nav__list--item {
-        display: inline-block;
-        margin-right: 30px; 
-        &:nth-child(5) {
-          margin-right: 0;
-        }
-        a.nav-hover {
-          display: inline-block;
-          color: $color-white;
-          font-family: 'Lato', 'Gill', sans-serif;
-          font-size: 1.6rem;
-          line-height: 2.6rem;
-          /* padding-bottom: 4.5px; //文字と下線に隙間を作る←他のメニューより上にずれる:line-heightを設定してなかったのが原因！ */
-          position: relative;
-          /* transition: 0.2s; 不要っぽいので一旦コメントアウト */
-          &::after {
-            position: absolute;
-            content: '';
-            width: 0;
-            height: 3px;
-            bottom: -2px;
-            left: 0;
-            background: $color-red;
-            transition: width 0.3s; /* プロパティを指定する */
-          }
-          &:hover::after {
-            width: 100%;
-          }
-        } //a.nav-hover
-      } //.nav__list--item
     } //.nav__list
-  } //.nav__inner
+    &__list--item {
+      display: inline-block;
+      margin-right: 32.5px; 
+      &:nth-child(5) {
+        margin-right: 0;
+      }
+      .nav-hover {
+        display: inline-block;
+        color: $color-white;
+        font-family: 'Lato', 'Gill', sans-serif;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        /* padding-bottom: 4.5px; //文字と下線に隙間を作る←他のメニューより上にずれる:line-heightを設定してなかったのが原因！ */
+        position: relative;
+        /* transition: 0.2s; 不要っぽいので一旦コメントアウト */
+        &::after {
+          position: absolute;
+          content: '';
+          width: 0;
+          height: 3px;
+          bottom: -2px;
+          left: 0;
+          background: $color-red;
+          transition: width 0.3s; /* プロパティを指定する */
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      } //.nav-hover
+    } //.nav__list--item
+    // } //.nav__list ネスト整理のため移動
+  // } //.nav__inner
 } //.nav
 /* カレント表示用のスタイル。あとで付与するクラスなのでここに記述した。 */
 /* (.current{~ という書き方ではダメで、↓のようにjqueryで指定した、親要素からの書き方で書く) */
@@ -108,4 +101,3 @@ html, body {
     transition: width 0.3s;
   }
 }
-/* ------------------------------------ */

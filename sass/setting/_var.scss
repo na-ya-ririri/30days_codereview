@@ -35,13 +35,14 @@ $color-footer-back2: #333333;
 // breakpoint ※モバイルファーストのコーディングで、なるべくブレイクポイントは減らすように※
 $layout-width-inner: 1086px;
 $breakpoints: (
+  "xxs":"screen and (max-width: 321px)",
   "xs":"screen and (max-width: 365px)",
   "sm":"screen and (min-width: 366px) and (max-width: 510px)",
   "md":"screen and (min-width: 511px) and (max-width: 620px)",
   "sp-price":"screen and (max-width: 550px)",
   "sp-footer":"screen and (max-width: 580px)",
   "voice":"screen and (max-width: 720px)",
-  "sp":"screen and (min-width: 621px) and (max-width: 767px)",
+  "sp":"screen and (min-width: 621px) and (max-width: 768px)",
   "sp-card":"screen and (max-width: 767px)",
   "tab-contact":"screen and (max-width: 800px)",
   "tab-news":"screen and (max-width: 850px)",
