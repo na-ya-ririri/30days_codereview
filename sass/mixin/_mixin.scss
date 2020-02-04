@@ -7,6 +7,14 @@
   margin: 0 auto;
 }
 
+// .slide1~5
+@mixin slide {
+  width: 100%;
+  background-size: cover;
+  height: 700px;
+  position: relative; /* 位置調整 */
+}
+
 // .top__catch
 @mixin top-catch ($fontSize, $marginBottom) {
   width: calc(100% - 1rem);
@@ -156,6 +164,11 @@
     @content;
   }
 }
+@mixin mqVOICE {
+  @media #{map-get($breakpoints, voice)}{
+    @content;
+  }
+}
 @mixin mqSP {
   @media #{map-get($breakpoints, sp)}{
     @content;
@@ -193,6 +206,11 @@
 }
 @mixin mqPC {
   @media #{map-get($breakpoints, pc)}{
+    @content;
+  }
+}
+@mixin mqPC-SWIPER {
+  @media #{map-get($breakpoints, pc-swiper)}{
     @content;
   }
 }

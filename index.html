@@ -13,10 +13,18 @@
   <link rel="stylesheet" href="css/form_reset.css"> <!-- リセットCSSはstyleより先に読み込むようにする -->
   <!-- style CSS -->
   <link rel="stylesheet" href="css/style.css">
+
   <!-- Google Fonts Noto Sans JP -->
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap&subset=japanese" rel="stylesheet">
   <!-- Google Fonts Lato -->
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+
+  <!-- swiper CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+
+  <!-- slick CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick-theme.min.css">
 
   <title>The Company Site</title>
 </head>
@@ -42,14 +50,98 @@
   </header> <!-- <header>タグに↓のメインビジュアルまでは含めない -->
 
     <!-- TOP after review -->
-    <section class="top"> <!-- 見出しh1があるのでdivではなくsectionタグを使用する -->
-      <div class="inner">
+    <!-- <section class="top"> --> <!-- 見出しh1があるのでdivではなくsectionタグを使用する -->
+      <!-- <div class="inner">
         <h1 class="top__catch">一番伝えたいことを書く</h1>
         <p class="top__lead">リードリードリード</p>
         <a href="#contact" class="top__contact">お問い合わせ</a>
-      </div>
-    </section> <!-- 無駄なdivを省く -->
+      </div> -->
+    <!-- </section> --> <!-- 無駄なdivを省く -->
 
+    <!-- TOP ver.swiper -->
+    <!-- <section class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide1">
+          <div class="inner">
+            <h1 class="top__catch">一番伝えたいことを書く</h1>
+            <p class="top__lead">リードリードリード</p>
+            <a href="#contact" class="top__contact">お問い合わせ</a>
+          </div>
+        </div>
+        <div class="swiper-slide slide2">
+          <div class="inner">
+            <h1 class="top__catch">一番伝えたいことを書く</h1>
+            <p class="top__lead">リードリードリード</p>
+            <a href="#contact" class="top__contact">お問い合わせ</a>
+          </div>
+        </div>
+        <div class="swiper-slide slide3">
+          <div class="inner">
+            <h1 class="top__catch">一番伝えたいことを書く</h1>
+            <p class="top__lead">リードリードリード</p>
+            <a href="#contact" class="top__contact">お問い合わせ</a>
+          </div>            
+        </div>
+        <div class="swiper-slide slide4">
+          <div class="inner">
+            <h1 class="top__catch">一番伝えたいことを書く</h1>
+            <p class="top__lead">リードリードリード</p>
+            <a href="#contact" class="top__contact">お問い合わせ</a>
+          </div>           
+        </div>
+        <div class="swiper-slide slide5">
+          <div class="inner">
+            <h1 class="top__catch">一番伝えたいことを書く</h1>
+            <p class="top__lead">リードリードリード</p>
+            <a href="#contact" class="top__contact">お問い合わせ</a>
+          </div>
+        </div>
+      </div> swiper-wrapper -->
+      <!-- <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </section> -->
+
+    <!-- TOP ver.slick -->
+    <section class="slick-container">
+      <div class="slick-wrapper">
+        <div class="slick-slide slide1">
+          <div class="inner">
+            <h1 class="top__catch">一番伝えたいことを書く</h1>
+            <p class="top__lead">リードリードリード</p>
+            <a href="#contact" class="top__contact">お問い合わせ</a>
+          </div>
+        </div>
+        <div class="slick-slide slide2">
+          <div class="inner">
+            <h1 class="top__catch">一番伝えたいことを書く</h1>
+            <p class="top__lead">リードリードリード</p>
+            <a href="#contact" class="top__contact">お問い合わせ</a>
+          </div>
+        </div>
+        <div class="slick-slide slide3">
+          <div class="inner">
+            <h1 class="top__catch">一番伝えたいことを書く</h1>
+            <p class="top__lead">リードリードリード</p>
+            <a href="#contact" class="top__contact">お問い合わせ</a>
+          </div>            
+        </div>
+        <div class="slick-slide slide4">
+          <div class="inner">
+            <h1 class="top__catch">一番伝えたいことを書く</h1>
+            <p class="top__lead">リードリードリード</p>
+            <a href="#contact" class="top__contact">お問い合わせ</a>
+          </div>           
+        </div>
+        <div class="slick-slide slide5">
+          <div class="inner">
+            <h1 class="top__catch">一番伝えたいことを書く</h1>
+            <p class="top__lead">リードリードリード</p>
+            <a href="#contact" class="top__contact">お問い合わせ</a>
+          </div>
+        </div>
+      </div> <!-- slick-wrapper -->
+    </section>
 
   <main>
     <!-- Card after review -->
@@ -154,7 +246,7 @@
         <h2 class="price__heading">Price</h2>
         <div class="price__inner--wrapper">
           <div class="price__wrapper--img">
-            <img src="img/table/price-img-min.png" class="price-img" alt="price-woman-image">
+            <img src="img/table/price-img-min.png" class="price-img" alt="">
           </div> <!-- img このdivは必要 -->
           <div class="price__wrapper--table">
             <div class="price-table-wrap">
@@ -316,10 +408,16 @@
 
  <!-- jquery googleCDN 2.x -->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
- <!-- jqery file -->
+ <!-- jqery -->
  <script src="jquery/script_jquery.js"></script>
+ <!-- swiper JS CDN -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+ <!-- slick JS CDN -->
+ <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick.min.js"></script>
  <!-- javascript -->
  <script src="javascript/script.js"></script> <!-- type="text/javascript"の記述は不要 -->
+ <script src="javascript/animate.js"></script>
 
 </body>
 </html>

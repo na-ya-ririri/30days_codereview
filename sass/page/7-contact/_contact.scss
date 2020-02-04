@@ -19,6 +19,12 @@
   &-form--wrapper {
     background-color: $color-white;
     padding: 60px 43px 40px 52px; /* フォント変更後、あまりにずれていたのでbottomを60pxから変更した */
+    @include mqTAB-CONTACT {
+      padding: 60px 35px 52px; /* レスポンシブしたときに他のセクションとpadding値がずれているのを調整 */
+    }
+    @include mqSP-FOOTER {
+      padding: 60px 20px 52px; /* こちら(breakpointが小さい方)を下に記述しないと効かないので注意 */
+    }
   } // .contact-form--wrapper
 } //.contact
     .contact-form {
@@ -150,19 +156,12 @@
           & + span {
             margin: 0 -8px 0;
             padding: 0 0 0 60px; /* □と文章(項目)の間の余白 */
-            @include mqXXS {
-              padding: 0 0 0 43px;
-            }
           }
           & + span::before {
             border: 1px solid $color-blog-border;
             height: 30px;
             top: -22px;
             width: 30px;
-            @include mqXXS {
-              height: 25px;
-              width: 25px;
-            }
           }
           & + span::after {
             -webkit-transform: translateY(-50%);
@@ -174,10 +173,6 @@
             transform: translateY(-50%);
             transition: opacity 0.1s ease 0s;
             width: 30px; /* 数値でないと表示されない。100%はダメ */
-            @include mqXXS {
-              height: 25px;
-              width: 25px;
-            }
           }
         } //.inputs-checkbox
         .privacy-text {
@@ -185,7 +180,7 @@
           line-height: 2.6rem;
           color: $color-black;
           @include mqXXS {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
           }
           .privacy-content {
             color: $color-black;
@@ -210,9 +205,6 @@
           padding: 9px 0;
           left: -3px; /* perfectpixelで合わせると必要 */
           position: relative;
-          @include mqXXS {
-            left: -2rem;
-          }
           &::after {
             position: absolute;
             content: '';

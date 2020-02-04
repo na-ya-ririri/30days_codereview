@@ -5,6 +5,10 @@ $color-blue: #3F51B5;
 $color-gray: #D6D6D6;
 $color-red: #E81919;
 
+// top-swiper-color
+$color-pagination: #FFFFFF9E;
+$color-pagination-active: #2F7DC8;
+
 // card-color
 $color-card-back: #EFEFEF;
 $color-card-border: #3F51B5;
@@ -49,5 +53,6 @@ $breakpoints: (
   "tab":"screen and (max-width: #{$layout-width-inner - 1px})",
   "tab-price":"screen and (max-width: 1110px)",
   "tab-footer":"screen and (max-width: 1080px)",
-  "pc":"screen and (min-width: #{$layout-width-inner})"
+  "pc":"screen and (min-width: #{$layout-width-inner})",
+  "pc-swiper":"screen and (min-width: 1365px)",
 )!default;

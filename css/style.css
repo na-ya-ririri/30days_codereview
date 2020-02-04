@@ -248,9 +248,15 @@ index.html
 }
 
 /* ------------------------------------ */
-/* top--------------------------------- */
-.top {
-  background: url(../img/header/mainvisual-min.png) center, center, no-repeat;
+/* top slick--------------------------- */
+.slick-container {
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+
+.slick-container .slide1 {
+  background: url(../img/carousel/png/mainvisual-min.png) center, center, no-repeat;
   width: 100%;
   background-size: cover;
   height: 700px;
@@ -258,7 +264,43 @@ index.html
   /* 位置調整 */
 }
 
-.top .inner {
+.slick-container .slide2 {
+  background: url(../img/carousel/png/andrew-small-EfhCUc_fjrU-unsplash-min.png) center, center, no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+  /* 位置調整 */
+}
+
+.slick-container .slide3 {
+  background: url(../img/carousel/png/h-k-HG419n_6Fro-unsplash-min.png) center, center, no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+  /* 位置調整 */
+}
+
+.slick-container .slide4 {
+  background: url(../img/carousel/png/jen-theodore-56UZ5G6uV4w-unsplash-min.png) center, center, no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+  /* 位置調整 */
+}
+
+.slick-container .slide5 {
+  background: url(../img/carousel/png/rose-2378156_1920-min.jpg) center, center, no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+  /* 位置調整 */
+}
+
+.slick-container .inner {
   position: absolute;
   /* 位置調整 */
   top: 235px;
@@ -271,7 +313,7 @@ index.html
   text-align: center;
 }
 
-.top__catch {
+.slick-container .inner .top__catch {
   font-size: 6.8rem;
   line-height: 10.8rem;
   margin-bottom: -3px;
@@ -280,7 +322,7 @@ index.html
 }
 
 @media screen and (max-width: 365px) {
-  .top__catch {
+  .slick-container .inner .top__catch {
     width: calc(100% - 1rem);
     font-size: 2.6rem;
     line-height: 30px;
@@ -289,7 +331,7 @@ index.html
 }
 
 @media screen and (min-width: 366px) and (max-width: 510px) {
-  .top__catch {
+  .slick-container .inner .top__catch {
     width: calc(100% - 1rem);
     font-size: 3.2rem;
     line-height: 30px;
@@ -298,7 +340,7 @@ index.html
 }
 
 @media screen and (min-width: 511px) and (max-width: 620px) {
-  .top__catch {
+  .slick-container .inner .top__catch {
     width: calc(100% - 1rem);
     font-size: 4.5rem;
     line-height: 30px;
@@ -307,7 +349,7 @@ index.html
 }
 
 @media screen and (min-width: 621px) and (max-width: 768px) {
-  .top__catch {
+  .slick-container .inner .top__catch {
     width: calc(100% - 1rem);
     font-size: 5.5rem;
     line-height: 30px;
@@ -315,7 +357,7 @@ index.html
   }
 }
 
-.top__lead {
+.slick-container .inner .top__lead {
   font-size: 3.8rem;
   line-height: 6.1rem;
   color: #333333;
@@ -324,7 +366,7 @@ index.html
 }
 
 @media screen and (max-width: 365px) {
-  .top__lead {
+  .slick-container .inner .top__lead {
     padding: 0 1rem;
     font-size: 2.3rem;
     line-height: 30px;
@@ -332,7 +374,7 @@ index.html
 }
 
 @media screen and (min-width: 366px) and (max-width: 510px) {
-  .top__lead {
+  .slick-container .inner .top__lead {
     padding: 0 1rem;
     font-size: 2.5rem;
     line-height: 30px;
@@ -340,7 +382,7 @@ index.html
 }
 
 @media screen and (min-width: 511px) and (max-width: 620px) {
-  .top__lead {
+  .slick-container .inner .top__lead {
     padding: 0 1rem;
     font-size: 3rem;
     line-height: 30px;
@@ -348,14 +390,14 @@ index.html
 }
 
 @media screen and (min-width: 621px) and (max-width: 768px) {
-  .top__lead {
+  .slick-container .inner .top__lead {
     padding: 0 1rem;
     font-size: 3.5rem;
     line-height: 30px;
   }
 }
 
-.top__contact {
+.slick-container .inner .top__contact {
   display: inline-block;
   font-size: 3.8rem;
   line-height: 6.1rem;
@@ -368,12 +410,12 @@ index.html
   margin: 0 auto;
 }
 
-.top__contact:hover {
+.slick-container .inner .top__contact:hover {
   opacity: 0.85;
 }
 
 @media screen and (max-width: 365px) {
-  .top__contact {
+  .slick-container .inner .top__contact {
     width: calc(100% - 10%);
     font-size: 2.0rem;
     line-height: 4rem;
@@ -381,17 +423,75 @@ index.html
 }
 
 @media screen and (min-width: 366px) and (max-width: 510px) {
-  .top__contact {
+  .slick-container .inner .top__contact {
     width: calc(100% - 18%);
     font-size: 2.3rem;
   }
 }
 
 @media screen and (min-width: 511px) and (max-width: 620px) {
-  .top__contact {
+  .slick-container .inner .top__contact {
     width: calc(100% - 30%);
     font-size: 2.8rem;
   }
+}
+
+.slick-container .slide-arrow {
+  width: 75px;
+  height: 75px;
+  z-index: 999;
+  /* prevボタンのみうまく表示されなかったのを解消 参考：https://travelogue.jp/blog/archives/4757.html*/
+  cursor: pointer;
+}
+
+@media screen and (max-width: 720px) {
+  .slick-container .slide-arrow {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.slick-container .prev-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  left: 158px;
+}
+
+@media screen and (max-width: 1110px) {
+  .slick-container .prev-arrow {
+    margin-top: -20px;
+    left: 20px;
+  }
+}
+
+.slick-container .next-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  right: 159px;
+}
+
+@media screen and (max-width: 1110px) {
+  .slick-container .next-arrow {
+    margin-top: -20px;
+    right: 20px;
+  }
+}
+
+.slick-container .slick-dots {
+  /* ページネーションの親クラス(ul) */
+  bottom: 19px;
+}
+
+.slick-container .slick-dots li button:before {
+  font-size: 16px;
+  /* width,heightだと外枠の大きさに指定がついてしまう */
+  color: #FFFFFF9E;
+}
+
+.slick-container .slick-dots li.slick-active button::before {
+  color: #2F7DC8;
 }
 
 /* ------------------------------------ */
@@ -1169,6 +1269,20 @@ index.html
   /* フォント変更後、あまりにずれていたのでbottomを60pxから変更した */
 }
 
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper {
+    padding: 60px 35px 52px;
+    /* レスポンシブしたときに他のセクションとpadding値がずれているのを調整 */
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .contact-form--wrapper {
+    padding: 60px 20px 52px;
+    /* こちら(breakpointが小さい方)を下に記述しないと効かないので注意 */
+  }
+}
+
 .contact-form {
   font-size: 1.8rem;
   line-height: 2.9rem;
@@ -1449,24 +1563,11 @@ index.html
   /* □と文章(項目)の間の余白 */
 }
 
-@media screen and (max-width: 321px) {
-  .contact-form__privacy .inputs-checkbox + span {
-    padding: 0 0 0 43px;
-  }
-}
-
 .contact-form__privacy .inputs-checkbox + span::before {
   border: 1px solid #707070;
   height: 30px;
   top: -22px;
   width: 30px;
-}
-
-@media screen and (max-width: 321px) {
-  .contact-form__privacy .inputs-checkbox + span::before {
-    height: 25px;
-    width: 25px;
-  }
 }
 
 .contact-form__privacy .inputs-checkbox + span::after {
@@ -1486,13 +1587,6 @@ index.html
   /* 数値でないと表示されない。100%はダメ */
 }
 
-@media screen and (max-width: 321px) {
-  .contact-form__privacy .inputs-checkbox + span::after {
-    height: 25px;
-    width: 25px;
-  }
-}
-
 .contact-form__privacy .privacy-text {
   font-size: 1.6rem;
   line-height: 2.6rem;
@@ -1501,7 +1595,7 @@ index.html
 
 @media screen and (max-width: 321px) {
   .contact-form__privacy .privacy-text {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -1531,12 +1625,6 @@ index.html
   left: -3px;
   /* perfectpixelで合わせると必要 */
   position: relative;
-}
-
-@media screen and (max-width: 321px) {
-  .contact-form__button .submit-btn {
-    left: -2rem;
-  }
 }
 
 .contact-form__button .submit-btn::after {
