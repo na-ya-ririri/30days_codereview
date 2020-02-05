@@ -252,52 +252,29 @@ index.html
 .slick-container {
   width: 100%;
   height: 700px;
+  /* 必要 */
   position: relative;
+  /* innerの位置調整 */
 }
 
-.slick-container .slide1 {
-  background: url(../img/carousel/png/mainvisual-min.png) center, center, no-repeat;
-  width: 100%;
-  background-size: cover;
+.slick-container .slick-slide {
   height: 700px;
+  /* 必要 */
   position: relative;
-  /* 位置調整 */
+  /* slide画像の位置調整 */
 }
 
-.slick-container .slide2 {
-  background: url(../img/carousel/png/andrew-small-EfhCUc_fjrU-unsplash-min.png) center, center, no-repeat;
-  width: 100%;
-  background-size: cover;
-  height: 700px;
-  position: relative;
+.slick-container .slick-slide-item {
+  /* background: url(../img/carousel/png/mainvisual-min.png) center, center, no-repeat; ←空divにbackgroundで画像指定するのは記述ルール的には推奨されていないため、HTMLに<img>を記述し、↓のように変更*/
+  /* @include slide; */
+  position: absolute;
   /* 位置調整 */
-}
-
-.slick-container .slide3 {
-  background: url(../img/carousel/png/h-k-HG419n_6Fro-unsplash-min.png) center, center, no-repeat;
   width: 100%;
-  background-size: cover;
-  height: 700px;
-  position: relative;
-  /* 位置調整 */
-}
-
-.slick-container .slide4 {
-  background: url(../img/carousel/png/jen-theodore-56UZ5G6uV4w-unsplash-min.png) center, center, no-repeat;
-  width: 100%;
-  background-size: cover;
-  height: 700px;
-  position: relative;
-  /* 位置調整 */
-}
-
-.slick-container .slide5 {
-  background: url(../img/carousel/png/rose-2378156_1920-min.jpg) center, center, no-repeat;
-  width: 100%;
-  background-size: cover;
-  height: 700px;
-  position: relative;
-  /* 位置調整 */
+  height: 100%;
+  top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position: center center;
 }
 
 .slick-container .inner {
@@ -311,6 +288,8 @@ index.html
   -ms-transform: translateX(-50%);
   width: 100%;
   text-align: center;
+  z-index: 999;
+  /* ここを追加してテキストが前面に出るようにした */
 }
 
 .slick-container .inner .top__catch {

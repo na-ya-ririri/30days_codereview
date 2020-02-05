@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="css/form_reset.css"> <!-- リセットCSSはstyleより先に読み込むようにする -->
   <!-- style CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- Animate CSS (公式サイト： https://daneden.github.io/animate.css/ からダウンロード) -->
+  <link rel="stylesheet" href="css/animate.css-master/animate.min.css">
 
   <!-- Google Fonts Noto Sans JP -->
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap&subset=japanese" rel="stylesheet">
@@ -35,8 +37,8 @@
     <!-- logo & nav after review -->
     <div class="nav">
       <div class="nav__inner flex">
-        <a href="#top" class="nav__logo"><img src="img/header/logo-min.png" alt="The Company logo"></a>
-        <nav class="nav__list">
+        <a href="#top" class="nav__logo wow bounceInLeft" data-wow-duration="2s"><img src="img/header/logo-min.png" alt="The Company logo"></a>
+        <nav class="nav__list wow bounceInRight" data-wow-duration="2s">
           <ul id="current-nav" class="flex">
             <li class="nav__list--item"><a href="#card" class="nav-hover">Card</a></li>
             <li class="nav__list--item"><a href="#news" class="nav-hover">News</a></li>
@@ -102,43 +104,29 @@
       <div class="swiper-button-next"></div>
     </section> -->
 
-    <!-- TOP ver.slick -->
+    <!-- TOP ver.slick after review -->
     <section class="slick-container">
+      <div class="inner wow fadeIn" data-wow-duration="3s">
+        <h1 class="top__catch">一番伝えたいことを書く</h1>
+        <p class="top__lead">リードリードリード</p>
+        <a href="#contact" class="top__contact wow infinite bounce">お問い合わせ</a>
+      </div>
       <div class="slick-wrapper">
-        <div class="slick-slide slide1">
-          <div class="inner">
-            <h1 class="top__catch">一番伝えたいことを書く</h1>
-            <p class="top__lead">リードリードリード</p>
-            <a href="#contact" class="top__contact">お問い合わせ</a>
-          </div>
+        <!-- <div class="slick-slide slide1"></div> ←空divは避ける！-->
+        <div class="slick-slide">
+          <img src="img/carousel/png/mainvisual-min.png" alt="top-image1" class="slick-slide-item">
         </div>
-        <div class="slick-slide slide2">
-          <div class="inner">
-            <h1 class="top__catch">一番伝えたいことを書く</h1>
-            <p class="top__lead">リードリードリード</p>
-            <a href="#contact" class="top__contact">お問い合わせ</a>
-          </div>
+        <div class="slick-slide">
+          <img src="img/carousel/png/andrew-small-EfhCUc_fjrU-unsplash-min.png" alt="top-image2" class="slick-slide-item">
         </div>
-        <div class="slick-slide slide3">
-          <div class="inner">
-            <h1 class="top__catch">一番伝えたいことを書く</h1>
-            <p class="top__lead">リードリードリード</p>
-            <a href="#contact" class="top__contact">お問い合わせ</a>
-          </div>            
+        <div class="slick-slide">
+          <img src="img/carousel/png/h-k-HG419n_6Fro-unsplash-min.png" alt="top-image3" class="slick-slide-item">
         </div>
-        <div class="slick-slide slide4">
-          <div class="inner">
-            <h1 class="top__catch">一番伝えたいことを書く</h1>
-            <p class="top__lead">リードリードリード</p>
-            <a href="#contact" class="top__contact">お問い合わせ</a>
-          </div>           
+        <div class="slick-slide">
+          <img src="img/carousel/png/jen-theodore-56UZ5G6uV4w-unsplash-min.png" alt="top-image4" class="slick-slide-item">
         </div>
-        <div class="slick-slide slide5">
-          <div class="inner">
-            <h1 class="top__catch">一番伝えたいことを書く</h1>
-            <p class="top__lead">リードリードリード</p>
-            <a href="#contact" class="top__contact">お問い合わせ</a>
-          </div>
+        <div class="slick-slide">
+          <img src="img/carousel/png/rose-2378156_1920-min.jpg" alt="top-image5" class="slick-slide-item">
         </div>
       </div> <!-- slick-wrapper -->
     </section>
@@ -149,32 +137,32 @@
       <div class="inner">
         <h2 class="card__heading">Card</h2>
         <ul class="card-list">
-          <li class="card-list__item">
+          <li class="card-list__item wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.5s">
             <img src="img/card/card-img.svg" class="card-list__item--img" alt="card-image">
             <h3 class="card-list__item--title">タイトルタイトル</h3>
             <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
           </li>
-          <li class="card-list__item">
+          <li class="card-list__item wow bounceIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
             <img src="img/card/card-img.svg" class="card-list__item--img" alt="card-image">
             <h3 class="card-list__item--title">タイトルタイトル</h3>
             <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
           </li>
-          <li class="card-list__item">
+          <li class="card-list__item wow fadeInRight" data-wow-duration="1.5s" data-wow-delay="0.5s">
             <img src="img/card/card-img.svg" class="card-list__item--img" alt="card-image">
             <h3 class="card-list__item--title">タイトルタイトル</h3>
             <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
           </li>
-          <li class="card-list__item">
+          <li class="card-list__item wow rollIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
             <img src="img/card/card-img.svg" class="card-list__item--img" alt="card-image">
             <h3 class="card-list__item--title">タイトルタイトル</h3>
             <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
           </li>
-          <li class="card-list__item">
+          <li class="card-list__item wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
             <img src="img/card/card-img.svg" class="card-list__item--img" alt="card-image">
             <h3 class="card-list__item--title">タイトルタイトル</h3>
             <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
           </li>
-          <li class="card-list__item">
+          <li class="card-list__item wow shake" data-wow-duration="1.5s" data-wow-delay="0.5s">
             <img src="img/card/card-img.svg" class="card-list__item--img" alt="card-image">
             <h3 class="card-list__item--title">タイトルタイトル</h3>
             <p class="card-list__item--text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
@@ -187,7 +175,7 @@
     <section class="news current-pos" id="news">
       <div class="inner">
         <h2 class="news__heading">News</h2>
-        <ul class="news-list">
+        <ul class="news-list wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.4s">
           <li class="news-list__item">
             <time datetime="2019-01-30" class="news-list__date">2019-01-30</time>
             <div class="news-list__tab">
@@ -235,7 +223,7 @@
           </li>
         </ul>
         <div class="news-list__link"> <!-- ↓のリンクを左右中央寄せにするために入れました -->
-          <a href="" class="link-button">more</a>
+          <a href="" class="link-button wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.45s">more</a>
         </div>
       </div>
     </section> <!-- div削減とBEM記述の修正 -->
@@ -244,7 +232,7 @@
     <section class="price current-pos" id="price">
       <div class="inner">
         <h2 class="price__heading">Price</h2>
-        <div class="price__inner--wrapper">
+        <div class="price__inner--wrapper wow lightSpeedIn" data-wow-duration="1.5s" data-wow-delay="0.4s">
           <div class="price__wrapper--img">
             <img src="img/table/price-img-min.png" class="price-img" alt="">
           </div> <!-- img このdivは必要 -->
@@ -290,7 +278,7 @@
     <section class="access current-pos" id="access">
       <div class="inner">
         <h2 class="access__heading">Access</h2>
-        <div class="access__inner--wrapper">
+        <div class="access__inner--wrapper wow zoomInDown" data-wow-duration="1.8s" data-wow-delay="0.4s">
           <div class="access-map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.0054065225077!2d77.65502781446456!3d12.957293375693013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13f778882c6f%3A0x14e38042a94c0cab!2sShivoham%20Shiva%20Temple!5e0!3m2!1sja!2sin!4v1578733626434!5m2!1sja!2sin" width="800" height="400" style="border:0;" allowfullscreen=""></iframe>
           </div> <!-- access-map -->
@@ -317,7 +305,7 @@
     <section class="contact current-pos" id="contact">
       <div class="inner">
         <h2 class="contact__heading">Contact</h2>
-        <div class="contact-form--wrapper">
+        <div class="contact-form--wrapper wow fadeInUpBig" data-wow-duration="1.5s" data-wow-delay="0.25s">
           <form action="abc.php" method="POST" class="contact-form"> <!-- エラー回避のためにaction部分は適当なファイル名を追加 -->
 
             <div class="contact-form__name">
@@ -401,7 +389,7 @@
     <div class="footer__end">
       <p class="cp-right"><small>Copyright © 2018 @haniwa008 All rights reserved.</small></p>
     </div> <!-- footer__end -->
-    <a href="#top" class="footer__top-link"><img src="img/footer/totop.svg" alt="TOPリンク" class="footer__top-btn"></a>
+    <a href="#top" class="footer__top-link wow infinite swing" data-wow-duration="2.5s"><img src="img/footer/totop.svg" alt="TOPリンク" class="footer__top-btn"></a>
   </footer>
 
  </div> <!-- .wrap -->
@@ -415,6 +403,11 @@
  <!-- slick JS CDN -->
  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick.min.js"></script>
+ <!-- wow JS -->
+ <script src="javascript/WOW-master/wow.min.js"></script>
+ <script>
+  new WOW().init(); //init()メソッドの呼び出し(初期化)
+ </script>
  <!-- javascript -->
  <script src="javascript/script.js"></script> <!-- type="text/javascript"の記述は不要 -->
  <script src="javascript/animate.js"></script>

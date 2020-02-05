@@ -26,6 +26,7 @@ $('.slick-wrapper').slick({
   infinite: true, //スライドのループ有効化
   fade: true, //フェードの有効化
   prevArrow: '<img src="../img/carousel/slider/arrow-prev.svg" class="slide-arrow prev-arrow">', //ここでボタンの画像を指定＋共通クラス、個別クラスを付与してスタイリング
-  nextArrow: '<img src="../img/carousel/slider/arrow-next.svg" class="slide-arrow next-arrow">'
+  nextArrow: '<img src="../img/carousel/slider/arrow-next.svg" class="slide-arrow next-arrow">',
+  // slide: ".slick-slide" ←の記述がなくても大丈夫そう…？
 });
 // カルーセル---------------------------------------------------------------------
