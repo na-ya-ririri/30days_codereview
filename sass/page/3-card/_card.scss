@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+@import "../../setting/var";
+@import "../../mixin/mixin";
+@import "../../base/reset";
+
+html, body {
+  font-family: “游ゴシック体”, YuGothic, “游ゴシック Medium”, “Yu Gothic Medium”, “游ゴシック”, “Yu Gothic”, sans-serif; 
+  font-size: 62.5%;
+}
+
+/* card-------------------------------- */
+.card {
+  background-color: $color-card-back;
+  padding-top: 58px;
+  padding-bottom: 120px;
+  .inner {
+    @include inner;
+      .card__heading {
+        @include heading(40px, 68px);
+        /* border-bottom: 5px solid $color-card-border; h2要素と長さが違う線を指定したい場合、borderではできない▶疑似要素 */
+        &::before {
+          @include heading-line;
+        }
+      } //.card__heading
+    .card-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      @include mqSP-CARD {
+        flex-direction: column; /* スマホ幅で縦1列並びに */
+        align-items: center;
+      }
+      .card-list__item {
+        background-color: $color-white;
+        padding: 16px 16px 35px 16px;
+        border-radius: 4px;
+        margin: 0 30px 22px 0;
+        width: calc(100% / 3 - 60px / 3); /* 余白30×2=60pxを3つのアイテムに均等に分け、1アイテム幅の100%/3から引けば余白は常に一定にかつアイテム幅を可変にできる */
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+        @include mqSP-CARD {
+          width: 100%;
+          min-width: 80%; /* アイテム幅が小さくなりすぎないように自分で入れてみた */
+          margin: 0 0 20px 0;
+          &:nth-child(3) {
+            margin-left: 30px; /* 下のtabの指定でずれた分を直す */
+          }
+        }
+        @include mqTAB {
+          width: calc(100% / 2 - 60px / 2 ); /* 2列で余白を2等分 */
+          &:nth-child(3n) {
+            margin-right: 30px; /* 親元の指定で0になっているのを余白足す */
+          }
+          &:nth-child(2n) {
+            margin-right: 0; /* 2列の時の余白をなくす */
+          }
+        }
+        .card-list__item--img {
+          width: 100%; /* 画面を小さくしたときに画像も小さくなるように */
+        }
+        .card-list__item--title {
+          font-size: 2rem;
+          color: $color-card-text;
+          line-height: 2.4rem;
+          margin-top: 22px;
+          margin-bottom: 20px;
+        }
+        .card-list__item--text {
+          font-size: 1.6rem;
+          color: $color-card-text;
+          line-height: 2.4rem;
+        }
+      } //.card-list__item
+    } //.card-list
+  } //.inner
+} //.card
+/* 参考URL: https://haniwaman.com/calc/ */
+/* ------------------------------------ */
