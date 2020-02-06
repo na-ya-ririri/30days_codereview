@@ -1,14 +1,14 @@
 @charset "utf-8";
-
+//↓ここから
 @import "../../setting/var";
 @import "../../mixin/mixin";
 @import "../../base/reset";
 
 html, body {
-  font-family: “游ゴシック体”, YuGothic, “游ゴシック Medium”, “Yu Gothic Medium”, “游ゴシック”, “Yu Gothic”, sans-serif; 
+  font-family: “游ゴシック体”, YuGothic, “游ゴシック Medium”, “Yu Gothic Medium”, “游ゴシック”, “Yu Gothic”, sans-serif;
   font-size: 62.5%;
 }
-
+//↑ここまで
 /* header------------------------------ */
 .nav {
   background: $color-blue;
