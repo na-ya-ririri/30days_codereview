@@ -18,6 +18,17 @@ $('.nav a').on('click',function() {
     'scrollTop':position
   }, 500); 
 });
+// ドロワーメニュー
+$('.drawer-menu__link').on('click',function() {
+  var navHeight = 60;
+  var id = $(this).attr('href');
+  console.log(id)
+  var position = $(id).offset().top - navHeight + 1;
+  console.log(position)
+  $('html, body').animate({
+    'scrollTop':position
+  }, 500); 
+});
 // お問い合わせボタン
 $('.top__contact').on('click',function() {
   var navHeight = 100;
@@ -150,3 +161,4 @@ $(function() {
 
 });
 // -------カレント表示 END---------------------------------
+

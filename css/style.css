@@ -107,6 +107,12 @@ index.html
   z-index: 9999;
 }
 
+@media screen and (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+
 .nav .flex {
   /* ロゴとメニューを横並びにしてinnerの両端揃えに */
   display: -webkit-box;
@@ -161,30 +167,6 @@ index.html
   }
 }
 
-@media screen and (max-width: 365px) {
-  .nav__list {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 366px) and (max-width: 510px) {
-  .nav__list {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 511px) and (max-width: 620px) {
-  .nav__list {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 621px) and (max-width: 768px) {
-  .nav__list {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 1085px) {
   .nav__list {
     margin-right: 2rem;
@@ -214,6 +196,7 @@ index.html
 .nav__list--item .nav-hover::after {
   position: absolute;
   content: '';
+  display: inline-block;
   width: 0;
   height: 3px;
   bottom: -2px;
@@ -226,6 +209,10 @@ index.html
 
 .nav__list--item .nav-hover:hover::after {
   width: 100%;
+}
+
+.nav-responsive, .overlay, .drawer-menu {
+  display: none;
 }
 
 /* カレント表示用のスタイル。あとで付与するクラスなのでここに記述した。 */
@@ -245,6 +232,147 @@ index.html
   background: #E81919;
   -webkit-transition: width 0.3s;
   transition: width 0.3s;
+}
+
+/* ドロワーメニュー */
+@media screen and (max-width: 768px) {
+  .nav-responsive {
+    display: block;
+    background: #3F51B5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+  .nav-responsive .nav-responsive__inner {
+    width: 1086px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .nav-responsive .flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 60px;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .drawer-menu__btn {
+    margin: 0 18px 0 0;
+    cursor: pointer;
+  }
+  .drawer-menu__btn .drawer-btn {
+    display: block;
+    width: 28px;
+    height: 22px;
+    position: relative;
+  }
+  .drawer-menu__btn .drawer-btn .hamburger {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    /* 線の太さ */
+    background: #FFFFFF;
+  }
+  .drawer-menu__btn .drawer-btn .hamburger:nth-child(1) {
+    top: 0;
+  }
+  .drawer-menu__btn .drawer-btn .hamburger:nth-child(2) {
+    top: 9px;
+  }
+  .drawer-menu__btn .drawer-btn .hamburger:nth-child(3) {
+    bottom: 0;
+  }
+  .overlay {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000000CC;
+    z-index: 9999;
+    display: none;
+  }
+  .drawer-menu {
+    display: block;
+    width: 200px;
+    height: 100%;
+    background: #FFFFFF;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    -webkit-transform: translateX(200px);
+            transform: translateX(200px);
+    /* ドロワーメニューの幅分、右に隠す */
+    -webkit-transition: ease 0.5s;
+    transition: ease 0.5s;
+  }
+  .drawer-menu.open {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .drawer-menu__list--item {
+    display: inline-block;
+    border-bottom: 1px dashed #707070;
+  }
+  .drawer-menu__link {
+    display: inline-block;
+    color: #707070;
+    font-family: 'Lato', 'Gill', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    padding: 15px 145px 14px 20px;
+    position: relative;
+  }
+  .drawer-menu__link::after {
+    position: absolute;
+    content: '';
+    background: url(../../../img/header/drawer/arrow-b.min.svg) no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 23px;
+    left: 174px;
+  }
+  .drawer-menu .drawer-btn-close {
+    width: 28px;
+    height: 28px;
+    display: block;
+    position: fixed;
+    top: 30px;
+    left: -25px;
+    cursor: pointer;
+    display: none;
+    /* jsにて表示、非表示させる */
+  }
+  .drawer-menu .drawer-btn-close .hamburger-close {
+    position: absolute;
+    right: 18px;
+    width: 100%;
+    height: 4px;
+    /* 線の太さ */
+    background: #FFFFFF;
+  }
+  .drawer-menu .drawer-btn-close .hamburger-close:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .drawer-menu .drawer-btn-close .hamburger-close:nth-child(2) {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .drawer-menu__link.current-drawer {
+    /* ドロワーメニューのカレント表示 */
+    background: skyblue;
+  }
 }
 
 /* ------------------------------------ */

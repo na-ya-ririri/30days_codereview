@@ -4,6 +4,9 @@ $color-black: #333333;
 $color-blue: #3F51B5;
 $color-gray: #D6D6D6;
 $color-red: #E81919;
+$color-drawer: #707070;
+$color-overlay: #000000CC;
+$color-current: skyblue;
 
 // top-swiper-color
 $color-pagination: #FFFFFF9E;
@@ -47,6 +50,7 @@ $breakpoints: (
   "sp-footer":"screen and (max-width: 580px)",
   "voice":"screen and (max-width: 720px)",
   "sp":"screen and (min-width: 621px) and (max-width: 768px)",
+  "sp-drawer":"screen and (max-width: 768px)",
   "sp-card":"screen and (max-width: 767px)",
   "tab-contact":"screen and (max-width: 800px)",
   "tab-news":"screen and (max-width: 850px)",

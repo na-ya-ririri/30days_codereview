@@ -49,6 +49,21 @@
         </nav>
       </div>
     </div> <!-- 無駄なdivを省く→HTML5のタグを使う<nav> -->
+
+    <!-- Drawer Button -->
+    <!-- ハンバーガーメニューを↑に入れ込むと配置がうまくいかなかったためタブレットサイズ以下の場合(ドロワーメニュー表示時)のヘッダーは、↑をdisplay:none;にし↓に表示を切り替える形で対応 -->
+    <div class="nav-responsive">
+      <div class="nav-responsive__inner flex">
+        <a href="#top" class="nav__logo wow bounceInLeft" data-wow-duration="2s"><img src="img/header/logo-min.png" alt="The Company logo"></a>
+        <div class="drawer-menu__btn wow bounceInRight" data-wow-duration="2s"> <!-- divないとボタンが表示されない -->
+          <buttton type="button" class="drawer-btn">
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+          </buttton>
+        </div> <!-- drawer-menu__btn -->
+      </div> <!-- nav-responsive__inner -->
+    </div>
   </header> <!-- <header>タグに↓のメインビジュアルまでは含めない -->
 
     <!-- TOP after review -->
@@ -364,6 +379,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="inner">
       <div class="footer__company">
@@ -392,16 +408,34 @@
     <a href="#top" class="footer__top-link wow infinite swing" data-wow-duration="2.5s"><img src="img/footer/totop.svg" alt="TOPリンク" class="footer__top-btn"></a>
   </footer>
 
+  <!-- Drawer Menu & Drawer Close Button -->
+  <div class="overlay"></div> <!-- ドロワーメニュー用 -->
+  <div class="drawer-menu">
+    <ul class="drawer-menu__list">
+      <li class="drawer-menu__list--item"><a href="#card" class="drawer-menu__link">Card</a></li>
+      <li class="drawer-menu__list--item"><a href="#news" class="drawer-menu__link">News</a></li>
+      <li class="drawer-menu__list--item"><a href="#price" class="drawer-menu__link">Price</a></li>
+      <li class="drawer-menu__list--item"><a href="#access" class="drawer-menu__link">Access</a></li>
+      <li class="drawer-menu__list--item"><a href="#contact" class="drawer-menu__link">Contact</a></li>
+    </ul>
+    <buttton type="button" class="drawer-btn-close">
+      <span class="hamburger-close"></span>
+      <span class="hamburger-close"></span>
+    </buttton>
+  </div> <!-- drawer-menu -->
+
  </div> <!-- .wrap -->
 
- <!-- jquery googleCDN 2.x -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+ <!-- jquery CDN -->
+ <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+ <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> ↓に記述していた最新版を採用したためコメントアウト-->
  <!-- jqery -->
- <script src="jquery/script_jquery.js"></script>
+ <script src="jquery/scroll_current.js"></script>
+ <script src="jquery/drawer.js"></script>
  <!-- swiper JS CDN -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
  <!-- slick JS CDN -->
- <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+ <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> ←ここに再びjqueryを読み込んでいたことでカレント表示が崩れていた！-->
  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick.min.js"></script>
  <!-- wow JS -->
  <script src="javascript/WOW-master/wow.min.js"></script>
