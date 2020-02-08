@@ -6,7 +6,7 @@
   /* background: -moz-linear-gradient(top, $color-footer-back1 0%, $color-footer-back2 100%); 不要*/
   background: -webkit-linear-gradient(top, $color-footer-back1 0%, $color-footer-back2 100%);
   color: $color-white;
-  position: relative; /* .footer__top-linkリンクのため */
+  /* position: relative;.footer__top-linkリンクのため */
   .inner {
     display: flex;
     justify-content: center;
@@ -103,9 +103,11 @@
     }
   } //.footer__end
   &__top-link {
-    position: absolute; /* .footerをporに */
+    /* position: absolute; .footerをporに */
+    position: fixed; /* 画面右下に固定 */
     right: 19px;
     bottom: 14px;
+    display: none; /* jsでスクロールしたらふわっと表示/非表示させる */
     &:hover {
       opacity: 0.7;
     }

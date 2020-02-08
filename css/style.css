@@ -369,10 +369,6 @@ index.html
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
   }
-  .drawer-menu__link.current-drawer {
-    /* ドロワーメニューのカレント表示 */
-    background: skyblue;
-  }
 }
 
 /* ------------------------------------ */
@@ -1762,8 +1758,7 @@ index.html
   /* background: -moz-linear-gradient(top, $color-footer-back1 0%, $color-footer-back2 100%); 不要*/
   background: -webkit-linear-gradient(top, #666666 0%, #333333 100%);
   color: #FFFFFF;
-  position: relative;
-  /* .footer__top-linkリンクのため */
+  /* position: relative;.footer__top-linkリンクのため */
 }
 
 .footer .inner {
@@ -1931,10 +1926,13 @@ index.html
 }
 
 .footer__top-link {
-  position: absolute;
-  /* .footerをporに */
+  /* position: absolute; .footerをporに */
+  position: fixed;
+  /* 画面右下に固定 */
   right: 19px;
   bottom: 14px;
+  display: none;
+  /* jsでスクロールしたらふわっと表示/非表示させる */
 }
 
 .footer__top-link:hover {
