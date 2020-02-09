@@ -95,6 +95,7 @@ index.html
 4.news
 5.price
 6.access
+6.5.q&a 追加
 7.contact
 8.footer
 --------------------------------------- */
@@ -175,11 +176,10 @@ index.html
 
 .nav__list--item {
   display: inline-block;
-  margin-right: 32.5px;
 }
 
-.nav__list--item:nth-child(5) {
-  margin-right: 0;
+.nav__list--item:not(:last-child) {
+  margin-right: 32.5px;
 }
 
 .nav__list--item .nav-hover {
@@ -1320,6 +1320,151 @@ index.html
   height: 100%;
   margin-left: 31px;
   top: 19px;
+}
+
+/* ------------------------------------ */
+/* q&a--------------------------------- */
+.qa {
+  background-color: #EFEFEF;
+  padding-top: 55px;
+  padding-bottom: 76px;
+}
+
+.qa .inner {
+  width: 1084px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.qa .inner .qa__heading {
+  text-align: center;
+  font-family: 'Lato', 'Gill', sans-serif;
+  font-size: 6.0rem;
+  line-height: 9.6rem;
+  color: #333333;
+  padding-bottom: 40px;
+  margin-bottom: 93px;
+  position: relative;
+}
+
+.qa .inner .qa__heading::before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  bottom: 0px;
+  /*下線の上下位置調整*/
+  display: inline-block;
+  width: 76px;
+  /*下線の幅*/
+  height: 5px;
+  /*下線の太さ*/
+  /* -moz-transform: translateX(-50%); 不要*/
+  -webkit-transform: translateX(-50%);
+  transform: translate(-50%);
+  /*位置調整*/
+  background-color: #3F51B5;
+  /*下線の色*/
+}
+
+.qa__back {
+  background: #FFFFFF;
+  padding: 70px 0;
+}
+
+.qa__list {
+  width: 904px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.qa__list--item:not(:last-child) {
+  margin-bottom: 28px;
+}
+
+@media screen and (max-width: 905px) {
+  .qa__list--item {
+    margin: 0 0.5rem 0;
+  }
+}
+
+.qa__list--item .qa__q {
+  font-size: 1.8rem;
+  line-height: 2.9rem;
+  color: #FFFFFF;
+  background: #3F51B5;
+  height: 60px;
+  padding: 21px 0 16px 55px;
+  cursor: pointer;
+  position: relative;
+}
+
+@media screen and (max-width: 550px) {
+  .qa__list--item .qa__q {
+    padding-left: 30px;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .qa__list--item .qa__q {
+    font-size: 1.5rem;
+  }
+}
+
+.qa__list--item .qa__q::before {
+  position: absolute;
+  content: 'Q';
+  left: 22px;
+}
+
+@media screen and (max-width: 550px) {
+  .qa__list--item .qa__q::before {
+    left: 10px;
+  }
+}
+
+.qa__list--item .qa__q::after {
+  position: absolute;
+  content: '';
+  background: url(../../../img/q&a/accordion/plus.svg) no-repeat;
+  width: 100%;
+  height: 100%;
+  top: 23px;
+  left: 95.8%;
+}
+
+@media screen and (max-width: 905px) {
+  .qa__list--item .qa__q::after {
+    left: 93%;
+  }
+}
+
+.qa__list--item .qa__q.open::after {
+  background: url(../../../img/q&a/accordion/minus.svg) no-repeat;
+  top: 30px;
+}
+
+.qa__list--item .qa-a__wrapper {
+  display: none;
+  /* jsで表示/非表示させる */
+}
+
+.qa__list--item .qa-a__wrapper .qa-a {
+  font-size: 1.8rem;
+  line-height: 2.9rem;
+  color: #3F51B5;
+  background: #FFFFFF;
+  border: 1px solid #3F51B5;
+  padding: 24px 27px 18px 55px;
+  cursor: pointer;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  position: relative;
+}
+
+.qa__list--item .qa-a__wrapper .qa-a::before {
+  position: absolute;
+  content: 'A';
+  left: 22px;
 }
 
 /* ------------------------------------ */

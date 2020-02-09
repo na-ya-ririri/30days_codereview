@@ -194,6 +194,11 @@
     @content;
   }
 }
+@mixin mqTAB-QA {
+  @media #{map-get($breakpoints, tab-qa)}{
+    @content;
+  }
+}
 @mixin mqTAB {
   @media #{map-get($breakpoints, tab)}{
     @content;

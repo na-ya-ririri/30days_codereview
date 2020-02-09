@@ -45,9 +45,8 @@
     } //.nav__list
     &__list--item {
       display: inline-block;
-      margin-right: 32.5px; 
-      &:nth-child(5) {
-        margin-right: 0;
+      &:not(:last-child) {
+        margin-right: 32.5px;
       }
       .nav-hover {
         display: inline-block;
