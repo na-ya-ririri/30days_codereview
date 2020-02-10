@@ -1896,12 +1896,18 @@ index.html
   left: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 9999;
-  padding: 3rem;
-  /* レスポンシブした時にモーダルの外に余白ができるように */
   display: none;
 }
 
-.privacy-modal__wrapper {
+.modal__inner {
+  /* レスポンシブした時にモーダルをスクロールできるように付与したdivクラス(.privacy-modal__wrapperに直接overflow-y:scroll;をかけると✕ボタンが消えてしまう) */
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0 3rem;
+  /* レスポンシブした時にモーダルの外に余白ができるように */
+}
+
+.modal__inner .privacy-modal__wrapper {
   display: none;
   background: #FFFFFF;
   position: fixed;
@@ -1915,39 +1921,79 @@ index.html
   /* カンプに合わせた */
   min-height: 610px;
   /* カンプに合わせた */
-  /* モーダルが固定表示でスクロールできなかったため、
-    もしモーダルの長さが画面幅を超えた場合(とくにスマホ)スクロールさせたい
-    →高さを指定して、超えた分はy軸にスクロール(ただし✕ボタンの表示がはみ出ていた分消えてしまうのでまた調整が必要) */
-  /* height: 90%; 
-    overflow-y:scroll; */
   z-index: 99999;
   position: relative;
 }
 
-.privacy-modal__wrapper .modal-close__btn {
+@media screen and (max-width: 1110px) {
+  .modal__inner .privacy-modal__wrapper {
+    /* margin-topを付与することでレスポンシブで上部が隠れてしまうのをなんとかする */
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .modal__inner .privacy-modal__wrapper {
+    margin-top: 90px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .modal__inner .privacy-modal__wrapper {
+    margin-top: 150px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .modal__inner .privacy-modal__wrapper {
+    margin-top: 280px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .modal__inner .privacy-modal__wrapper {
+    margin-top: 450px;
+    padding: 65px 26.5px 20px 26px;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .modal__inner .privacy-modal__wrapper {
+    margin-top: 550px;
+    padding: 65px 16.5px 20px 16px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .modal__inner .privacy-modal__wrapper {
+    margin-top: 660px;
+  }
+}
+
+.modal__inner .privacy-modal__wrapper .modal-close__btn {
   position: absolute;
   top: -20px;
   right: -20px;
   cursor: pointer;
 }
 
-.privacy-modal__wrapper .modal-close__btn:hover {
+.modal__inner .privacy-modal__wrapper .modal-close__btn:hover {
   opacity: 0.9;
 }
 
-.privacy-modal__wrapper .privacy-modal__title--wrapper {
+.modal__inner .privacy-modal__wrapper .privacy-modal__title--wrapper {
   text-align: center;
   margin-bottom: 48.5px;
 }
 
-.privacy-modal__wrapper .privacy-modal__title--wrapper .privacy-modal__title {
+.modal__inner .privacy-modal__wrapper .privacy-modal__title--wrapper .privacy-modal__title {
   font-size: 2.4rem;
   line-height: 3.9rem;
   color: #707070;
   position: relative;
 }
 
-.privacy-modal__wrapper .privacy-modal__title--wrapper .privacy-modal__title::before {
+.modal__inner .privacy-modal__wrapper .privacy-modal__title--wrapper .privacy-modal__title::before {
   position: absolute;
   content: '';
   display: inline-block;
@@ -1960,12 +2006,18 @@ index.html
   height: 2px;
 }
 
-.privacy-modal__wrapper .privacy-modal__list--item {
+@media screen and (max-width: 340px) {
+  .modal__inner .privacy-modal__wrapper .privacy-modal__title--wrapper .privacy-modal__title {
+    font-size: 2rem;
+  }
+}
+
+.modal__inner .privacy-modal__wrapper .privacy-modal__list--item {
   padding-left: 27.5px;
   margin-bottom: 30px;
 }
 
-.privacy-modal__wrapper .privacy-modal__list--item .privacy-modal__list--item-title {
+.modal__inner .privacy-modal__wrapper .privacy-modal__list--item .privacy-modal__list--item-title {
   font-size: 2rem;
   line-height: 3.2rem;
   color: #707070;
@@ -1973,7 +2025,7 @@ index.html
   position: relative;
 }
 
-.privacy-modal__wrapper .privacy-modal__list--item .privacy-modal__list--item-title::before {
+.modal__inner .privacy-modal__wrapper .privacy-modal__list--item .privacy-modal__list--item-title::before {
   position: absolute;
   content: '';
   display: inline-block;
@@ -1986,17 +2038,23 @@ index.html
   background: #3F51B5;
 }
 
-.privacy-modal__wrapper .privacy-modal__list--item .privacy-modal__list--item-text {
+@media screen and (max-width: 340px) {
+  .modal__inner .privacy-modal__wrapper .privacy-modal__list--item .privacy-modal__list--item-title {
+    font-size: 1.8rem;
+  }
+}
+
+.modal__inner .privacy-modal__wrapper .privacy-modal__list--item .privacy-modal__list--item-text {
   font-size: 1.6rem;
   line-height: 2.6rem;
   color: #707070;
 }
 
-.privacy-modal__wrapper .privacy-modal__close--wrapper {
+.modal__inner .privacy-modal__wrapper .privacy-modal__close--wrapper {
   text-align: center;
 }
 
-.privacy-modal__wrapper .privacy-modal__close--wrapper .privacy-modal__close {
+.modal__inner .privacy-modal__wrapper .privacy-modal__close--wrapper .privacy-modal__close {
   font-size: 1.6rem;
   line-height: 2.6rem;
   color: #FFFFFF;
@@ -2009,7 +2067,7 @@ index.html
   transition: opacity 0.3s;
 }
 
-.privacy-modal__wrapper .privacy-modal__close--wrapper .privacy-modal__close:hover {
+.modal__inner .privacy-modal__wrapper .privacy-modal__close--wrapper .privacy-modal__close:hover {
   opacity: 0.9;
 }
 

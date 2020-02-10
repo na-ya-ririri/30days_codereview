@@ -230,108 +230,138 @@
       left: 0;
       background: $color-modal-overlay;
       z-index: 9999;
-      padding: 3rem; /* レスポンシブした時にモーダルの外に余白ができるように */
       display: none;
     } //.modal-overlay
-    .privacy-modal__wrapper {
-    display: none;
-    background: $color-white;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 65px 56.5px 20px 56px;
-    width: 100%;
-    max-width: 930px; /* カンプに合わせた */
-    min-height: 610px; /* カンプに合わせた */
-    /* モーダルが固定表示でスクロールできなかったため、
-    もしモーダルの長さが画面幅を超えた場合(とくにスマホ)スクロールさせたい
-    →高さを指定して、超えた分はy軸にスクロール(ただし✕ボタンの表示がはみ出ていた分消えてしまうのでまた調整が必要) */
-    /* height: 90%; 
-    overflow-y:scroll; */
-    z-index: 99999;
-    position: relative;
-    .modal-close__btn {
-      position: absolute;
-      top: -20px;
-      right: -20px;
-      cursor: pointer;
-      &:hover {
-        opacity: 0.9;
-      }
-    } //.modal-close__btn
-    .privacy-modal__title--wrapper {
-      text-align: center;
-      margin-bottom: 48.5px;
-      .privacy-modal__title {
-        font-size: 2.4rem;
-        line-height: 3.9rem;
-        color: $color-modal-title;
+    .modal__inner { /* レスポンシブした時にモーダルをスクロールできるように付与したdivクラス(.privacy-modal__wrapperに直接overflow-y:scroll;をかけると✕ボタンが消えてしまう) */
+      height: 100%; 
+      overflow-y:scroll;
+      padding: 0 3rem; /* レスポンシブした時にモーダルの外に余白ができるように */
+      .privacy-modal__wrapper {
+        display: none;
+        background: $color-white;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 65px 56.5px 20px 56px;
+        width: 100%;
+        max-width: 930px; /* カンプに合わせた */
+        min-height: 610px; /* カンプに合わせた */
+        z-index: 99999;
         position: relative;
-        &::before {
+        @include mqTAB-PRICE { /* margin-topを付与することでレスポンシブで上部が隠れてしまうのをなんとかする */
+          margin-top: 50px;
+        }
+        @include mqTAB-NEWS {
+          margin-top: 90px;
+        }
+        @include mqVOICE {
+          margin-top: 150px;
+        }
+        @include mqSP-FOOTER {
+          margin-top: 280px;
+        }
+        @include mqSP-MODAL {
+          margin-top: 450px;
+          padding: 65px 26.5px 20px 26px;
+        }
+        @include mqXS {
+          margin-top: 550px;
+          padding: 65px 16.5px 20px 16px;
+        }
+        @include mqXS-MODAL {
+          margin-top: 660px;
+        }
+        .modal-close__btn {
           position: absolute;
-          content: '';
-          display: inline-block;
-          background: $color-blue;
-          left: 50%;
-          transform: translateX(-50%);
-          bottom: -20px;
-          width: 155px;
-          height: 2px;
-        }
-      }
-    } //.privacy-modal__title--wrapper
-    .privacy-modal__list {
-      &--item {
-        padding-left: 27.5px;
-        margin-bottom: 30px;
-        .privacy-modal__list--item-title {
-          font-size: 2rem;
-          line-height: 3.2rem;
-          color: $color-modal-title;
-          margin-bottom: 18px;
-          position: relative;
-          &::before {
-            position: absolute;
-            content: '';
-            display: inline-block;
-            top: 50%;
-            transform: translateY(-50%);
-            left: -27.5px;
-            width: 3px;
-            height: 18px;
-            background: $color-blue;
+          top: -20px;
+          right: -20px;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.9;
           }
-        }
-        .privacy-modal__list--item-text {
-          font-size: 1.6rem;
-          line-height: 2.6rem;
-          color: $color-modal-title;
-        }
-      } //.privacy-modal__list--item
-    } //.privacy-modal__list
-    .privacy-modal__close--wrapper {
-      text-align: center;
-      .privacy-modal__close {
-        font-size: 1.6rem;
-        line-height: 2.6rem;
-        color: $color-white;
-        background: $color-blue;
-        border-radius: 12px;
-        width: 180px;
-        height: 38px;
-        cursor: pointer;
-        transition: opacity 0.3s;
-        &:hover {
-          opacity: 0.9;
-        }
-      }
-    } //.privacy-modal__close--wrapper
-  } //.privacy-modal__wrapper
+        } //.modal-close__btn
+        .privacy-modal__title--wrapper {
+          text-align: center;
+          margin-bottom: 48.5px;
+          .privacy-modal__title {
+            font-size: 2.4rem;
+            line-height: 3.9rem;
+            color: $color-modal-title;
+            position: relative;
+            &::before {
+              position: absolute;
+              content: '';
+              display: inline-block;
+              background: $color-blue;
+              left: 50%;
+              transform: translateX(-50%);
+              bottom: -20px;
+              width: 155px;
+              height: 2px;
+            }
+            @include mqXS-MODAL {
+              font-size: 2rem;
+            }
+          }
+        } //.privacy-modal__title--wrapper
+        .privacy-modal__list {
+          &--item {
+            padding-left: 27.5px;
+            margin-bottom: 30px;
+            .privacy-modal__list--item-title {
+              font-size: 2rem;
+              line-height: 3.2rem;
+              color: $color-modal-title;
+              margin-bottom: 18px;
+              position: relative;
+              &::before {
+                position: absolute;
+                content: '';
+                display: inline-block;
+                top: 50%;
+                transform: translateY(-50%);
+                left: -27.5px;
+                width: 3px;
+                height: 18px;
+                background: $color-blue;
+              }
+              @include mqXS-MODAL {
+                font-size: 1.8rem;
+              }
+            }
+            .privacy-modal__list--item-text {
+              font-size: 1.6rem;
+              line-height: 2.6rem;
+              color: $color-modal-title;
+            }
+          } //.privacy-modal__list--item
+        } //.privacy-modal__list
+        .privacy-modal__close--wrapper {
+          text-align: center;
+          .privacy-modal__close {
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+            color: $color-white;
+            background: $color-blue;
+            border-radius: 12px;
+            width: 180px;
+            height: 38px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            &:hover {
+              opacity: 0.9;
+            }
+          }
+        } //.privacy-modal__close--wrapper
+      } //.privacy-modal__wrapper
+    } //.modal__inner
   /* モーダル END */
   // } // .contact-form--wrapper
 //   } //.contact__inner
 // } //.contact
+
+
 
 // ↓リセットCSSつきコード
 // .contact {

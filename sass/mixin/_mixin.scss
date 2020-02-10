@@ -139,8 +139,18 @@
     @content;
   }
 }
+@mixin mqXS-MODAL {
+  @media #{map-get($breakpoints, xs-modal)}{
+    @content;
+  }
+}
 @mixin mqXS {
   @media #{map-get($breakpoints, xs)}{
+    @content;
+  }
+}
+@mixin mqSP-MODAL {
+  @media #{map-get($breakpoints, sp-modal)}{
     @content;
   }
 }

@@ -47,7 +47,9 @@ $color-footer-back2: #333333;
 $layout-width-inner: 1086px;
 $breakpoints: (
   "xxs":"screen and (max-width: 321px)",
+  "xs-modal":"screen and (max-width: 340px)",
   "xs":"screen and (max-width: 365px)",
+  "sp-modal":"screen and (max-width: 420px)",
   "sm":"screen and (min-width: 366px) and (max-width: 510px)",
   "md":"screen and (min-width: 511px) and (max-width: 620px)",
   "sp-price":"screen and (max-width: 550px)",

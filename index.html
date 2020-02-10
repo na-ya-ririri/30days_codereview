@@ -330,7 +330,7 @@
                   アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。
                 </p>
               </div>
-            </li> <!-- qa__list--item -->
+            </li> <!-- qa__list-item -->
             <li class="qa__list--item">
               <h3 class="qa__q">クリックするとどうなりますか？</h3>
               <div class="qa-a__wrapper">
@@ -338,7 +338,7 @@
                   アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。
                 </p>
               </div>
-            </li> <!-- qa__list--item -->
+            </li> <!-- qa__list-item -->
             <li class="qa__list--item">
               <h3 class="qa__q">クリックするとどうなりますか？</h3>
               <div class="qa-a__wrapper">
@@ -346,7 +346,7 @@
                   アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。
                 </p>
               </div>
-            </li> <!-- qa__list--item -->
+            </li> <!-- qa__list-item -->
             <li class="qa__list--item">
               <h3 class="qa__q">クリックするとどうなりますか？</h3>
               <div class="qa-a__wrapper">
@@ -354,7 +354,7 @@
                   アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。アコーディオンでここが開きます。
                 </p>
               </div>
-            </li> <!-- qa__list--item -->
+            </li> <!-- qa__list-item -->
           </ul>
         </div>
       </div> <!-- inner -->
@@ -426,25 +426,27 @@
 
       <!-- モーダル -->
       <div class="modal-overlay"> <!-- ドロワーのように<span>一行でやるとモーダル出た後に変なスクロールが出来るようになってしまう -->
-        <div class="privacy-modal__wrapper">
-          <span><img src="img/form/btn-batsu.svg" class="close-modal modal-close__btn" alt="privacy policy close"></span>
-          <div class="privacy-modal__title--wrapper"> <!-- ↓中央配置用 -->
-            <h3 class="privacy-modal__title">プライバシーポリシー</h3>
-          </div>
-          <ul class="privacy-modal__list">
-            <li class="privacy-modal__list--item">
-              <h4 class="privacy-modal__list--item-title">ほにゃらら</h4>
-              <p class="privacy-modal__list--item-text">ほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃらら。</p>
-            </li>
-            <li class="privacy-modal__list--item">
-              <h4 class="privacy-modal__list--item-title">ほにゃらら</h4>
-              <p class="privacy-modal__list--item-text">ほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃらら。</p>
-            </li>
-          </ul>
-          <div class="privacy-modal__close--wrapper"> <!-- ↓中央配置用 -->
-            <button type="button" class="close-modal privacy-modal__close submit-button">閉じる</button> <!-- スタイルリセットのためsubmit-buttonを追加 -->
-          </div>
-        </div>
+        <div class="modal__inner"> <!-- モーダルをスクロールさせ、かつ✕ボタンを正常に表示させるためのdiv -->
+          <div class="privacy-modal__wrapper">
+            <span><img src="img/form/btn-batsu.svg" class="close-modal modal-close__btn" alt="privacy policy close"></span>
+            <div class="privacy-modal__title--wrapper"> <!-- ↓中央配置用 -->
+              <h3 class="privacy-modal__title">プライバシーポリシー</h3>
+            </div>
+            <ul class="privacy-modal__list">
+              <li class="privacy-modal__list--item">
+                <h4 class="privacy-modal__list--item-title">ほにゃらら</h4>
+                <p class="privacy-modal__list--item-text">ほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃらら。</p>
+              </li>
+              <li class="privacy-modal__list--item">
+                <h4 class="privacy-modal__list--item-title">ほにゃらら</h4>
+                <p class="privacy-modal__list--item-text">ほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃらら。</p>
+              </li>
+            </ul>
+            <div class="privacy-modal__close--wrapper"> <!-- ↓中央配置用 -->
+              <button type="button" class="close-modal privacy-modal__close submit-button">閉じる</button> <!-- スタイルリセットのためsubmit-buttonを追加 -->
+            </div>
+          </div> <!-- privacy-modal__wrapper -->
+        </div> <!-- modal__inner -->
       </div>
        
     </section>
