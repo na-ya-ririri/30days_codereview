@@ -364,7 +364,8 @@
     <section class="contact current-pos" id="contact">
       <div class="inner">
         <h2 class="contact__heading">Contact</h2>
-        <div class="contact-form--wrapper wow fadeInUpBig" data-wow-duration="1.5s" data-wow-delay="0.25s">
+        <!-- wow fadeInUpBig" data-wow-duration="1.5s" data-wow-delay="0.25s" -->
+        <div class="contact-form--wrapper">
           <form action="abc.php" method="POST" class="contact-form"> <!-- エラー回避のためにaction部分は適当なファイル名を追加 -->
 
             <div class="contact-form__name">
@@ -410,7 +411,9 @@
               <label>
                 <input type="checkbox" name="privacy-check" class="check inputs-checkbox"><span></span> <!-- チェックボックスのためのspan -->
               </label>
-              <p class="privacy-text"><a href="#" class="privacy-content">プライバシーポリシー</a>に合意する</p>
+              <p class="privacy-text">
+                <a href="#contact" class="privacy-content">プライバシーポリシー</a>に合意する <!-- #→#contactへ -->
+              </p>
             </div> <!-- contact-form__privacy -->
 
             <div class="contact-form__button">
@@ -420,6 +423,30 @@
           </form>
         </div> <!-- contact__inner-wrapper -->
       </div> <!-- contact__inner -->
+
+      <!-- モーダル -->
+      <div class="modal-overlay"> <!-- ドロワーのように<span>一行でやるとモーダル出た後に変なスクロールが出来るようになってしまう -->
+        <div class="privacy-modal__wrapper">
+          <span><img src="img/form/btn-batsu.svg" class="close-modal modal-close__btn" alt="privacy policy close"></span>
+          <div class="privacy-modal__title--wrapper"> <!-- ↓中央配置用 -->
+            <h3 class="privacy-modal__title">プライバシーポリシー</h3>
+          </div>
+          <ul class="privacy-modal__list">
+            <li class="privacy-modal__list--item">
+              <h4 class="privacy-modal__list--item-title">ほにゃらら</h4>
+              <p class="privacy-modal__list--item-text">ほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃらら。</p>
+            </li>
+            <li class="privacy-modal__list--item">
+              <h4 class="privacy-modal__list--item-title">ほにゃらら</h4>
+              <p class="privacy-modal__list--item-text">ほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃららほにゃらら。</p>
+            </li>
+          </ul>
+          <div class="privacy-modal__close--wrapper"> <!-- ↓中央配置用 -->
+            <button type="button" class="close-modal privacy-modal__close submit-button">閉じる</button> <!-- スタイルリセットのためsubmit-buttonを追加 -->
+          </div>
+        </div>
+      </div>
+       
     </section>
   </main>
 
@@ -479,6 +506,7 @@
  <script src="jquery/scroll_current.js"></script>
  <script src="jquery/drawer.js"></script>
  <script src="jquery/accordion.js"></script>
+ <script src="jquery/modal.js"></script>
  <!-- swiper JS CDN -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
  <!-- slick JS CDN -->

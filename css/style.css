@@ -1456,8 +1456,6 @@ index.html
   border: 1px solid #3F51B5;
   padding: 24px 27px 18px 55px;
   cursor: pointer;
-  -webkit-transition: all .5s;
-  transition: all .5s;
   position: relative;
 }
 
@@ -1889,6 +1887,133 @@ index.html
   opacity: 0.85;
 }
 
+/* モーダル */
+.modal-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  padding: 3rem;
+  /* レスポンシブした時にモーダルの外に余白ができるように */
+  display: none;
+}
+
+.privacy-modal__wrapper {
+  display: none;
+  background: #FFFFFF;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 65px 56.5px 20px 56px;
+  width: 100%;
+  max-width: 930px;
+  /* カンプに合わせた */
+  min-height: 610px;
+  /* カンプに合わせた */
+  /* モーダルが固定表示でスクロールできなかったため、
+    もしモーダルの長さが画面幅を超えた場合(とくにスマホ)スクロールさせたい
+    →高さを指定して、超えた分はy軸にスクロール(ただし✕ボタンの表示がはみ出ていた分消えてしまうのでまた調整が必要) */
+  /* height: 90%; 
+    overflow-y:scroll; */
+  z-index: 99999;
+  position: relative;
+}
+
+.privacy-modal__wrapper .modal-close__btn {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  cursor: pointer;
+}
+
+.privacy-modal__wrapper .modal-close__btn:hover {
+  opacity: 0.9;
+}
+
+.privacy-modal__wrapper .privacy-modal__title--wrapper {
+  text-align: center;
+  margin-bottom: 48.5px;
+}
+
+.privacy-modal__wrapper .privacy-modal__title--wrapper .privacy-modal__title {
+  font-size: 2.4rem;
+  line-height: 3.9rem;
+  color: #707070;
+  position: relative;
+}
+
+.privacy-modal__wrapper .privacy-modal__title--wrapper .privacy-modal__title::before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  background: #3F51B5;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: -20px;
+  width: 155px;
+  height: 2px;
+}
+
+.privacy-modal__wrapper .privacy-modal__list--item {
+  padding-left: 27.5px;
+  margin-bottom: 30px;
+}
+
+.privacy-modal__wrapper .privacy-modal__list--item .privacy-modal__list--item-title {
+  font-size: 2rem;
+  line-height: 3.2rem;
+  color: #707070;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.privacy-modal__wrapper .privacy-modal__list--item .privacy-modal__list--item-title::before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: -27.5px;
+  width: 3px;
+  height: 18px;
+  background: #3F51B5;
+}
+
+.privacy-modal__wrapper .privacy-modal__list--item .privacy-modal__list--item-text {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: #707070;
+}
+
+.privacy-modal__wrapper .privacy-modal__close--wrapper {
+  text-align: center;
+}
+
+.privacy-modal__wrapper .privacy-modal__close--wrapper .privacy-modal__close {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: #FFFFFF;
+  background: #3F51B5;
+  border-radius: 12px;
+  width: 180px;
+  height: 38px;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.privacy-modal__wrapper .privacy-modal__close--wrapper .privacy-modal__close:hover {
+  opacity: 0.9;
+}
+
+/* モーダル END */
 /* _contact.scss内では修正変更できず、form_reset.cssをHTMLで読み込んでいるとスタイルが崩れる模様。
 ⇢style.scssにリセットCSSも含めて直接スタイルを書き込めば崩れはなくなる
 ⇢さらに、リセットCSSも含めた下記コードを_contact.scssに書き込み、style.scssにて@import "page/7-contact/contact";としてもスタイル崩れはなくなる。(ただし、先に_contact.scss内に下記コードを書き、その後style.scssに@import "page/7-contact/contact";と記述しないとスタイルは反映されない)
